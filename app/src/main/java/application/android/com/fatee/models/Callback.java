@@ -1,4 +1,4 @@
-package application.android.com.fakee.models;
+package application.android.com.fatee.models;
 
 public interface Callback<T> {
     void onSuccess(T result);
