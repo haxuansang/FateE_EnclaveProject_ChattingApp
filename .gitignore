@@ -1,9 +1,3 @@
-# Ignore everything in this directory
-*
-# Except this file
-!.gitignore
-
-
 # Built application files
 *.apk
 *.ap_
