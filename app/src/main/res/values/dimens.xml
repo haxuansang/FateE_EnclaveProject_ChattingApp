@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="size_login">20sp</dimen>
+    <dimen name="size_icon">150dp</dimen>
+    <dimen name="size_edtuser_margin">20dp</dimen>
+</resources>
