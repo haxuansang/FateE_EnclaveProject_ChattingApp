@@ -14,8 +14,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
-
-
 import application.android.com.fatee.R;
 import application.android.com.fatee.presenters.ProcessLogicPresenter;
 import application.android.com.fatee.utils.ConnectionBroadcastReceiver;
@@ -39,17 +37,18 @@ public class LoginActivity extends AppCompatActivity implements ViewProcessLogin
         setContentView(R.layout.activity_login);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         viewProcessLogin=this;
-        initView();
         delayLogin();
+        initView();
         presenterLogicProcessLogin = new ProcessLogicPresenter(viewProcessLogin);
         broadcastReceiver = new ConnectionBroadcastReceiver();
 
     }
 
 
+
     @Override
-    protected void onResume() {
-        super.onResume();
+    protected void onStart() {
+        super.onStart();
         IntentFilter intentFilter =new IntentFilter();
         intentFilter.addAction(ConnectivityManager.CONNECTIVITY_ACTION);
         registerReceiver(broadcastReceiver,intentFilter);
@@ -86,7 +85,7 @@ public class LoginActivity extends AppCompatActivity implements ViewProcessLogin
 
                 relativeLayoutLogin.setVisibility(View.VISIBLE);
             }
-        },2000);
+        },3000);
 
 
     }
