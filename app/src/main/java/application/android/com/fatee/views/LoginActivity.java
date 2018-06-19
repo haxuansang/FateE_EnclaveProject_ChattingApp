@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -19,7 +20,7 @@ import application.android.com.fatee.presenters.ProcessLogicPresenter;
 import application.android.com.fatee.utils.ConnectionBroadcastReceiver;
 import application.android.com.fatee.views.interfaces.ViewProcessLogin;
 
-public class LoginActivity extends AppCompatActivity implements ViewProcessLogin {
+public class LoginActivity extends AppCompatActivity implements ViewProcessLogin, View.OnFocusChangeListener {
     private ImageView imageViewIcon;
     private Button btnLogin,btnRegister;
     private EditText edtUsername,edtPassword;
@@ -55,6 +56,16 @@ public class LoginActivity extends AppCompatActivity implements ViewProcessLogin
 
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        edtUsername.setOnFocusChangeListener(this);
+        edtPassword.setOnFocusChangeListener(this);
+
+    }
+
+
+
     // Init app View
     private void initView()
     {
@@ -87,7 +98,6 @@ public class LoginActivity extends AppCompatActivity implements ViewProcessLogin
             }
         },3000);
 
-
     }
 
 
@@ -111,4 +121,20 @@ public class LoginActivity extends AppCompatActivity implements ViewProcessLogin
         linearLayoutWrongLogin.setVisibility(View.INVISIBLE);
 
     }
+
+    @Override
+    public void onFocusChange(View view, boolean hasFocus) {
+        if(!hasFocus)
+            hideSoftInputKeyboard(view);
+
+    }
+
+
+    //Hide soft input keyboard when tap outside edittext
+    private void hideSoftInputKeyboard(View view)
+    {
+        InputMethodManager inputMethodManager = (InputMethodManager)getSystemService(LoginActivity.INPUT_METHOD_SERVICE);
+        inputMethodManager.hideSoftInputFromWindow(view.getWindowToken(),0);
+    }
+
 }

@@ -22,8 +22,8 @@ public class ConnectionBroadcastReceiver extends BroadcastReceiver {
         if (checkConnected(context))
             presenterLogicProcessLogin.caseHaveConnection();
         else presenterLogicProcessLogin.caseLostConnection();
-
             }
+
     public boolean checkConnected(Context context)
     {
 
