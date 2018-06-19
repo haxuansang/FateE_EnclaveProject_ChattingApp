@@ -5,7 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
-import android.net.wifi.WifiManager;
+
 
 
 
@@ -19,17 +19,11 @@ public class ConnectionBroadcastReceiver extends BroadcastReceiver {
     public void onReceive(Context context, Intent intent) {
 
         ProcessLogicPresenter presenterLogicProcessLogin = new ProcessLogicPresenter(LoginActivity.viewProcessLogin);
-        if (intent.getAction().equals(WifiManager.SUPPLICANT_STATE_CHANGED_ACTION)) {
-            if (intent.hasExtra(WifiManager.EXTRA_SUPPLICANT_ERROR)) {
-                 presenterLogicProcessLogin.caseLostConnection();
+        if (checkConnected(context))
+            presenterLogicProcessLogin.caseHaveConnection();
+        else presenterLogicProcessLogin.caseLostConnection();
+
             }
-        }
-            else {
-                if (!checkConnected(context))
-                    presenterLogicProcessLogin.caseLostConnection();
-                else presenterLogicProcessLogin.caseHaveConnection();
-            }
-        }
     public boolean checkConnected(Context context)
     {
 

@@ -4,7 +4,6 @@ import android.content.BroadcastReceiver;
 import android.content.IntentFilter;
 import android.content.pm.ActivityInfo;
 import android.net.ConnectivityManager;
-import android.net.wifi.WifiManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
@@ -12,6 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
@@ -26,6 +26,7 @@ public class LoginActivity extends AppCompatActivity implements ViewProcessLogin
     private Button btnLogin,btnRegister;
     private EditText edtUsername,edtPassword;
     private RelativeLayout relativeLayoutLogin;
+    private LinearLayout linearLayoutWrongLogin;
     Handler handler;
     ProcessLogicPresenter presenterLogicProcessLogin;
     public static ViewProcessLogin viewProcessLogin;
@@ -43,7 +44,6 @@ public class LoginActivity extends AppCompatActivity implements ViewProcessLogin
         presenterLogicProcessLogin = new ProcessLogicPresenter(viewProcessLogin);
         broadcastReceiver = new ConnectionBroadcastReceiver();
 
-
     }
 
 
@@ -52,7 +52,6 @@ public class LoginActivity extends AppCompatActivity implements ViewProcessLogin
         super.onResume();
         IntentFilter intentFilter =new IntentFilter();
         intentFilter.addAction(ConnectivityManager.CONNECTIVITY_ACTION);
-        intentFilter.addAction(WifiManager.SUPPLICANT_STATE_CHANGED_ACTION);
         registerReceiver(broadcastReceiver,intentFilter);
 
     }
@@ -66,6 +65,7 @@ public class LoginActivity extends AppCompatActivity implements ViewProcessLogin
         edtPassword=(EditText)findViewById(R.id.edt_Password);
         edtUsername=(EditText)findViewById(R.id.edt_Username);
         relativeLayoutLogin=(RelativeLayout)findViewById(R.id.relativeLayout_Login);
+        linearLayoutWrongLogin=(LinearLayout)findViewById(R.id.linear_warning);
 
     }
 
@@ -98,8 +98,8 @@ public class LoginActivity extends AppCompatActivity implements ViewProcessLogin
         edtPassword.setEnabled(false);
         btnLogin.setEnabled(false);
         btnLogin.setBackgroundResource(R.drawable.disableshape);
+        linearLayoutWrongLogin.setVisibility(View.VISIBLE);
         Toast.makeText(this, "You lost Internet Connection. Please restart your Wifi or 3G.", Toast.LENGTH_SHORT).show();
-
     }
 
     @Override
@@ -109,5 +109,7 @@ public class LoginActivity extends AppCompatActivity implements ViewProcessLogin
         edtPassword.setEnabled(true);
         btnLogin.setEnabled(true);
         btnLogin.setBackgroundResource(R.drawable.shape);
+        linearLayoutWrongLogin.setVisibility(View.INVISIBLE);
+
     }
 }
