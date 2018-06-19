@@ -4,28 +4,28 @@ import android.content.BroadcastReceiver;
 import android.content.IntentFilter;
 import android.content.pm.ActivityInfo;
 import android.net.ConnectivityManager;
-import android.net.wifi.WifiManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
-
-
 import application.android.com.fatee.R;
 import application.android.com.fatee.presenters.ProcessLogicPresenter;
 import application.android.com.fatee.utils.ConnectionBroadcastReceiver;
 import application.android.com.fatee.views.interfaces.ViewProcessLogin;
 
-public class LoginActivity extends AppCompatActivity implements ViewProcessLogin {
+public class LoginActivity extends AppCompatActivity implements ViewProcessLogin, View.OnFocusChangeListener {
     private ImageView imageViewIcon;
     private Button btnLogin,btnRegister;
     private EditText edtUsername,edtPassword;
     private RelativeLayout relativeLayoutLogin;
+    private LinearLayout linearLayoutWrongLogin;
     Handler handler;
     ProcessLogicPresenter presenterLogicProcessLogin;
     public static ViewProcessLogin viewProcessLogin;
@@ -38,24 +38,33 @@ public class LoginActivity extends AppCompatActivity implements ViewProcessLogin
         setContentView(R.layout.activity_login);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         viewProcessLogin=this;
-        initView();
         delayLogin();
+        initView();
         presenterLogicProcessLogin = new ProcessLogicPresenter(viewProcessLogin);
         broadcastReceiver = new ConnectionBroadcastReceiver();
 
-
     }
 
+
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        IntentFilter intentFilter =new IntentFilter();
+        intentFilter.addAction(ConnectivityManager.CONNECTIVITY_ACTION);
+        registerReceiver(broadcastReceiver,intentFilter);
+
+    }
 
     @Override
     protected void onResume() {
         super.onResume();
-        IntentFilter intentFilter =new IntentFilter();
-        intentFilter.addAction(ConnectivityManager.CONNECTIVITY_ACTION);
-        intentFilter.addAction(WifiManager.SUPPLICANT_STATE_CHANGED_ACTION);
-        registerReceiver(broadcastReceiver,intentFilter);
+        edtUsername.setOnFocusChangeListener(this);
+        edtPassword.setOnFocusChangeListener(this);
 
     }
+
+
 
     // Init app View
     private void initView()
@@ -66,6 +75,7 @@ public class LoginActivity extends AppCompatActivity implements ViewProcessLogin
         edtPassword=(EditText)findViewById(R.id.edt_Password);
         edtUsername=(EditText)findViewById(R.id.edt_Username);
         relativeLayoutLogin=(RelativeLayout)findViewById(R.id.relativeLayout_Login);
+        linearLayoutWrongLogin=(LinearLayout)findViewById(R.id.linear_warning);
 
     }
 
@@ -86,8 +96,7 @@ public class LoginActivity extends AppCompatActivity implements ViewProcessLogin
 
                 relativeLayoutLogin.setVisibility(View.VISIBLE);
             }
-        },2000);
-
+        },3000);
 
     }
 
@@ -98,8 +107,8 @@ public class LoginActivity extends AppCompatActivity implements ViewProcessLogin
         edtPassword.setEnabled(false);
         btnLogin.setEnabled(false);
         btnLogin.setBackgroundResource(R.drawable.disableshape);
+        linearLayoutWrongLogin.setVisibility(View.VISIBLE);
         Toast.makeText(this, "You lost Internet Connection. Please restart your Wifi or 3G.", Toast.LENGTH_SHORT).show();
-
     }
 
     @Override
@@ -109,5 +118,23 @@ public class LoginActivity extends AppCompatActivity implements ViewProcessLogin
         edtPassword.setEnabled(true);
         btnLogin.setEnabled(true);
         btnLogin.setBackgroundResource(R.drawable.shape);
+        linearLayoutWrongLogin.setVisibility(View.INVISIBLE);
+
     }
+
+    @Override
+    public void onFocusChange(View view, boolean hasFocus) {
+        if(!hasFocus)
+            hideSoftInputKeyboard(view);
+
+    }
+
+
+    //Hide soft input keyboard when tap outside edittext
+    private void hideSoftInputKeyboard(View view)
+    {
+        InputMethodManager inputMethodManager = (InputMethodManager)getSystemService(LoginActivity.INPUT_METHOD_SERVICE);
+        inputMethodManager.hideSoftInputFromWindow(view.getWindowToken(),0);
+    }
+
 }

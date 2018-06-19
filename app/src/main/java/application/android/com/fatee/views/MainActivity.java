@@ -1,7 +1,7 @@
 package application.android.com.fatee.views;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 
 import application.android.com.fatee.R;
 

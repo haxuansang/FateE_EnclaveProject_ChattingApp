@@ -1,35 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:layout_height="match_parent"
-    android:layout_width="match_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/wallpaper"
     tools:context=".views.LoginActivity"
-     >
+    android:clickable="true"
+    android:focusableInTouchMode="true">
+
     <RelativeLayout
-        android:layout_margin="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
+        android:layout_margin="10dp"
         android:animateLayoutChanges="true"
 
-       >
+        >
+
         <ImageView
-            android:layout_marginTop="20dp"
             android:id="@+id/imgview_icon"
             android:layout_width="@dimen/size_icon"
             android:layout_height="@dimen/size_icon"
-            android:src="@drawable/heart"
-            android:scaleType="fitCenter"
-            android:adjustViewBounds="true"
             android:layout_centerHorizontal="true"
-            />
-        <RelativeLayout
             android:layout_marginTop="20dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/heart" />
+
+        <RelativeLayout
             android:id="@+id/relativeLayout_Login"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/imgview_icon"
+            android:layout_marginTop="60dp"
             android:visibility="gone">
+
             <LinearLayout
                 android:id="@+id/linear_Username"
                 android:layout_width="match_parent"
@@ -38,59 +43,94 @@
 
 
                 <EditText
-                    android:layout_marginLeft="@dimen/size_edtuser_margin"
-                    android:layout_marginRight="@dimen/size_edtuser_margin"
                     android:id="@+id/edt_Username"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:drawableLeft="@drawable/user_icon"
+                    android:hint="@string/login_username"
                     android:maxLines="1"
-                    android:hint="@string/login_username"/>
+                    android:background="@android:color/white"
+
+                    />
             </LinearLayout>
+
             <LinearLayout
-                android:layout_below="@id/linear_Username"
                 android:id="@+id/linear_Password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="10dp">
+                android:layout_below="@id/linear_Username"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
 
 
                 <EditText
-
-                    android:layout_marginLeft="@dimen/size_edtuser_margin"
-                    android:layout_marginRight="@dimen/size_edtuser_margin"
                     android:id="@+id/edt_Password"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:drawableLeft="@drawable/password_icon"
+                    android:hint="@string/login_password"
                     android:maxLines="1"
-                    android:password="true"
-                    android:hint="@string/login_password"/>
+                    android:background="@android:color/white"
+                    android:password="true" />
             </LinearLayout>
-                <Button
 
-                    android:layout_below="@id/linear_Password"
-                    android:id="@+id/btn_Login"
-                    android:layout_width="200dp"
-                    android:layout_height="50dp"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="40dp"
-                    android:text="Login"
-                    android:textAllCaps="false"
-                    android:background="@drawable/shape"
-                    android:textColor="@android:color/white"
-                    android:textSize="@dimen/size_login"/>
-               <Button
-                   android:layout_below="@id/btn_Login"
-                   android:id="@+id/btn_Register"
-                   android:layout_width="wrap_content"
-                   android:layout_height="wrap_content"
-                   android:layout_centerHorizontal="true"
-                   android:layout_marginTop="10dp"
-                   android:text="Register new account"
-                   android:textAllCaps="false"
-                   android:background="@android:color/transparent"
-                   android:textColor="@android:color/holo_blue_light"
-                   android:textSize="@dimen/size_login" />
+            <Button
+
+                android:id="@+id/btn_Login"
+                android:layout_width="250dp"
+                android:layout_height="50dp"
+                android:layout_below="@id/linear_Password"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="40dp"
+                android:background="@drawable/shape"
+                android:text="Login"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/size_login" />
+
+            <Button
+                android:id="@+id/btn_Register"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/btn_Login"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="8dp"
+                android:background="@android:color/transparent"
+                android:text="Register new account"
+                android:textAllCaps="false"
+                android:textColor="@android:color/holo_blue_light"
+                android:textSize="15sp" />
+
+            <LinearLayout
+                android:id="@+id/linear_warning"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/btn_Register"
+                android:layout_marginLeft="45dp"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal"
+                android:visibility="visible">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/warning_icon" />
+
+                <TextView
+                    android:gravity="bottom"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:text="@string/login_warning"
+                    android:textColor="@android:color/holo_red_light"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
 
         </RelativeLayout>
     </RelativeLayout>
