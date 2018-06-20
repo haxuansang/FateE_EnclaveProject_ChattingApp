@@ -51,6 +51,7 @@
                     android:drawableLeft="@drawable/user_icon"
                     android:hint="@string/login_username"
                     android:maxLines="1"
+                    android:ems="10"
                     android:background="@android:color/white"
 
                     />
@@ -75,7 +76,8 @@
                     android:hint="@string/login_password"
                     android:maxLines="1"
                     android:background="@android:color/white"
-                    android:password="true" />
+                    android:password="true"
+                    android:ems="10"/>
             </LinearLayout>
 
             <Button
