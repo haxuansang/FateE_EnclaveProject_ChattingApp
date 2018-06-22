@@ -76,7 +76,7 @@
                     android:hint="@string/login_password"
                     android:maxLines="1"
                     android:background="@android:color/white"
-                    android:password="true"
+                    android:inputType="textPassword"
                     android:ems="10"/>
             </LinearLayout>
 
@@ -92,7 +92,8 @@
                 android:text="Login"
                 android:textAllCaps="false"
                 android:textColor="@android:color/white"
-                android:textSize="@dimen/size_login" />
+                android:textSize="@dimen/size_login"
+                android:onClick="login"/>
 
             <Button
                 android:id="@+id/btn_Register"
