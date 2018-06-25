@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/cv_survey"
+    >
+<android.support.v7.widget.CardView xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:contentPaddingLeft="20dp"
+    app:contentPaddingRight="20dp"
+    app:contentPaddingBottom="20dp"
+    app:contentPaddingTop="5dp"
+    android:layout_marginBottom="15dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+    <TextView
+        android:layout_marginLeft="7.4dp"
+        android:id="@+id/tvQuestion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="What type of sports do you like?"
+
+        android:textStyle="bold|italic"
+        android:textSize="18sp"
+        />
+
+        <CheckBox
+            android:layout_marginTop="6dp"
+            android:id="@+id/cbAnswer1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Football"
+            android:paddingLeft="10dp"
+
+           />
+        <CheckBox
+            android:id="@+id/cbAnswer2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Table Tennis"
+            android:paddingLeft="10dp"
+            android:layout_marginTop="2dp"
+            />
+        <CheckBox
+            android:id="@+id/cbAnswer3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Basketall"
+            android:paddingLeft="10dp"
+            android:layout_marginTop="2dp"
+
+          />
+        <CheckBox
+            android:id="@+id/cbAnswer4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Volleyball"
+            android:paddingLeft="10dp"
+            android:layout_marginTop="2dp"
+            />
+
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>
+</RelativeLayout>

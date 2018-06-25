@@ -3,10 +3,23 @@
 
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">#2c3e50</item>
+        <item name="colorPrimary">#f37736</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">#2c3e50</item>
-        
+        <item name="colorAccent">#f37736</item>
+
+    </style>
+
+    <style name="AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="ThemeMain" parent="Theme.AppCompat.Light.NoActionBar" >
+
+        <item name="colorPrimary">#2c3e50</item>
+    </style>
+    <style name="customCheckbox">
+        <item name="android:layout_width">10dp</item>
+        <item name="android:layout_height">10dp</item>
     </style>
 
 </resources>

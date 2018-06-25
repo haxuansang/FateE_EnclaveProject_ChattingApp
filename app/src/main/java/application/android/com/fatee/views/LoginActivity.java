@@ -1,6 +1,7 @@
 package application.android.com.fatee.views;
 
 import android.content.BroadcastReceiver;
+import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.pm.ActivityInfo;
 import android.net.ConnectivityManager;
@@ -61,9 +62,16 @@ public class LoginActivity extends AppCompatActivity implements ViewProcessLogin
         super.onResume();
         edtUsername.setOnFocusChangeListener(this);
         edtPassword.setOnFocusChangeListener(this);
+        btnLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(LoginActivity.this,MainActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
 
     }
-
 
 
     // Init app View
@@ -93,7 +101,6 @@ public class LoginActivity extends AppCompatActivity implements ViewProcessLogin
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-
                 relativeLayoutLogin.setVisibility(View.VISIBLE);
             }
         },3000);
