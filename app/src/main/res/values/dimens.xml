@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="size_login">20sp</dimen>
-    <dimen name="size_icon">150dp</dimen>
+    <dimen name="size_icon">180dp</dimen>
     <dimen name="size_edtuser_margin">20dp</dimen>
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="activity_horizontal_margin">16dp</dimen>
