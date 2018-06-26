@@ -37,6 +37,7 @@ public class CheckTempBannedUserService extends Service{
         sharedPreferences = getSharedPreferences(Constant.SHARED_PREFERENCES_NAME, Context.MODE_PRIVATE);
         editor =  sharedPreferences.edit();
         editor.remove(Constant.TEMP_BANNED_USER);
+        Toast.makeText(getApplicationContext(),"ok",Toast.LENGTH_SHORT).show();
 
     }
 }
