@@ -5,6 +5,7 @@ import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
 
+import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.NavigationView;
 
 import android.support.v4.view.GravityCompat;
@@ -14,9 +15,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 ;
 
 import application.android.com.fatee.R;
+import application.android.com.fatee.views.fragments.NotificationsFragment;
 import application.android.com.fatee.views.fragments.ProfileFragment;
 import application.android.com.fatee.views.fragments.RoomFragment;
 import application.android.com.fatee.views.fragments.SettingsFragment;
@@ -27,6 +30,7 @@ public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     FragmentTransaction fragmentTransaction;
     FragmentManager fragmentManager;
+
 
 
     @Override
@@ -42,6 +46,7 @@ public class MainActivity extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+
         navigationView.setNavigationItemSelectedListener(this);
         fragmentManager= getFragmentManager();
         fragmentTransaction=fragmentManager.beginTransaction();
@@ -73,10 +78,16 @@ public class MainActivity extends AppCompatActivity
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
+        fragmentTransaction=fragmentManager.beginTransaction();
+        fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        switch (id ) {
+            case R.id.notifications:
+            fragmentTransaction.replace(R.id.frame_layout,new NotificationsFragment());
+            fragmentTransaction.commit();
             return true;
+
         }
 
         return super.onOptionsItemSelected(item);
@@ -87,6 +98,7 @@ public class MainActivity extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         fragmentTransaction=fragmentManager.beginTransaction();
+
         fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
         int id = item.getItemId();
         switch (id)
@@ -94,23 +106,28 @@ public class MainActivity extends AppCompatActivity
             case R.id.room:
                 fragmentTransaction.replace(R.id.frame_layout,new RoomFragment());
                 fragmentTransaction.commit();
+
                 break;
             case R.id.profile:
 
                 fragmentTransaction.replace(R.id.frame_layout,new ProfileFragment());
                 fragmentTransaction.commit();
+
                 break;
             case R.id.survey:
                 fragmentTransaction.replace(R.id.frame_layout,new SurveyFragment());
                 fragmentTransaction.commit();
+
                 break;
             case R.id.support:
                 fragmentTransaction.replace(R.id.frame_layout,new SupportFragment());
                 fragmentTransaction.commit();
+
                 break;
             case R.id.settings:
                 fragmentTransaction.replace(R.id.frame_layout,new SettingsFragment());
                 fragmentTransaction.commit();
+
                 break;
             case R.id.signout:
                 Intent intent = new Intent(MainActivity.this,LoginActivity.class);

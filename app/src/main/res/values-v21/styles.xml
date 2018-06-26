@@ -6,7 +6,15 @@
         <item name="colorPrimary">#e65100</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">#e65100</item>
-        <item name="android:statusBarColor">#bf360c</item>
+        <item name="android:statusBarColor">#e65100</item>
         <item name="android:navigationBarColor">#e65100</item>
+    </style>
+    <style name="CustomCheckbox">
+        <item name="android:textSize">17sp</item>
+        <item name="android:paddingLeft">5dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">5dp</item>
+
     </style>
 </resources>

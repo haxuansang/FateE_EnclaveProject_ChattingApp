@@ -1,19 +1,19 @@
 package application.android.com.fatee.models.entities;
 
 public class Answer {
-    long answerId;
+    String answerId;
     String answerString;
 
-    public Answer(long answerId, String answerString) {
+    public Answer(String answerId, String answerString) {
         this.answerId = answerId;
         this.answerString = answerString;
     }
 
-    public long getAnswerId() {
+    public String getAnswerId() {
         return answerId;
     }
 
-    public void setAnswerId(long answerId) {
+    public void setAnswerId(String answerId) {
         this.answerId = answerId;
     }
 

@@ -17,9 +17,6 @@
 
         <item name="colorPrimary">#2c3e50</item>
     </style>
-    <style name="customCheckbox">
-        <item name="android:layout_width">10dp</item>
-        <item name="android:layout_height">10dp</item>
-    </style>
+
 
 </resources>

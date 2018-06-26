@@ -42,18 +42,18 @@ public class SurveyFragment extends Fragment {
     public void InitFragment()
     {
         recyclerView=(RecyclerView)view.findViewById(R.id.recyclerview);
-        ArrayList<Answer> listAnswer  = new ArrayList<>();
-        listAnswer.add(new Answer(1,"Football"));
-        listAnswer.add(new Answer(2,"Basketbal"));
-        listAnswer.add(new Answer(3,"Tennis"));
-        listAnswer.add(new Answer(4,"Swimming"));
+        ArrayList<Answer> listAnswer = new ArrayList<>();
+        listAnswer.add(new Answer("a1","Football"));
+        listAnswer.add(new Answer("a2","Basketbal"));
+        listAnswer.add(new Answer("a3","Tennis"));
+        listAnswer.add(new Answer("a4","Swimming"));
+        ArrayList<Answer> listAnswer1= new ArrayList<>();
+        listAnswer1.add(new Answer("a5","Male"));
+        listAnswer1.add(new Answer("a6","Female"));
+        listAnswer1.add(new Answer("a7","LGBT"));
         ArrayList<Question> listQuestions= new ArrayList<>();
-        listQuestions.add(new Question(1,"Checkbox","What type of sports do you like?",listAnswer));
-        listQuestions.add(new Question(1,"Checkbox","What type of sports do you like?",listAnswer));
-        listQuestions.add(new Question(1,"Checkbox","What type of sports do you like?",listAnswer));
-        listQuestions.add(new Question(1,"Checkbox","What type of sports do you like?",listAnswer));
-        listQuestions.add(new Question(1,"Checkbox","What type of sports do you like?",listAnswer));
-        listQuestions.add(new Question(1,"Checkbox","What type of sports do you like?",listAnswer));
+        listQuestions.add(new Question("q1","M","What type of sports do you like?",listAnswer));
+        listQuestions.add(new Question("q2","S","What is your gender?",listAnswer1));
 
         recyclerViewSurvey = new RecyclerViewSurvey(listQuestions,view.getContext());
         LinearLayoutManager layoutManager = new LinearLayoutManager(view.getContext());

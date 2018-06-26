@@ -3,23 +3,23 @@ package application.android.com.fatee.models.entities;
 import java.util.ArrayList;
 
 public class Question {
-    long questionId;
+    String questionId;
     String questionType;
     String questionContent;
     ArrayList<Answer> arrayListAnswer;
 
-    public Question(long questionId, String questionType, String questionContent, ArrayList<Answer> arrayListAnswer) {
+    public Question(String questionId, String questionType, String questionContent, ArrayList<Answer> arrayListAnswer) {
         this.questionId = questionId;
         this.questionType = questionType;
         this.questionContent = questionContent;
         this.arrayListAnswer = arrayListAnswer;
     }
 
-    public long getQuestionId() {
+    public String getQuestionId() {
         return questionId;
     }
 
-    public void setQuestionId(long questionId) {
+    public void setQuestionId(String questionId) {
         this.questionId = questionId;
     }
 
