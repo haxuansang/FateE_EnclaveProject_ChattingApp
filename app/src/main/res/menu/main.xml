@@ -15,7 +15,7 @@
 
         android:id="@+id/notifications"
         android:icon="@drawable/ic_notifications_none_black_24dp"
-        android:title="NewRoom"
+        android:title="Notifications"
         app:showAsAction="always" />
 
 </menu>

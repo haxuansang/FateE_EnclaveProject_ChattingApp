@@ -5,7 +5,7 @@ android {
     compileSdkVersion 27
     defaultConfig {
         applicationId "application.android.com.fatee"
-        minSdkVersion 16
+        minSdkVersion 15
         targetSdkVersion 27
         versionCode 1
         versionName "1.0"
@@ -38,7 +38,7 @@ dependencies {
     //Showmore
     implementation 'com.borjabravo:readmoretextview:2.0.1'
 
-    implementation 'com.github.travijuu:numberpicker:1.0.7'
+
 
 
 }
