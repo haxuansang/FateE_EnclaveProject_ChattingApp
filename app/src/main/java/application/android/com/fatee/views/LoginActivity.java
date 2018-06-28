@@ -1,8 +1,11 @@
 package application.android.com.fatee.views;
 
 import android.content.BroadcastReceiver;
+<<<<<<< HEAD
 import android.content.Context;
 import android.content.DialogInterface;
+=======
+>>>>>>> origin
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
@@ -77,6 +80,34 @@ public class LoginActivity extends AppCompatActivity implements ViewProcessLogin
     @Override
     protected void onResume() {
         super.onResume();
+<<<<<<< HEAD
+=======
+        edtUsername.setOnFocusChangeListener(this);
+        edtPassword.setOnFocusChangeListener(this);
+        btnLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(LoginActivity.this,MainActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+    }
+
+
+    // Init app View
+    private void initView()
+    {
+        imageViewIcon=(ImageView)findViewById(R.id.imgview_icon);
+        btnLogin=(Button)findViewById(R.id.btn_Login);
+        btnRegister=(Button)findViewById(R.id.btn_Register);
+        edtPassword=(EditText)findViewById(R.id.edt_Password);
+        edtUsername=(EditText)findViewById(R.id.edt_Username);
+        relativeLayoutLogin=(RelativeLayout)findViewById(R.id.relativeLayout_Login);
+        linearLayoutWrongLogin=(LinearLayout)findViewById(R.id.linear_warning);
+
+>>>>>>> origin
     }
 
     @Override
