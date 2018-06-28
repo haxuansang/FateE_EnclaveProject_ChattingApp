@@ -74,12 +74,8 @@
                     android:drawableLeft="@drawable/password_icon"
                     android:hint="@string/login_password"
                     android:maxLines="1"
-<<<<<<< HEAD
                     android:background="@android:color/white"
                     android:inputType="textPassword"
-=======
-                    android:password="true"
->>>>>>> origin
                     android:ems="10"/>
             </LinearLayout>
 

@@ -1,17 +1,13 @@
 package application.android.com.fatee.views;
 
 import android.content.BroadcastReceiver;
-<<<<<<< HEAD
 import android.content.Context;
 import android.content.DialogInterface;
-=======
->>>>>>> origin
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.net.ConnectivityManager;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
@@ -21,6 +17,7 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
@@ -52,6 +49,7 @@ public class LoginActivity extends AppCompatActivity implements ViewProcessLogin
     SharedPreferences sharedPreferences;
     Intent service;
     private String preUsername = "";
+    private ImageView imageViewIcon;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,16 +78,12 @@ public class LoginActivity extends AppCompatActivity implements ViewProcessLogin
     @Override
     protected void onResume() {
         super.onResume();
-<<<<<<< HEAD
-=======
         edtUsername.setOnFocusChangeListener(this);
         edtPassword.setOnFocusChangeListener(this);
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(LoginActivity.this,MainActivity.class);
-                startActivity(intent);
-                finish();
+                login(view);
             }
         });
 
@@ -106,8 +100,6 @@ public class LoginActivity extends AppCompatActivity implements ViewProcessLogin
         edtUsername=(EditText)findViewById(R.id.edt_Username);
         relativeLayoutLogin=(RelativeLayout)findViewById(R.id.relativeLayout_Login);
         linearLayoutWrongLogin=(LinearLayout)findViewById(R.id.linear_warning);
-
->>>>>>> origin
     }
 
     @Override
@@ -122,14 +114,6 @@ public class LoginActivity extends AppCompatActivity implements ViewProcessLogin
         stopService(service);
     }
 
-    private void initView() {
-        btnLogin = (Button) findViewById(R.id.btn_Login);
-        btnRegister = (Button) findViewById(R.id.btn_Register);
-        edtPassword = (EditText) findViewById(R.id.edt_Password);
-        edtUsername = (EditText) findViewById(R.id.edt_Username);
-        relativeLayoutLogin = (RelativeLayout) findViewById(R.id.relativeLayout_Login);
-        linearLayoutWrongLogin = (LinearLayout) findViewById(R.id.linear_warning);
-    }
 
     private void delayLogin() {
         handler = new Handler();
@@ -148,8 +132,9 @@ public class LoginActivity extends AppCompatActivity implements ViewProcessLogin
             if ("banned".equals(status)) {
                 showNoticeDiaglogMessage("This user was banned!");
             } else if ("success".equals(status)) {
-                Intent intent = new Intent(this, MainActivity.class);
-                startActivity(intent);
+                Intent intent = new Intent(LoginActivity.this,MainActivity.class);
+                this.startActivity(intent);
+                finish();
             } else if ("WUWPFailed".equals(status)) {
                 showNoticeDiaglogMessage("Wrong username!");
             } else {
