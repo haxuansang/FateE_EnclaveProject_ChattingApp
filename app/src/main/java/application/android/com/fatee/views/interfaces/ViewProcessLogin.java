@@ -1,8 +1,9 @@
 package application.android.com.fatee.views.interfaces;
 
-public interface ViewProcessLogin {
+import application.android.com.fatee.models.entities.LoginResponse;
 
+public interface ViewProcessLogin {
+    void noticeForUserAfterLogin(LoginResponse userResponse);
     void caseLostNetworkConnection();
     void caseHaveNetworkConnection();
-
 }

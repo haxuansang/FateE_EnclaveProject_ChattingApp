@@ -10,14 +10,12 @@ import android.widget.Toast;
 import application.android.com.fatee.utils.Constant;
 
 public class CheckTempBannedUserService extends Service{
-
     SharedPreferences sharedPreferences;
     SharedPreferences.Editor editor;
+
     public CheckTempBannedUserService() {
 
     }
-
-
     @Override
     public IBinder onBind(Intent intent) {
         return null;
@@ -38,6 +36,5 @@ public class CheckTempBannedUserService extends Service{
         editor =  sharedPreferences.edit();
         editor.remove(Constant.TEMP_BANNED_USER);
         Toast.makeText(getApplicationContext(),"ok",Toast.LENGTH_SHORT).show();
-
     }
 }
