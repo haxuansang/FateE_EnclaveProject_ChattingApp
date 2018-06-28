@@ -77,9 +77,9 @@ public class MainActivity extends AppCompatActivity
         //noinspection SimplifiableIfStatement
         switch (id ) {
             case R.id.notifications:
-            fragmentTransaction.replace(R.id.frame_layout,new NotificationsFragment());
-            fragmentTransaction.commit();
-            return true;
+                fragmentTransaction.replace(R.id.frame_layout,new NotificationsFragment());
+                fragmentTransaction.commit();
+                return true;
 
         }
 

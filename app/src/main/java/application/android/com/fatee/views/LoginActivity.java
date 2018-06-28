@@ -2,7 +2,6 @@ package application.android.com.fatee.views;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
@@ -101,7 +100,6 @@ public class LoginActivity extends AppCompatActivity implements ViewProcessLogin
         edtUsername=(EditText)findViewById(R.id.edt_Username);
         relativeLayoutLogin=(RelativeLayout)findViewById(R.id.relativeLayout_Login);
         linearLayoutWrongLogin=(LinearLayout)findViewById(R.id.linear_warning);
-
     }
 
     @Override
