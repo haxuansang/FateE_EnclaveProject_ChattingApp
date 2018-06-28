@@ -74,10 +74,10 @@
                     android:drawableLeft="@drawable/password_icon"
                     android:hint="@string/login_password"
                     android:maxLines="1"
-                    android:password="true"
+                    android:background="@android:color/white"
+                    android:inputType="textPassword"
                     android:ems="10"/>
             </LinearLayout>
-
             <Button
 
                 android:id="@+id/btn_Login"
@@ -90,7 +90,8 @@
                 android:text="Login"
                 android:textAllCaps="false"
                 android:textColor="@android:color/white"
-                android:textSize="@dimen/size_login" />
+                android:textSize="@dimen/size_login"
+                android:onClick="login"/>
 
             <Button
                 android:id="@+id/btn_Register"
@@ -130,8 +131,6 @@
                     android:textColor="@android:color/holo_red_light"
                     android:textSize="15sp" />
             </LinearLayout>
-
-
         </RelativeLayout>
     </RelativeLayout>
 </RelativeLayout>
