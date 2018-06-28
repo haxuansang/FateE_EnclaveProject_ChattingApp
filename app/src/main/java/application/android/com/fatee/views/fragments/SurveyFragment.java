@@ -61,12 +61,7 @@ public class SurveyFragment extends Fragment {
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(recyclerViewSurvey);
-
-
-
-
-
-
+        
 
     }
 
