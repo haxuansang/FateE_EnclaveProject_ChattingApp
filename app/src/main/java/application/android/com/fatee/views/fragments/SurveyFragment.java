@@ -54,7 +54,8 @@ public class SurveyFragment extends Fragment {
         ArrayList<Question> listQuestions= new ArrayList<>();
         listQuestions.add(new Question("q1","M","What type of sports do you like?",listAnswer));
         listQuestions.add(new Question("q2","S","What is your gender?",listAnswer1));
-
+        listQuestions.add(new Question ("q3","T","What your name?",null));
+        listQuestions.add(new Question("q4","N","How old are you?",null));
         recyclerViewSurvey = new RecyclerViewSurvey(listQuestions,view.getContext());
         LinearLayoutManager layoutManager = new LinearLayoutManager(view.getContext());
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);

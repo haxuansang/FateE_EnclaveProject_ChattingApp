@@ -5,7 +5,6 @@ import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
 
-import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.NavigationView;
 
 import android.support.v4.view.GravityCompat;
@@ -15,15 +14,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 ;
 
 import application.android.com.fatee.R;
+import application.android.com.fatee.views.fragments.AboutFragment;
 import application.android.com.fatee.views.fragments.NotificationsFragment;
 import application.android.com.fatee.views.fragments.ProfileFragment;
 import application.android.com.fatee.views.fragments.RoomFragment;
 import application.android.com.fatee.views.fragments.SettingsFragment;
-import application.android.com.fatee.views.fragments.SupportFragment;
+import application.android.com.fatee.views.fragments.BuddyFragment;
 import application.android.com.fatee.views.fragments.SurveyFragment;
 
 public class MainActivity extends AppCompatActivity
@@ -116,8 +115,8 @@ public class MainActivity extends AppCompatActivity
                 fragmentTransaction.commit();
 
                 break;
-            case R.id.support:
-                fragmentTransaction.replace(R.id.frame_layout,new SupportFragment());
+            case R.id.buddy:
+                fragmentTransaction.replace(R.id.frame_layout,new BuddyFragment());
                 fragmentTransaction.commit();
 
                 break;
@@ -126,13 +125,16 @@ public class MainActivity extends AppCompatActivity
                 fragmentTransaction.commit();
 
                 break;
+            case R.id.about:
+                fragmentTransaction.replace(R.id.frame_layout,new AboutFragment());
+                fragmentTransaction.commit();
+                break;
+
             case R.id.signout:
                 Intent intent = new Intent(MainActivity.this,LoginActivity.class);
                 this.startActivity(intent);
                 this.finish();
                 break;
-            case R.id.exit:
-                this.finish();
 
 
         }

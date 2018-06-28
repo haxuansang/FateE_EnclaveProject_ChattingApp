@@ -28,11 +28,11 @@
         android:textSize="17sp"/>
 
     <TextView
+        android:maxLines="2"
         android:layout_marginTop="2dp"
         android:id="@+id/textView"
-        android:ems="20"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Description: My hobbies are programing, playing Guitar. " />
+        android:text="My hobbies are programing, playing Guitar. " />
 
 </LinearLayout>

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:id="@+id/room" android:title="Room" android:icon="@drawable/ic_room_black_24dp"/>
+    <item android:id="@+id/buddy"     android:title="Buddy"      android:icon="@drawable/ic_suport_black_24dp"/>
     <item android:id="@+id/profile" android:title="Profile" android:icon="@drawable/ic_profile_black_24dp"/>
     <item android:id="@+id/survey"      android:title="Survey"      android:icon="@drawable/ic_survey_black_24dp"/>
-    <item android:id="@+id/support"     android:title="Support"      android:icon="@drawable/ic_suport_black_24dp"/>
     <item android:id="@+id/settings" android:title="Settings"    android:icon="@drawable/ic_settings_black_24dp"/>
+    <item android:id="@+id/about" android:title="About" android:icon="@drawable/ic_info_black_24dp"/>
     <item android:id="@+id/signout"     android:title="Log Out"        android:icon="@drawable/ic_logout_left_black_24dp"/>
-    <item android:id="@+id/exit"        android:title="Exit"    android:icon="@drawable/ic_exit_to_app_black_24dp"/>
 </menu>
