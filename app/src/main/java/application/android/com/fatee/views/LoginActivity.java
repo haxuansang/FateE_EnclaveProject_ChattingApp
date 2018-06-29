@@ -29,7 +29,7 @@ import application.android.com.fatee.R;
 import application.android.com.fatee.models.entities.LoginResponse;
 import application.android.com.fatee.models.entities.User;
 import application.android.com.fatee.models.services.CheckTempBannedUserService;
-import application.android.com.fatee.presenters.ProcessLogicPresenter;
+import application.android.com.fatee.presenters.ProcessLogicPresenterImpl;
 import application.android.com.fatee.utils.ConnectionBroadcastReceiver;
 import application.android.com.fatee.utils.Constant;
 import application.android.com.fatee.views.interfaces.ViewProcessLogin;
@@ -40,7 +40,7 @@ public class LoginActivity extends AppCompatActivity implements ViewProcessLogin
     private RelativeLayout relativeLayoutLogin;
     private LinearLayout linearLayoutWrongLogin;
     Handler handler;
-    ProcessLogicPresenter presenterLogicProcessLogin;
+    ProcessLogicPresenterImpl presenterLogicProcessLogin;
     public static ViewProcessLogin viewProcessLogin;
     BroadcastReceiver broadcastReceiver;
     private int countdown = 5;
@@ -60,7 +60,7 @@ public class LoginActivity extends AppCompatActivity implements ViewProcessLogin
         delayLogin();
         initView();
         initFocusChangeListener();
-        presenterLogicProcessLogin = new ProcessLogicPresenter(viewProcessLogin);
+        presenterLogicProcessLogin = new ProcessLogicPresenterImpl(viewProcessLogin);
         broadcastReceiver = new ConnectionBroadcastReceiver();
         sharedPreferences = getSharedPreferences(Constant.SHARED_PREFERENCES_NAME, Context.MODE_PRIVATE);
         service = new Intent(LoginActivity.this, CheckTempBannedUserService.class);

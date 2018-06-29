@@ -6,14 +6,14 @@ import application.android.com.fatee.models.entities.User;
 import application.android.com.fatee.models.services.LoginServiceImpl;
 import application.android.com.fatee.models.services.interfaces.LoginService;
 import application.android.com.fatee.presenters.interfaces.PresenterProcessLogin;
+import application.android.com.fatee.views.interfaces.SurveyView;
 import application.android.com.fatee.views.interfaces.ViewProcessLogin;
 
-public class ProcessLogicPresenter implements PresenterProcessLogin {
+public class ProcessLogicPresenterImpl implements PresenterProcessLogin {
     private ViewProcessLogin viewProcessLogin;
     private LoginService loginService;
 
-
-    public ProcessLogicPresenter(ViewProcessLogin viewProcessLogin) {
+    public ProcessLogicPresenterImpl(ViewProcessLogin viewProcessLogin) {
         this.viewProcessLogin = viewProcessLogin;
         loginService = new LoginServiceImpl();
     }

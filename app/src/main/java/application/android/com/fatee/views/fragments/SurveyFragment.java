@@ -1,13 +1,10 @@
 package application.android.com.fatee.views.fragments;
 
 import android.app.Fragment;
-import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
 
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,19 +12,26 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 
 import application.android.com.fatee.R;
-import application.android.com.fatee.models.entities.Answer;
+import application.android.com.fatee.models.entities.AnswerResponse;
 import application.android.com.fatee.models.entities.Question;
+import application.android.com.fatee.models.entities.QuestionResponse;
+import application.android.com.fatee.models.entities.SurveyResponse;
+import application.android.com.fatee.presenters.SurveyPresenterImpl;
+import application.android.com.fatee.presenters.interfaces.SurveyPresenter;
 import application.android.com.fatee.views.adapters.RecyclerViewSurvey;
+import application.android.com.fatee.views.interfaces.SurveyView;
 
 
-public class SurveyFragment extends Fragment {
+public class SurveyFragment extends Fragment implements SurveyView {
+    private View view;
+    private RecyclerView recyclerView;
+    private RecyclerViewSurvey recyclerViewSurvey;
+    private SurveyPresenter surveyPresenter;
 
-    View view;
-    RecyclerView recyclerView;
-    RecyclerViewSurvey recyclerViewSurvey;
     public SurveyFragment() {
         super();
     }
+
 
 
     @Override
@@ -35,38 +39,21 @@ public class SurveyFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         view= inflater.inflate(R.layout.fragment_survey, container, false);
-        InitFragment();
+        surveyPresenter = new SurveyPresenterImpl(this);
+        recyclerView=(RecyclerView)view.findViewById(R.id.recyclerview);
+        surveyPresenter.getSurvey();
         return view;
     }
 
-    public void InitFragment()
-    {
-        recyclerView=(RecyclerView)view.findViewById(R.id.recyclerview);
-        ArrayList<Answer> listAnswer = new ArrayList<>();
-        listAnswer.add(new Answer("a1","Football"));
-        listAnswer.add(new Answer("a2","Basketbal"));
-        listAnswer.add(new Answer("a3","Tennis"));
-        listAnswer.add(new Answer("a4","Swimming"));
-        ArrayList<Answer> listAnswer1= new ArrayList<>();
-        listAnswer1.add(new Answer("a5","Male"));
-        listAnswer1.add(new Answer("a6","Female"));
-        listAnswer1.add(new Answer("a7","LGBT"));
-        ArrayList<Question> listQuestions= new ArrayList<>();
-        listQuestions.add(new Question("q1","M","What type of sports do you like?",listAnswer));
-        listQuestions.add(new Question("q2","S","What is your gender?",listAnswer1));
-        listQuestions.add(new Question ("q3","T","What your name?",null));
-        listQuestions.add(new Question("q4","N","How old are you?",null));
-        recyclerViewSurvey = new RecyclerViewSurvey(listQuestions,view.getContext());
-        LinearLayoutManager layoutManager = new LinearLayoutManager(view.getContext());
-        layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
-        recyclerView.setLayoutManager(layoutManager);
-        recyclerView.setAdapter(recyclerViewSurvey);
-        
 
+    @Override
+    public void viewSurvey(SurveyResponse surveyResponse) {
+        if("success".equals(surveyResponse.getResponseCode())) {
+            recyclerViewSurvey = new RecyclerViewSurvey(surveyResponse, view.getContext());
+            LinearLayoutManager layoutManager = new LinearLayoutManager(view.getContext());
+            layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+            recyclerView.setLayoutManager(layoutManager);
+            recyclerView.setAdapter(recyclerViewSurvey);
+        }
     }
-
-
-
-
-
 }

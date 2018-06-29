@@ -20,14 +20,16 @@ import java.util.ArrayList;
 
 import application.android.com.fatee.R;
 import application.android.com.fatee.models.entities.Question;
+import application.android.com.fatee.models.entities.QuestionResponse;
+import application.android.com.fatee.models.entities.SurveyResponse;
 
 public class RecyclerViewSurvey extends RecyclerView.Adapter<RecyclerViewSurvey.SurveyViewHolder> implements View.OnClickListener {
-    ArrayList<Question> listQuestion;
-    Context context;
+    private SurveyResponse surveyResponse;
+    private Context context;
 
 
-    public RecyclerViewSurvey(ArrayList<Question> listQuestion, Context context) {
-        this.listQuestion = listQuestion;
+    public RecyclerViewSurvey(SurveyResponse surveyResponse, Context context) {
+        this.surveyResponse = surveyResponse;
         this.context = context;
     }
 
@@ -40,32 +42,32 @@ public class RecyclerViewSurvey extends RecyclerView.Adapter<RecyclerViewSurvey.
 
     @Override
     public void onBindViewHolder(@NonNull SurveyViewHolder holder, int position) {
-        holder.tvQuestion.setText(listQuestion.get(position).getQuestionContent());
+        holder.tvQuestion.setText(surveyResponse.getQuestionResponses().get(position).getQuestion());
         LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
         params.setMargins(0, 7, 0, 0);
-
-        switch (listQuestion.get(position).getQuestionType()) {
+        QuestionResponse questionResponse = surveyResponse.getQuestionResponses().get(position);
+        int answerSize = surveyResponse.getQuestionResponses().get(position).getAnswerResponses().size();
+        switch (surveyResponse.getQuestionResponses().get(position).getType()) {
             case "M":
-                for (int i = 0; i < listQuestion.get(position).getArrayListAnswer().size(); i++) {
+                for (int i = 0; i < answerSize; i++) {
                     CheckBox checkBox = new CheckBox(context);
                     checkBox.setTextSize(17);
-                    checkBox.setText(listQuestion.get(position).getArrayListAnswer().get(i).getAnswerString());
-                    checkBox.setTag(listQuestion.get(position).getArrayListAnswer().get(i).getAnswerId());
+                    checkBox.setText(questionResponse.getAnswerResponses().get(i).getAnswer());
+                    checkBox.setTag(questionResponse.getAnswerResponses().get(i).getId());
                     holder.linearLayout_survey.addView(checkBox);
                     checkBox.setOnClickListener(this);
                     checkBox.setLayoutParams(params);
                     checkBox.setPadding(15, 0, 0, 0);
-
                 }
                 break;
             case "S":
                 RadioGroup radioGroup = new RadioGroup(context);
-                for (int i = 0; i < listQuestion.get(position).getArrayListAnswer().size(); i++) {
+                for (int i = 0; i < answerSize; i++) {
                     RadioButton radioButton = new RadioButton(context);
                     radioButton.setTextSize(17);
-                    radioButton.setTag(listQuestion.get(position).getArrayListAnswer().get(i).getAnswerId());
-                    radioButton.setText(listQuestion.get(position).getArrayListAnswer().get(i).getAnswerString());
+                    radioButton.setTag(questionResponse.getAnswerResponses().get(i).getId());
+                    radioButton.setText(questionResponse.getAnswerResponses().get(i).getAnswer());
                     radioGroup.addView(radioButton);
                     radioButton.setOnClickListener(this);
                     radioButton.setLayoutParams(params);
@@ -82,8 +84,6 @@ public class RecyclerViewSurvey extends RecyclerView.Adapter<RecyclerViewSurvey.
                 editText.setGravity(View.TEXT_ALIGNMENT_CENTER);
                 editText.setLayoutParams(param_textbox);
                 holder.linearLayout_survey.addView(editText);
-
-
                 break;
 
             case "N":
@@ -92,19 +92,16 @@ public class RecyclerViewSurvey extends RecyclerView.Adapter<RecyclerViewSurvey.
                 NumberPicker numberPicker = new NumberPicker(context);
                 numberPicker.setMaxValue(9999);
                 numberPicker.setMinValue(0);
-                numberPicker.setValue(10);
+                numberPicker.setValue(Integer.parseInt(questionResponse.getAnswerResponses().get(position - 1).getAnswer()));
                 numberPicker.setLayoutParams(param_this);
                 holder.linearLayout_survey.addView(numberPicker);
-
                 break;
-
-
         }
     }
 
     @Override
     public int getItemCount() {
-        return listQuestion.size();
+        return surveyResponse.getQuestionResponses().size();
     }
 
     @Override

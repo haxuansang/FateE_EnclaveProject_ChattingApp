@@ -6,13 +6,13 @@ public class Question {
     String questionId;
     String questionType;
     String questionContent;
-    ArrayList<Answer> arrayListAnswer;
+    ArrayList<AnswerResponse> arrayListAnswerResponse;
 
-    public Question(String questionId, String questionType, String questionContent, ArrayList<Answer> arrayListAnswer) {
+    public Question(String questionId, String questionType, String questionContent, ArrayList<AnswerResponse> arrayListAnswerResponse) {
         this.questionId = questionId;
         this.questionType = questionType;
         this.questionContent = questionContent;
-        this.arrayListAnswer = arrayListAnswer;
+        this.arrayListAnswerResponse = arrayListAnswerResponse;
     }
 
     public String getQuestionId() {
@@ -38,12 +38,12 @@ public class Question {
     public void setQuestionContent(String questionContent) {
         this.questionContent = questionContent;
     }
-    public ArrayList<Answer> getArrayListAnswer() {
-        return arrayListAnswer;
+    public ArrayList<AnswerResponse> getArrayListAnswerResponse() {
+        return arrayListAnswerResponse;
     }
 
-    public void setArrayListAnswer(ArrayList<Answer> arrayListAnswer) {
-        this.arrayListAnswer = arrayListAnswer;
+    public void setArrayListAnswerResponse(ArrayList<AnswerResponse> arrayListAnswerResponse) {
+        this.arrayListAnswerResponse = arrayListAnswerResponse;
     }
 
 }
