@@ -17,6 +17,8 @@ import android.view.MenuItem;
 ;
 
 import application.android.com.fatee.R;
+import application.android.com.fatee.models.entities.AboutPageElement;
+import application.android.com.fatee.views.adapters.AboutPage;
 import application.android.com.fatee.views.fragments.AboutFragment;
 import application.android.com.fatee.views.fragments.NotificationsFragment;
 import application.android.com.fatee.views.fragments.ProfileFragment;
@@ -123,8 +125,9 @@ public class MainActivity extends AppCompatActivity
 
                 break;
             case R.id.about:
-                fragmentTransaction.replace(R.id.frame_layout,new AboutFragment());
-                fragmentTransaction.commit();
+                Intent intentAbout = new Intent(MainActivity.this, AboutPageElement.class);
+                this.startActivity(intentAbout);
+                this.finish();
                 break;
 
             case R.id.signout:
