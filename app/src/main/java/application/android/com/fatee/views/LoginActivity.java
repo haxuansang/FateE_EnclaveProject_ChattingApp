@@ -26,12 +26,14 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import application.android.com.fatee.R;
+import application.android.com.fatee.helpers.UserUtil;
 import application.android.com.fatee.models.entities.LoginResponse;
 import application.android.com.fatee.models.entities.User;
 import application.android.com.fatee.models.services.CheckTempBannedUserService;
 import application.android.com.fatee.presenters.ProcessLogicPresenterImpl;
 import application.android.com.fatee.utils.ConnectionBroadcastReceiver;
 import application.android.com.fatee.utils.Constant;
+import application.android.com.fatee.views.fragments.SurveyFragment;
 import application.android.com.fatee.views.interfaces.ViewProcessLogin;
 
 public class LoginActivity extends AppCompatActivity implements ViewProcessLogin, View.OnFocusChangeListener {
@@ -91,8 +93,7 @@ public class LoginActivity extends AppCompatActivity implements ViewProcessLogin
 
 
     // Init app View
-    private void initView()
-    {
+    private void initView() {
         imageViewIcon=(ImageView)findViewById(R.id.imgview_icon);
         btnLogin=(Button)findViewById(R.id.btn_Login);
         btnRegister=(Button)findViewById(R.id.btn_Register);
@@ -133,6 +134,9 @@ public class LoginActivity extends AppCompatActivity implements ViewProcessLogin
                 showNoticeDiaglogMessage("This user was banned!");
             } else if ("success".equals(status)) {
                 Intent intent = new Intent(LoginActivity.this,MainActivity.class);
+                UserUtil.getInstance(loginResponse.getUserModel(), loginResponse.getUserModel().getSurveyStatus());
+                intent.putExtra("surveyStatus", loginResponse.getUserModel().getSurveyStatus());
+                intent.putExtra("userId", loginResponse.getUserModel().getId());
                 this.startActivity(intent);
                 finish();
             } else if ("WUWPFailed".equals(status)) {

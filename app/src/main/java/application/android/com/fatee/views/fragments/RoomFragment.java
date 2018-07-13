@@ -10,21 +10,22 @@ import android.view.ViewGroup;
 
 import application.android.com.fatee.R;
 
-/**
- * A simple {@link Fragment} subclass.
- */
 public class RoomFragment extends Fragment {
+    private static RoomFragment instance;
 
+    public static RoomFragment getInstance() {
+        if(instance == null)
+            instance = new RoomFragment();
+        return instance;
+    }
 
     public RoomFragment() {
-        // Required empty public constructor
     }
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_room, container, false);
     }
 

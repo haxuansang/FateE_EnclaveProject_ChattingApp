@@ -3,6 +3,7 @@ package application.android.com.fatee.models.entities;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class QuestionResponse {
@@ -17,7 +18,11 @@ public class QuestionResponse {
     private String type;
     @SerializedName("answerPackage")
     @Expose
-    private List<AnswerResponse> answerResponses = null;
+    private List<AnswerResponse> answerResponses;
+
+    public QuestionResponse() {
+        answerResponses = new ArrayList<>();
+    }
 
     public String getId() {
         return id;

@@ -17,6 +17,7 @@ import android.view.MenuItem;
 ;
 
 import application.android.com.fatee.R;
+import application.android.com.fatee.helpers.UserUtil;
 import application.android.com.fatee.views.fragments.AboutFragment;
 import application.android.com.fatee.views.fragments.NotificationsFragment;
 import application.android.com.fatee.views.fragments.ProfileFragment;
@@ -42,9 +43,17 @@ public class MainActivity extends AppCompatActivity
         toggle.syncState();
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        String surveyStatus = getIntent().getExtras().getString("surveyStatus");
+
         fragmentManager= getFragmentManager();
         fragmentTransaction=fragmentManager.beginTransaction();
-        fragmentTransaction.add(R.id.frame_layout,new RoomFragment());
+        if("F".equals(surveyStatus)) {
+            UserUtil.getInstance(UserUtil.getUser(), "F");
+            fragmentTransaction.add(R.id.frame_layout, SurveyFragment.getInstance());
+        } else {
+            UserUtil.getInstance(UserUtil.getUser(), "T");
+            fragmentTransaction.add(R.id.frame_layout, RoomFragment.getInstance());
+        }
         fragmentTransaction.commit();
     }
 
