@@ -26,14 +26,17 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import application.android.com.fatee.R;
-import application.android.com.fatee.helpers.UserUtil;
+import application.android.com.fatee.models.entities.UserModel;
+import application.android.com.fatee.utils.DiaglogConstant;
+import application.android.com.fatee.utils.LoginConstant;
+import application.android.com.fatee.utils.MailConstant;
+import application.android.com.fatee.utils.SurveyConstant;
+import application.android.com.fatee.utils.UserUtil;
 import application.android.com.fatee.models.entities.LoginResponse;
 import application.android.com.fatee.models.entities.User;
 import application.android.com.fatee.models.services.CheckTempBannedUserService;
 import application.android.com.fatee.presenters.ProcessLogicPresenterImpl;
 import application.android.com.fatee.utils.ConnectionBroadcastReceiver;
-import application.android.com.fatee.utils.Constant;
-import application.android.com.fatee.views.fragments.SurveyFragment;
 import application.android.com.fatee.views.interfaces.ViewProcessLogin;
 
 public class LoginActivity extends AppCompatActivity implements ViewProcessLogin, View.OnFocusChangeListener {
@@ -41,15 +44,15 @@ public class LoginActivity extends AppCompatActivity implements ViewProcessLogin
     private EditText edtUsername, edtPassword;
     private RelativeLayout relativeLayoutLogin;
     private LinearLayout linearLayoutWrongLogin;
-    Handler handler;
-    ProcessLogicPresenterImpl presenterLogicProcessLogin;
+    private Handler handler;
+    private ProcessLogicPresenterImpl presenterLogicProcessLogin;
     public static ViewProcessLogin viewProcessLogin;
-    BroadcastReceiver broadcastReceiver;
+    private BroadcastReceiver broadcastReceiver;
     private int countdown = 5;
     private int count = 0;
     private int wrong_info_times = 0;
-    SharedPreferences sharedPreferences;
-    Intent service;
+    private SharedPreferences sharedPreferences;
+    private Intent service;
     private String preUsername = "";
     private ImageView imageViewIcon;
 
@@ -64,7 +67,7 @@ public class LoginActivity extends AppCompatActivity implements ViewProcessLogin
         initFocusChangeListener();
         presenterLogicProcessLogin = new ProcessLogicPresenterImpl(viewProcessLogin);
         broadcastReceiver = new ConnectionBroadcastReceiver();
-        sharedPreferences = getSharedPreferences(Constant.SHARED_PREFERENCES_NAME, Context.MODE_PRIVATE);
+        sharedPreferences = getSharedPreferences(LoginConstant.SHARED_PREFERENCES_NAME_MESSAGE, Context.MODE_PRIVATE);
         service = new Intent(LoginActivity.this, CheckTempBannedUserService.class);
     }
 
@@ -91,16 +94,14 @@ public class LoginActivity extends AppCompatActivity implements ViewProcessLogin
 
     }
 
-
-    // Init app View
     private void initView() {
-        imageViewIcon=(ImageView)findViewById(R.id.imgview_icon);
-        btnLogin=(Button)findViewById(R.id.btn_Login);
-        btnRegister=(Button)findViewById(R.id.btn_Register);
-        edtPassword=(EditText)findViewById(R.id.edt_Password);
-        edtUsername=(EditText)findViewById(R.id.edt_Username);
-        relativeLayoutLogin=(RelativeLayout)findViewById(R.id.relativeLayout_Login);
-        linearLayoutWrongLogin=(LinearLayout)findViewById(R.id.linear_warning);
+        imageViewIcon = (ImageView) findViewById(R.id.imgview_icon);
+        btnLogin = (Button) findViewById(R.id.btn_Login);
+        btnRegister = (Button) findViewById(R.id.btn_Register);
+        edtPassword = (EditText) findViewById(R.id.edt_Password);
+        edtUsername = (EditText) findViewById(R.id.edt_Username);
+        relativeLayoutLogin = (RelativeLayout) findViewById(R.id.relativeLayout_Login);
+        linearLayoutWrongLogin = (LinearLayout) findViewById(R.id.linear_warning);
     }
 
     @Override
@@ -129,27 +130,40 @@ public class LoginActivity extends AppCompatActivity implements ViewProcessLogin
     @Override
     public void noticeForUserAfterLogin(LoginResponse loginResponse) {
         if (!isTempBannedUser()) {
-            String status = getUserStatus(loginResponse);
-            if ("banned".equals(status)) {
-                showNoticeDiaglogMessage("This user was banned!");
-            } else if ("success".equals(status)) {
-                Intent intent = new Intent(LoginActivity.this,MainActivity.class);
-                UserUtil.getInstance(loginResponse.getUserModel(), loginResponse.getUserModel().getSurveyStatus());
-                intent.putExtra("surveyStatus", loginResponse.getUserModel().getSurveyStatus());
-                intent.putExtra("userId", loginResponse.getUserModel().getId());
-                this.startActivity(intent);
-                finish();
-            } else if ("WUWPFailed".equals(status)) {
-                showNoticeDiaglogMessage("Wrong username!");
+            String userStatus = getUserStatus(loginResponse);
+            if (userStatus.equals(LoginConstant.BANNED_STATUS)) {
+                showNoticeDiaglogMessage(LoginConstant.USER_BANNED_MESSAGE);
+            } else if (userStatus.equals(LoginConstant.USER_LOGIN_SUCCESS_STATUS)) {
+                forwardFromLoginActivityToMainActivityAfterLoginSuccessfully(loginResponse);
+            } else if (userStatus.equals(LoginConstant.USER_LOGIN_WRONG_USER_AND_PASS_RETURN)) {
+                showNoticeDiaglogMessage(LoginConstant.USER_LOGIN_WRONG_USER_MESSAGE);
             } else {
-                if(count == 3) {
-                    showOptionDiaglogMessage(loginResponse.getLoginResponseInfo().getMessage(), loginResponse.getLoginResponseInfo().getMail());
-                } else if(count < 3){
-                    showNoticeDiaglogMessage("Wrong password!");
-                    limitLoginNumber();
+                countdown--;
+                count++;
+                if (count == 3) {
+                    String loginReponseInfoMessage = loginResponse.getLoginResponseInfo().getMessage();
+                    String email = loginResponse.getLoginResponseInfo().getMail();
+                    showOptionDiaglogMessage(loginReponseInfoMessage, email);
+                } else {
+                    if (countdown > 0 && countdown <= 4) {
+                        showNoticeDiaglogMessage(LoginConstant.USER_LOGIN_WRONG_PASS_MESSAGE);
+                    }
                 }
+                limitLoginNumber();
             }
         }
+    }
+
+    private void forwardFromLoginActivityToMainActivityAfterLoginSuccessfully(LoginResponse loginResponse) {
+        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+        String surveyStatus = loginResponse.getUserModel().getSurveyStatus();
+        UserModel userModel = loginResponse.getUserModel();
+        UserUtil.getInstance(userModel, surveyStatus);
+        intent.putExtra(SurveyConstant.USER_SURVEY_STATUS_KEY, surveyStatus);
+        String userId = loginResponse.getUserModel().getId();
+        intent.putExtra(LoginConstant.USER_ID_MESSAGE, userId);
+        this.startActivity(intent);
+        finish();
     }
 
     @Override
@@ -159,7 +173,7 @@ public class LoginActivity extends AppCompatActivity implements ViewProcessLogin
         btnLogin.setEnabled(false);
         btnLogin.setBackgroundResource(R.drawable.disableshape);
         linearLayoutWrongLogin.setVisibility(View.VISIBLE);
-        Toast.makeText(getApplicationContext(), Constant.LOST_INTERNET_CONNECTION, Toast.LENGTH_SHORT);
+        Toast.makeText(getApplicationContext(), LoginConstant.LOST_INTERNET_CONNECTION_MESSAGE, Toast.LENGTH_SHORT);
     }
 
     @Override
@@ -188,7 +202,7 @@ public class LoginActivity extends AppCompatActivity implements ViewProcessLogin
             public void onFocusChange(View view, boolean b) {
                 if (!edtPassword.hasFocus()) {
                     if (!isValidPassword(edtPassword.getText().toString())) {
-                        edtPassword.setError(Constant.PASSWORD_ERROR);
+                        edtPassword.setError(LoginConstant.PASSWORD_ERROR_MESSAGE);
                     }
                 }
             }
@@ -199,7 +213,7 @@ public class LoginActivity extends AppCompatActivity implements ViewProcessLogin
             public void onFocusChange(View view, boolean b) {
                 if (!edtUsername.hasFocus()) {
                     if (!isValidUsername(edtUsername.getText().toString())) {
-                        edtUsername.setError(Constant.USERNAME_ERROR);
+                        edtUsername.setError(LoginConstant.USERNAME_ERROR_MESSAGE);
                     }
                 }
             }
@@ -209,7 +223,7 @@ public class LoginActivity extends AppCompatActivity implements ViewProcessLogin
     public boolean isValidPassword(String password) {
         Pattern pattern;
         Matcher matcher;
-        pattern = Pattern.compile(Constant.PASSWORD_PATTERN);
+        pattern = Pattern.compile(LoginConstant.PASSWORD_PATTERN);
         matcher = pattern.matcher(password);
         return matcher.matches();
     }
@@ -217,7 +231,7 @@ public class LoginActivity extends AppCompatActivity implements ViewProcessLogin
     public boolean isValidUsername(String username) {
         Pattern pattern;
         Matcher matcher;
-        pattern = Pattern.compile(Constant.USERNAME_PATTERN);
+        pattern = Pattern.compile(LoginConstant.USERNAME_PATTERN);
         matcher = pattern.matcher(username);
         return matcher.matches();
     }
@@ -225,16 +239,16 @@ public class LoginActivity extends AppCompatActivity implements ViewProcessLogin
     public void login(View v) {
         String currentUsername = edtUsername.getText().toString();
         String password = edtPassword.getText().toString();
-        if(!preUsername.equals(currentUsername)) {
+        if (!preUsername.equals(currentUsername)) {
             count = 0;
             wrong_info_times = 0;
             countdown = 5;
         }
-        if(!"".equals(currentUsername) && !"".equals(password)) {
+        if (!currentUsername.equals(LoginConstant.USERNAME_EMPTY) && !password.equals(LoginConstant.PASSWORD_EMPTY)) {
             presenterLogicProcessLogin.getDataFromServer(new User(currentUsername, password));
             preUsername = currentUsername;
         } else {
-            showNoticeDiaglogMessage("Please enter username and password!");
+            showNoticeDiaglogMessage(LoginConstant.USER_INFO_REQUIREMENT_MESSAGE);
         }
     }
 
@@ -242,19 +256,17 @@ public class LoginActivity extends AppCompatActivity implements ViewProcessLogin
         AlertDialog.Builder builder1 = new AlertDialog.Builder(LoginActivity.this);
         builder1.setMessage(message);
         builder1.setCancelable(true);
-
         builder1.setPositiveButton(
-                "Yes",
+                DiaglogConstant.YES_ACTION,
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
-                        showNoticeDiaglogMessage("Please check mail " + hideMail(mail) + " to reset password");
+                        showNoticeDiaglogMessage(MailConstant.CHECK_MAIL_MESSAGE + hideMail(mail) + MailConstant.RESET_MAIL_MESSAGE);
                         dialog.cancel();
                         limitLoginNumber();
                     }
                 });
-
         builder1.setNegativeButton(
-                "No",
+                DiaglogConstant.NO_ACTION,
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         limitLoginNumber();
@@ -266,10 +278,10 @@ public class LoginActivity extends AppCompatActivity implements ViewProcessLogin
     }
 
     private void showNoticeDiaglogMessage(String message) {
-        AlertDialog.Builder builder= new AlertDialog.Builder(LoginActivity.this);
+        AlertDialog.Builder builder = new AlertDialog.Builder(LoginActivity.this);
         builder.setMessage(message)
                 .setCancelable(false)
-                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                .setPositiveButton(DiaglogConstant.OK_ACTION, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
 
                     }
@@ -280,42 +292,43 @@ public class LoginActivity extends AppCompatActivity implements ViewProcessLogin
 
     private String hideMail(String mail) {
         String result = "";
-        for(int i = 0; i < mail.split("@")[0].length(); i++) {
-            if(i >= 3)
-                result += "*";
+        for (int i = 0; i < mail.split(MailConstant.MAIL_DELIM)[0].length(); i++) {
+            if (i >= 3)
+                result += MailConstant.STAR_CHARACTER;
             else
                 result += mail.charAt(i);
         }
-        return result + "@" + mail.split("@")[1];
+        return result + MailConstant.MAIL_DELIM + mail.split(MailConstant.MAIL_DELIM)[1];
     }
 
     private void limitLoginNumber() {
-        countdown--;
-        count++;
         if (countdown == 0) {
             wrong_info_times++;
             if (wrong_info_times >= 2) {
                 addTempBannedUser();
                 SharedPreferences.Editor editor = sharedPreferences.edit();
-                editor.putString(Constant.TEMP_BANNED_USER, edtUsername.getText().toString());
-            } else {
+                editor.putString(LoginConstant.TEMP_BANNED_USER_NAME, edtUsername.getText().toString());
+            } else if (wrong_info_times < 2) {
                 limitLoginTimer();
             }
         }
     }
 
     public String getUserStatus(LoginResponse loginResponse) {
-        if ("Success".equals(loginResponse.getResponseCode())) {
-            if ("b".equals(loginResponse.getUserModel().getBanStatus())) {
-                return "banned";
+        String responseCode = loginResponse.getResponseCode();
+        if (responseCode.equals(LoginConstant.USER_LOGIN_SUCCESS_RESPONSE_CODE)) {
+            String banStatus = loginResponse.getUserModel().getBanStatus();
+            if (banStatus.equals(LoginConstant.BANNED_STATUS_CHARACTER)) {
+                return LoginConstant.BANNED_STATUS;
             } else {
-                return "success";
+                return LoginConstant.USER_LOGIN_SUCCESS_STATUS;
             }
         } else {
-            if ("WUWP".equals(loginResponse.getLoginResponseStatus())) {
-                return "WUWPFailed";
+            String loginResponseStatus = loginResponse.getLoginResponseStatus();
+            if (loginResponseStatus.equals(LoginConstant.UER_LOGIN_WRONG_PASS_AND_USER_STATUS)) {
+                return LoginConstant.USER_LOGIN_WRONG_USER_AND_PASS_RETURN;
             } else {
-                return "RUWPFailed";
+                return LoginConstant.USER_LOGIN_RIGHT_USER_AND_PASS_RETURN;
             }
         }
     }
@@ -323,7 +336,7 @@ public class LoginActivity extends AppCompatActivity implements ViewProcessLogin
     private void limitLoginTimer() {
         btnLogin.setEnabled(false);
         btnLogin.setClickable(false);
-        showNoticeDiaglogMessage(Constant.DELAY_AFTER_WRONG_5_TIMES);
+        showNoticeDiaglogMessage(LoginConstant.DELAY_AFTER_WRONG_5_TIMES_MESSAGE);
         for (int i = 1; i < 3; i++) {
             CountDownTimer ticktimer = new CountDownTimer(5000 * wrong_info_times, 1000) {
                 @Override
@@ -344,12 +357,12 @@ public class LoginActivity extends AppCompatActivity implements ViewProcessLogin
 
     private void addTempBannedUser() {
         SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putString(Constant.TEMP_BANNED_USER, edtUsername.getText().toString());
+        editor.putString(LoginConstant.TEMP_BANNED_USER_NAME, edtUsername.getText().toString());
         editor.apply();
     }
 
     private boolean isTempBannedUser() {
-        String user = sharedPreferences.getString(Constant.TEMP_BANNED_USER, "null");
+        String user = sharedPreferences.getString(LoginConstant.TEMP_BANNED_USER_NAME, "null");
         return wrong_info_times >= 2 && user.equals(edtUsername.getText().toString());
     }
 }

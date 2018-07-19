@@ -2,6 +2,7 @@ package application.android.com.fatee.models.api;
 
 import java.util.concurrent.TimeUnit;
 
+import application.android.com.fatee.utils.RetrofitConstant;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
@@ -20,7 +21,7 @@ public class APIClient {
         retrofit = new Retrofit
                 .Builder()
                 .client(okHttpClient)
-                .baseUrl("http://192.168.21.113:8080")
+                .baseUrl(RetrofitConstant.BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         return retrofit;

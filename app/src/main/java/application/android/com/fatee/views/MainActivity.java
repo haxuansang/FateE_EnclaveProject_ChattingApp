@@ -17,7 +17,8 @@ import android.view.MenuItem;
 ;
 
 import application.android.com.fatee.R;
-import application.android.com.fatee.helpers.UserUtil;
+import application.android.com.fatee.utils.SurveyConstant;
+import application.android.com.fatee.utils.UserUtil;
 import application.android.com.fatee.views.fragments.AboutFragment;
 import application.android.com.fatee.views.fragments.NotificationsFragment;
 import application.android.com.fatee.views.fragments.ProfileFragment;
@@ -43,15 +44,15 @@ public class MainActivity extends AppCompatActivity
         toggle.syncState();
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-        String surveyStatus = getIntent().getExtras().getString("surveyStatus");
+        String surveyStatus = getIntent().getExtras().getString(SurveyConstant.USER_SURVEY_STATUS_KEY);
 
         fragmentManager= getFragmentManager();
         fragmentTransaction=fragmentManager.beginTransaction();
-        if("F".equals(surveyStatus)) {
-            UserUtil.getInstance(UserUtil.getUser(), "F");
+        if(surveyStatus.equals(SurveyConstant.USER_NO_FINISH_SURVEY_STATUS)) {
+            UserUtil.getInstance(UserUtil.getUser(), SurveyConstant.USER_NO_FINISH_SURVEY_STATUS);
             fragmentTransaction.add(R.id.frame_layout, SurveyFragment.getInstance());
         } else {
-            UserUtil.getInstance(UserUtil.getUser(), "T");
+            UserUtil.getInstance(UserUtil.getUser(), SurveyConstant.USER_FINISHED_SURVEY_STATUS);
             fragmentTransaction.add(R.id.frame_layout, RoomFragment.getInstance());
         }
         fragmentTransaction.commit();
@@ -76,14 +77,9 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
         fragmentTransaction=fragmentManager.beginTransaction();
         fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
-
-        //noinspection SimplifiableIfStatement
         switch (id ) {
             case R.id.notifications:
                 fragmentTransaction.replace(R.id.frame_layout,new NotificationsFragment());
@@ -135,7 +131,6 @@ public class MainActivity extends AppCompatActivity
                 fragmentTransaction.replace(R.id.frame_layout,new AboutFragment());
                 fragmentTransaction.commit();
                 break;
-
             case R.id.signout:
                 Intent intent = new Intent(MainActivity.this,LoginActivity.class);
                 this.startActivity(intent);

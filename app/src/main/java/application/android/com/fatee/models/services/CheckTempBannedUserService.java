@@ -7,7 +7,7 @@ import android.content.SharedPreferences;
 import android.os.IBinder;
 import android.widget.Toast;
 
-import application.android.com.fatee.utils.Constant;
+import application.android.com.fatee.utils.LoginConstant;
 
 public class CheckTempBannedUserService extends Service{
     SharedPreferences sharedPreferences;
@@ -32,9 +32,8 @@ public class CheckTempBannedUserService extends Service{
     @Override
     public void onDestroy() {
         super.onDestroy();
-        sharedPreferences = getSharedPreferences(Constant.SHARED_PREFERENCES_NAME, Context.MODE_PRIVATE);
+        sharedPreferences = getSharedPreferences(LoginConstant.SHARED_PREFERENCES_NAME_MESSAGE, Context.MODE_PRIVATE);
         editor =  sharedPreferences.edit();
-        editor.remove(Constant.TEMP_BANNED_USER);
-        Toast.makeText(getApplicationContext(),"ok",Toast.LENGTH_SHORT).show();
+        editor.remove(LoginConstant.TEMP_BANNED_USER_NAME);
     }
 }

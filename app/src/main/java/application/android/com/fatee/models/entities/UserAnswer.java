@@ -14,6 +14,7 @@ public class UserAnswer {
     @Expose
     private String answerContent;
 
+
     public UserAnswer(String questionId, String answerId, String answerContent) {
         this.questionId = questionId;
         this.answerId = answerId;

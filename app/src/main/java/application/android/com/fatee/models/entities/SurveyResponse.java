@@ -13,6 +13,8 @@ public class SurveyResponse {
     @Expose
     private List<QuestionResponse> questionResponses = null;
 
+    private boolean hasAnswered;
+
     public String getResponseCode() {
         return responseCode;
     }
@@ -27,5 +29,13 @@ public class SurveyResponse {
 
     public void setQuestionResponses(List<QuestionResponse> questionResponses) {
         this.questionResponses = questionResponses;
+    }
+
+    public boolean isHasAnswered() {
+        return hasAnswered;
+    }
+
+    public void setHasAnswered(boolean hasAnswered) {
+        this.hasAnswered = hasAnswered;
     }
 }

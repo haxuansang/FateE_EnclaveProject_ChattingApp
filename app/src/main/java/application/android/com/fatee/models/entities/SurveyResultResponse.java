@@ -28,12 +28,4 @@ public class SurveyResultResponse {
     public void setUserAnswers(List<UserAnswer> userAnswers) {
         this.userAnswers = userAnswers;
     }
-
-    @Override
-    public String toString() {
-        return "SurveyResultResponse{" +
-                "responseCode='" + responseCode + '\'' +
-                ", userAnswers=" + userAnswers +
-                '}';
-    }
 }

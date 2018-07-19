@@ -1,6 +1,5 @@
-package application.android.com.fatee.helpers;
+package application.android.com.fatee.utils;
 
-import application.android.com.fatee.models.entities.User;
 import application.android.com.fatee.models.entities.UserModel;
 
 public class UserUtil {
@@ -24,5 +23,9 @@ public class UserUtil {
 
     public static String getSurveyStatus() {
         return surveyStatus;
+    }
+
+    public static void setSurveyStatus(String s) {
+        surveyStatus = s;
     }
 }

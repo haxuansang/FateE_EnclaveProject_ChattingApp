@@ -20,6 +20,9 @@ public class QuestionResponse {
     @Expose
     private List<AnswerResponse> answerResponses;
 
+
+    private boolean hasAnswered = false;
+
     public QuestionResponse() {
         answerResponses = new ArrayList<>();
     }
@@ -56,4 +59,11 @@ public class QuestionResponse {
         this.answerResponses = answerResponses;
     }
 
+    public boolean isHasAnswered() {
+        return hasAnswered;
+    }
+
+    public void setHasAnswered(boolean hasAnswered) {
+        this.hasAnswered = hasAnswered;
+    }
 }
