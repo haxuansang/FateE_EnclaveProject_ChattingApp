@@ -9,16 +9,16 @@ import android.net.NetworkInfo;
 
 
 
-import application.android.com.fatee.presenters.ProcessLogicPresenter;
+import application.android.com.fatee.presenters.ProcessLogicPresenterImpl;
 import application.android.com.fatee.views.LoginActivity;
 
 public class ConnectionBroadcastReceiver extends BroadcastReceiver {
-    ProcessLogicPresenter presenterLogicProcessLogin;
+    ProcessLogicPresenterImpl presenterLogicProcessLogin;
 
     @Override
     public void onReceive(Context context, Intent intent) {
 
-        ProcessLogicPresenter presenterLogicProcessLogin = new ProcessLogicPresenter(LoginActivity.viewProcessLogin);
+        ProcessLogicPresenterImpl presenterLogicProcessLogin = new ProcessLogicPresenterImpl(LoginActivity.viewProcessLogin);
         if (checkConnected(context))
             presenterLogicProcessLogin.caseHaveConnection();
         else presenterLogicProcessLogin.caseLostConnection();

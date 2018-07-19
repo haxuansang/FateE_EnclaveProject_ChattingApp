@@ -32,6 +32,10 @@ public class UserModel{
     @Expose
     private Integer reportNumbers;
 
+    @SerializedName("surveyStatus")
+    @Expose
+    private String surveyStatus;
+
 
     public UserModel() {
     }
@@ -108,4 +112,11 @@ public class UserModel{
         this.reportNumbers = reportNumbers;
     }
 
+    public String getSurveyStatus() {
+        return surveyStatus;
+    }
+
+    public void setSurveyStatus(String surveyStatus) {
+        this.surveyStatus = surveyStatus;
+    }
 }
