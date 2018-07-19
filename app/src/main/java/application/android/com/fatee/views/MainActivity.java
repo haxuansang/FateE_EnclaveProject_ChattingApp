@@ -125,9 +125,8 @@ public class MainActivity extends AppCompatActivity
 
                 break;
             case R.id.about:
-                Intent intentAbout = new Intent(MainActivity.this, AboutPageElement.class);
+                Intent intentAbout = new Intent(MainActivity.this, AboutFragment.class);
                 this.startActivity(intentAbout);
-                this.finish();
                 break;
 
             case R.id.signout:
@@ -135,7 +134,6 @@ public class MainActivity extends AppCompatActivity
                 this.startActivity(intent);
                 this.finish();
                 break;
-
 
         }
 

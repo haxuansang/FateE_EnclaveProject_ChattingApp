@@ -1,0 +1,7 @@
+#Internal package file, do not edit.
+#Mon Jul 16 14:02:53 ICT 2018
+0.baseType=DIRECTORY
+0.base=/home/anh/Downloads/mobile/app/build/intermediates/assets/debug
+0.path=fonts/Pacifico.ttf
+0.set=ASSET
+count=1

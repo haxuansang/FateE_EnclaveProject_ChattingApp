@@ -1,6 +1,4 @@
-package com.login_signup_screendesign_demo;
-
-import com.login_signup_screendesign_demo.R;
+package application.android.com.fatee.views;
 
 import android.content.Context;
 import android.view.Gravity;
@@ -9,6 +7,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import application.android.com.fatee.R;
+
 
 public class CustomToast {
 

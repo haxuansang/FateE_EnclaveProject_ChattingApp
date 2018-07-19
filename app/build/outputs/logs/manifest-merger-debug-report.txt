@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/anh/Downloads/mobile/app/src/main/AndroidManifest.xml:2:1-41:12
-INJECTED from /home/anh/Downloads/mobile/app/src/main/AndroidManifest.xml:2:1-41:12
-INJECTED from /home/anh/Downloads/mobile/app/src/main/AndroidManifest.xml:2:1-41:12
-INJECTED from /home/anh/Downloads/mobile/app/src/main/AndroidManifest.xml:2:1-41:12
+ADDED from /home/anh/Downloads/mobile/app/src/main/AndroidManifest.xml:2:1-49:12
+INJECTED from /home/anh/Downloads/mobile/app/src/main/AndroidManifest.xml:2:1-49:12
+INJECTED from /home/anh/Downloads/mobile/app/src/main/AndroidManifest.xml:2:1-49:12
+INJECTED from /home/anh/Downloads/mobile/app/src/main/AndroidManifest.xml:2:1-49:12
 MERGED from [com.android.support:design:27.1.1] /home/anh/.gradle/caches/transforms-1/files-1.1/design-27.1.1.aar/7418363d931d7312b2b5fbb1d96693b6/AndroidManifest.xml:17:1-22:12
 MERGED from [com.borjabravo:readmoretextview:2.0.1] /home/anh/.gradle/caches/transforms-1/files-1.1/readmoretextview-2.0.1.aar/762f71c4d6789e8a6c4d3b12b6721d78/AndroidManifest.xml:2:1-16:12
 MERGED from [com.android.support:appcompat-v7:27.1.1] /home/anh/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/cbdf7017e8e550a55b9a87ff2851b643/AndroidManifest.xml:17:1-22:12
@@ -24,20 +24,20 @@ MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /home/anh/.gradle/cache
 MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /home/anh/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.0.aar/e244bc67549ee102de60e460e7cc25df/AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.lifecycle:runtime:1.1.0] /home/anh/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/9b87d37964bbfaa9050bf8c39263cfe7/AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.core:runtime:1.1.0] /home/anh/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/7902b50fa9c03f05520c1cb9f9a35e1d/AndroidManifest.xml:17:1-22:12
-INJECTED from /home/anh/Downloads/mobile/app/src/main/AndroidManifest.xml:2:1-41:12
-INJECTED from /home/anh/Downloads/mobile/app/src/main/AndroidManifest.xml:2:1-41:12
-INJECTED from /home/anh/Downloads/mobile/app/src/main/AndroidManifest.xml:2:1-41:12
+INJECTED from /home/anh/Downloads/mobile/app/src/main/AndroidManifest.xml:2:1-49:12
+INJECTED from /home/anh/Downloads/mobile/app/src/main/AndroidManifest.xml:2:1-49:12
+INJECTED from /home/anh/Downloads/mobile/app/src/main/AndroidManifest.xml:2:1-49:12
 	package
 		ADDED from /home/anh/Downloads/mobile/app/src/main/AndroidManifest.xml:3:5-44
 		INJECTED from /home/anh/Downloads/mobile/app/src/main/AndroidManifest.xml
 		INJECTED from /home/anh/Downloads/mobile/app/src/main/AndroidManifest.xml
 	android:versionName
 		INJECTED from /home/anh/Downloads/mobile/app/src/main/AndroidManifest.xml
-		ADDED from /home/anh/Downloads/mobile/app/src/main/AndroidManifest.xml:2:1-41:12
+		ADDED from /home/anh/Downloads/mobile/app/src/main/AndroidManifest.xml:2:1-49:12
 		INJECTED from /home/anh/Downloads/mobile/app/src/main/AndroidManifest.xml
 	android:versionCode
 		INJECTED from /home/anh/Downloads/mobile/app/src/main/AndroidManifest.xml
-		ADDED from /home/anh/Downloads/mobile/app/src/main/AndroidManifest.xml:2:1-41:12
+		ADDED from /home/anh/Downloads/mobile/app/src/main/AndroidManifest.xml:2:1-49:12
 		INJECTED from /home/anh/Downloads/mobile/app/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /home/anh/Downloads/mobile/app/src/main/AndroidManifest.xml:2:11-69
@@ -54,7 +54,7 @@ ADDED from /home/anh/Downloads/mobile/app/src/main/AndroidManifest.xml:7:5-67
 	android:name
 		ADDED from /home/anh/Downloads/mobile/app/src/main/AndroidManifest.xml:7:22-64
 application
-ADDED from /home/anh/Downloads/mobile/app/src/main/AndroidManifest.xml:9:5-40:19
+ADDED from /home/anh/Downloads/mobile/app/src/main/AndroidManifest.xml:9:5-48:19
 MERGED from [com.borjabravo:readmoretextview:2.0.1] /home/anh/.gradle/caches/transforms-1/files-1.1/readmoretextview-2.0.1.aar/762f71c4d6789e8a6c4d3b12b6721d78/AndroidManifest.xml:11:5-14:19
 MERGED from [com.borjabravo:readmoretextview:2.0.1] /home/anh/.gradle/caches/transforms-1/files-1.1/readmoretextview-2.0.1.aar/762f71c4d6789e8a6c4d3b12b6721d78/AndroidManifest.xml:11:5-14:19
 MERGED from [com.android.support.constraint:constraint-layout:1.1.1] /home/anh/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.1.aar/6773a14890aab892737edffa95a3dbed/AndroidManifest.xml:9:5-20
@@ -74,7 +74,7 @@ MERGED from [de.hdodenhof:circleimageview:2.1.0] /home/anh/.gradle/caches/transf
 	android:theme
 		ADDED from /home/anh/Downloads/mobile/app/src/main/AndroidManifest.xml:15:9-65
 activity#application.android.com.fatee.views.LoginActivity
-ADDED from /home/anh/Downloads/mobile/app/src/main/AndroidManifest.xml:16:9-25:20
+ADDED from /home/anh/Downloads/mobile/app/src/main/AndroidManifest.xml:16:9-24:20
 	android:theme
 		ADDED from /home/anh/Downloads/mobile/app/src/main/AndroidManifest.xml:18:13-44
 	android:name
@@ -89,6 +89,10 @@ category#android.intent.category.LAUNCHER
 ADDED from /home/anh/Downloads/mobile/app/src/main/AndroidManifest.xml:22:17-77
 	android:name
 		ADDED from /home/anh/Downloads/mobile/app/src/main/AndroidManifest.xml:22:27-74
+activity#application.android.com.fatee.views.fragments.AboutFragment
+ADDED from /home/anh/Downloads/mobile/app/src/main/AndroidManifest.xml:25:9-66
+	android:name
+		ADDED from /home/anh/Downloads/mobile/app/src/main/AndroidManifest.xml:25:19-64
 activity#application.android.com.fatee.views.MainActivity
 ADDED from /home/anh/Downloads/mobile/app/src/main/AndroidManifest.xml:26:9-30:20
 	android:label
@@ -97,18 +101,24 @@ ADDED from /home/anh/Downloads/mobile/app/src/main/AndroidManifest.xml:26:9-30:2
 		ADDED from /home/anh/Downloads/mobile/app/src/main/AndroidManifest.xml:29:13-44
 	android:name
 		ADDED from /home/anh/Downloads/mobile/app/src/main/AndroidManifest.xml:27:13-47
+activity#application.android.com.fatee.views.RegisterActivity
+ADDED from /home/anh/Downloads/mobile/app/src/main/AndroidManifest.xml:31:9-38:20
+	android:theme
+		ADDED from /home/anh/Downloads/mobile/app/src/main/AndroidManifest.xml:32:13-44
+	android:name
+		ADDED from /home/anh/Downloads/mobile/app/src/main/AndroidManifest.xml:31:19-57
 receiver#application.android.com.fatee.utils.ConnectionBroadcastReceiver
-ADDED from /home/anh/Downloads/mobile/app/src/main/AndroidManifest.xml:32:9-80
+ADDED from /home/anh/Downloads/mobile/app/src/main/AndroidManifest.xml:40:9-80
 	android:name
-		ADDED from /home/anh/Downloads/mobile/app/src/main/AndroidManifest.xml:32:19-68
+		ADDED from /home/anh/Downloads/mobile/app/src/main/AndroidManifest.xml:40:19-68
 service#application.android.com.fatee.models.services.CheckTempBannedUserService
-ADDED from /home/anh/Downloads/mobile/app/src/main/AndroidManifest.xml:34:9-37:47
+ADDED from /home/anh/Downloads/mobile/app/src/main/AndroidManifest.xml:42:9-45:47
 	android:enabled
-		ADDED from /home/anh/Downloads/mobile/app/src/main/AndroidManifest.xml:36:13-35
+		ADDED from /home/anh/Downloads/mobile/app/src/main/AndroidManifest.xml:44:13-35
 	android:exported
-		ADDED from /home/anh/Downloads/mobile/app/src/main/AndroidManifest.xml:37:13-36
+		ADDED from /home/anh/Downloads/mobile/app/src/main/AndroidManifest.xml:45:13-36
 	android:name
-		ADDED from /home/anh/Downloads/mobile/app/src/main/AndroidManifest.xml:35:13-71
+		ADDED from /home/anh/Downloads/mobile/app/src/main/AndroidManifest.xml:43:13-71
 uses-sdk
 INJECTED from /home/anh/Downloads/mobile/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /home/anh/Downloads/mobile/app/src/main/AndroidManifest.xml

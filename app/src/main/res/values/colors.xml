@@ -7,6 +7,7 @@
 
     <!-- General -->
     <color name="about_item_icon_color">#313131</color>
+    <color name="button_selectorcolor">#9E9E9E</color>
 
     <!-- Social -->
     <color name="about_facebook_color">#3b5998</color>

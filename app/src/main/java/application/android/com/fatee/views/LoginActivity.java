@@ -1,5 +1,6 @@
 package application.android.com.fatee.views;
 
+import android.app.Dialog;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -54,7 +55,7 @@ public class LoginActivity extends AppCompatActivity implements ViewProcessLogin
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.login_layout);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         viewProcessLogin = this;
         delayLogin();
@@ -86,8 +87,22 @@ public class LoginActivity extends AppCompatActivity implements ViewProcessLogin
                 login(view);
             }
         });
-
+//    btnRegister.setOnClickListener(new View.OnClickListener() {
+//        @Override
+//        public void onClick(View view) {
+//            loadLayoutRegister();
+//        }
+//    });
     }
+
+//    private void loadLayoutRegister() {
+//        AlertDialog.Builder builder = new AlertDialog.Builder(LoginActivity.this);
+//        View dialogView = getLayoutInflater().inflate(R.layout.register_dialog,null);
+//        initView();
+//        builder.setView(dialogView);
+//        final AlertDialog dialog = builder.create();
+//        dialog.show();
+//    }
 
 
     // Init app View
@@ -348,4 +363,9 @@ public class LoginActivity extends AppCompatActivity implements ViewProcessLogin
         String user = sharedPreferences.getString(Constant.TEMP_BANNED_USER, "null");
         return wrong_info_times >= 2 && user.equals(edtUsername.getText().toString());
     }
+    public void registerFromLogin(View view){
+        Intent intent = new Intent(this, RegisterActivity.class);
+        startActivity(intent);
+    }
+
 }

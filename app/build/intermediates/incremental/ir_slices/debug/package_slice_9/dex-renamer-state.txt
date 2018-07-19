@@ -1,4 +1,4 @@
-#Wed Jul 04 12:34:52 ICT 2018
-base.0=C\:\\Users\\admin\\Desktop\\mobile\\mobile\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\9
+#Thu Jul 19 13:58:02 ICT 2018
+base.0=/home/anh/Downloads/mobile/app/build/intermediates/transforms/dexMerger/debug/73
 path.0=classes.dex
 renamed.0=classes.dex

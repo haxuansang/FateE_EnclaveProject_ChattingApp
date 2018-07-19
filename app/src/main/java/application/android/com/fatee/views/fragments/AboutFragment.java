@@ -20,7 +20,7 @@ import application.android.com.fatee.R;
 import application.android.com.fatee.models.entities.AboutPageElement;
 import application.android.com.fatee.views.adapters.AboutPage;
 
-public class AboutFragment extends FragmentActivity {
+public class AboutFragment extends AppCompatActivity {
 
 
     @Override
@@ -32,21 +32,20 @@ public class AboutFragment extends FragmentActivity {
 
         View aboutPage = new AboutPage(this)
                 .isRTL(false)
-                .setImage(R.drawable.dummy_image)
-                .addItem(new AboutPageElement().setTitle("Version 6.2"))
+                .setImage(R.drawable.main_logo)
+                .addItem(new AboutPageElement().setTitle("Version 0.1"))
                 .addItem(adsElement)
                 .addGroup("Connect with us")
                 .addEmail("tatrunganha28@gmail.com")
                 .addWebsite("http://google.com")
                 .addFacebook("trung.anh.ta.1")
                 .addTwitter("medyo80")
-                .addYoutube("UCdPQtdWIsg7_pi4mrRu46vA")
+                .addYoutube("UCiC7YR-m7v6RLIqPau4d4WA")
                 .addPlayStore("com.ideashower.readitlater.pro")
                 .addInstagram("medyo80")
                 .addGitHub("medyo")
                 .addItem(getCopyRightsElement())
                 .create();
-
         setContentView(aboutPage);
     }
 

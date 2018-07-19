@@ -1,9 +1,14 @@
 <resources>
+    <string name="show_password">Show password</string>
+    <string name="login_screen">Login</string>
     <string name="app_name">FateE</string>
     <string name="action_favorite">ActionBarFavorite</string>
     <string name="login_username">Username</string>
     <string name="login_password">Password</string>
-    <string name="login_warning">You Lost Internet Connection</string>
+    <string name="register_nickname">Nickname</string>
+    <string name="register_password_verify">Password verification</string>
+    <string name="register_email">Email</string>
+    <string name="login_warning">Oops! You lost Internet connection</string>
     <string name="title_activity_main">Fatee</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -14,8 +19,7 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="copy_right" translatable="false">Copyrights © %1$d</string>
-    <string name="about_page_description" translatable="false">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vehicula ligula tortor, in pellentesque dui congue ac. Vestibulum lacinia urna magna, quis cursus ante iaculis nec. Nunc ut ligula sit amet odio ultrices euismod vel vel purus. Sed lacus mauris, aliquam et placerat id</string>
-
+    <string name="about_page_description" translatable="false">I would like to send my sincere thanks to Enclave for helping me complete this project.</string>
     <string name="about_contact_us">Contact us</string>
     <string name="about_instagram">Follow us on Instagram</string>
     <string name="about_facebook">Like us on Facebook</string>
@@ -24,4 +28,9 @@
     <string name="about_twitter">Follow us on Twitter</string>
     <string name="about_github">Fork us on GitHub</string>
     <string name="about_website">Visit our website</string>
+    <string name="terms_conditions">By clicking SignUp you agree all the Terms and Conditions.</string>
+    <string name="already_user">Already have Account? Login here.</string>
+    <string name="registered_email">Please enter your Registered Email below:</string>
+    <string name="submit">SUBMIT</string>
+    <string name="back">BACK</string>
 </resources>

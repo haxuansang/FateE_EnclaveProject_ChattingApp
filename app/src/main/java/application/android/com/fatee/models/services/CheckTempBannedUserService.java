@@ -14,8 +14,8 @@ public class CheckTempBannedUserService extends Service{
     SharedPreferences.Editor editor;
 
     public CheckTempBannedUserService() {
-
     }
+
     @Override
     public IBinder onBind(Intent intent) {
         return null;
@@ -23,9 +23,7 @@ public class CheckTempBannedUserService extends Service{
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-
         super.onStartCommand(intent, flags, startId);
-
         return START_STICKY;
     }
 
@@ -35,6 +33,5 @@ public class CheckTempBannedUserService extends Service{
         sharedPreferences = getSharedPreferences(Constant.SHARED_PREFERENCES_NAME, Context.MODE_PRIVATE);
         editor =  sharedPreferences.edit();
         editor.remove(Constant.TEMP_BANNED_USER);
-        Toast.makeText(getApplicationContext(),"ok",Toast.LENGTH_SHORT).show();
     }
 }
