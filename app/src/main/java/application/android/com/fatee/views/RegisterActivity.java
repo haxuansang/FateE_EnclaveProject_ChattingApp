@@ -1,15 +1,9 @@
 package application.android.com.fatee.views;
 
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
@@ -24,7 +18,6 @@ import application.android.com.fatee.R;
 import application.android.com.fatee.models.entities.RegisterResponse;
 import application.android.com.fatee.models.entities.User;
 import application.android.com.fatee.presenters.RegisterPresenterImpl;
-import application.android.com.fatee.presenters.interfaces.RegisterPresenter;
 import application.android.com.fatee.utils.Constant;
 import application.android.com.fatee.views.interfaces.RegisterView;
 

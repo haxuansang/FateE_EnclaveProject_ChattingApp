@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/anh/Downloads/mobile/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-notnight-v8/values-notnight-v8.xml",
+            "outputFile": "/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-notnight-v8/values-notnight-v8.xml",
             "map": [
                 {
-                    "source": "/home/anh/Downloads/mobile/app/src/main/res/values-notnight/colors.xml",
+                    "source": "/home/loc/Desktop/Mobile demo/mobile/app/src/main/res/values-notnight/colors.xml",
                     "from": {
                         "startLines": "6,10,11,7,12,4,2,3",
                         "startColumns": "4,4,4,4,4,4,4,4",

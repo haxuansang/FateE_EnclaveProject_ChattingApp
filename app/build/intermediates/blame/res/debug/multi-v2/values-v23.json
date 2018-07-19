@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/anh/Downloads/mobile/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v23/values-v23.xml",
+            "outputFile": "/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v23/values-v23.xml",
             "map": [
                 {
-                    "source": "/home/anh/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/cbdf7017e8e550a55b9a87ff2851b643/res/values-v23/values-v23.xml",
+                    "source": "/home/loc/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/b724ece56b4bee46d6ca2a08c6230349/res/values-v23/values-v23.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,19,32,33,34,35,36",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4",
@@ -15,7 +15,7 @@
                     }
                 },
                 {
-                    "source": "/home/anh/.gradle/caches/transforms-1/files-1.1/cardview-v7-27.1.1.aar/c2f16019b07dd5940ca51fd04d7ddf02/res/values-v23/values-v23.xml",
+                    "source": "/home/loc/.gradle/caches/transforms-1/files-1.1/cardview-v7-27.1.1.aar/42cb8d9376725c152dfa2d42fb442437/res/values-v23/values-v23.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
