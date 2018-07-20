@@ -1,5 +1,6 @@
 package application.android.com.fatee.views;
 
+import android.Manifest;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -7,10 +8,13 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
+import android.content.pm.PackageManager;
 import android.net.ConnectivityManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -21,6 +25,12 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
+
+import com.quickblox.auth.session.QBSettings;
+import com.quickblox.core.QBEntityCallback;
+import com.quickblox.core.exception.QBResponseException;
+import com.quickblox.users.QBUsers;
+import com.quickblox.users.model.QBUser;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -39,6 +49,11 @@ import application.android.com.fatee.presenters.ProcessLogicPresenterImpl;
 import application.android.com.fatee.utils.ConnectionBroadcastReceiver;
 import application.android.com.fatee.views.interfaces.ViewProcessLogin;
 
+import static application.android.com.fatee.utils.LoginConstant.ACCOUNT_KEY;
+import static application.android.com.fatee.utils.LoginConstant.APP_ID;
+import static application.android.com.fatee.utils.LoginConstant.AUTH_KEY;
+import static application.android.com.fatee.utils.LoginConstant.AUTH_SECRET;
+
 public class LoginActivity extends AppCompatActivity implements ViewProcessLogin, View.OnFocusChangeListener {
     private Button btnLogin, btnRegister;
     private EditText edtUsername, edtPassword;
@@ -55,11 +70,16 @@ public class LoginActivity extends AppCompatActivity implements ViewProcessLogin
     private Intent service;
     private String preUsername = "";
     private ImageView imageViewIcon;
+    String currentUsername,password;
+    public static int check=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_layout);
+        requestRuntimePermission();
+        QBSettings.getInstance().init(getApplicationContext(), APP_ID, AUTH_KEY, AUTH_SECRET);
+        QBSettings.getInstance().setAccountKey(ACCOUNT_KEY);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         viewProcessLogin = this;
         delayLogin();
@@ -154,6 +174,26 @@ public class LoginActivity extends AppCompatActivity implements ViewProcessLogin
         }
     }
 
+    private boolean CheckLoginQuickBlox(String currentUsername, String password) {
+
+        QBUser qbUser = new QBUser(currentUsername,password);
+        QBUsers.signIn(qbUser).performAsync(new QBEntityCallback<QBUser>() {
+            @Override
+            public void onSuccess(QBUser qbUser, Bundle bundle) {
+                    check=1;
+            }
+
+            @Override
+            public void onError(QBResponseException e) {
+                    check=0;
+                Toast.makeText(LoginActivity.this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+        if(check==1)
+            return true;
+        return false;
+    }
+
     private void forwardFromLoginActivityToMainActivityAfterLoginSuccessfully(LoginResponse loginResponse) {
         Intent intent = new Intent(LoginActivity.this, MainActivity.class);
         String surveyStatus = loginResponse.getUserModel().getSurveyStatus();
@@ -162,6 +202,8 @@ public class LoginActivity extends AppCompatActivity implements ViewProcessLogin
         intent.putExtra(SurveyConstant.USER_SURVEY_STATUS_KEY, surveyStatus);
         String userId = loginResponse.getUserModel().getId();
         intent.putExtra(LoginConstant.USER_ID_MESSAGE, userId);
+        intent.putExtra(LoginConstant.USERNAME,currentUsername);
+        intent.putExtra(LoginConstant.PASSWORD,password);
         this.startActivity(intent);
         finish();
     }
@@ -237,8 +279,8 @@ public class LoginActivity extends AppCompatActivity implements ViewProcessLogin
     }
 
     public void login(View v) {
-        String currentUsername = edtUsername.getText().toString();
-        String password = edtPassword.getText().toString();
+        currentUsername = edtUsername.getText().toString();
+        password = edtPassword.getText().toString();
         if (!preUsername.equals(currentUsername)) {
             count = 0;
             wrong_info_times = 0;
@@ -369,5 +411,31 @@ public class LoginActivity extends AppCompatActivity implements ViewProcessLogin
     public void registerFromLogin(View view){
         Intent intent = new Intent(this, RegisterActivity.class);
         startActivity(intent);
+    }
+    private void requestRuntimePermission() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            if (checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED && checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE)!= PackageManager.PERMISSION_GRANTED)
+
+            {
+                requestPermissions(new String[]{
+                        Manifest.permission.READ_EXTERNAL_STORAGE,
+                        Manifest.permission.WRITE_EXTERNAL_STORAGE
+                },1000);
+            }
+        }
+    }
+
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        switch (requestCode)
+        {
+            case 1000:
+                if(grantResults[0]==PackageManager.PERMISSION_GRANTED)
+                    Toast.makeText(this, "Permission Granted", Toast.LENGTH_SHORT).show();
+                else
+                    Toast.makeText(this, "Permission Denied", Toast.LENGTH_SHORT).show();
+
+        }
     }
 }

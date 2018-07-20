@@ -1,27 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-night-v8/values-night-v8.xml",
+            "outputFile": "/home/sang/Desktop/new mobile/mobile/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-night-v8/values-night-v8.xml",
             "map": [
                 {
-                    "source": "/home/loc/Desktop/Mobile demo/mobile/app/src/main/res/values-night/colors.xml",
-                    "from": {
-                        "startLines": "6,10,11,7,12,4,2,3",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "220,352,415,277,471,153,55,102",
-                        "endColumns": "56,62,55,55,50,45,46,50",
-                        "endOffsets": "272,410,466,328,517,194,97,148"
-                    },
-                    "to": {
-                        "startLines": "2,3,4,5,6,7,8,9",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,112,175,231,287,338,384,431",
-                        "endColumns": "56,62,55,55,50,45,46,50",
-                        "endOffsets": "107,170,226,282,333,379,426,477"
-                    }
-                },
-                {
-                    "source": "/home/loc/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/b724ece56b4bee46d6ca2a08c6230349/res/values-night-v8/values-night-v8.xml",
+                    "source": "/home/sang/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/1c5d1dff7c7e37df4ce60ad78cb69218/res/values-night-v8/values-night-v8.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8",
                         "startColumns": "4,4,4,4,4,4,4",
@@ -35,6 +18,23 @@
                         "startOffsets": "482,552,636,720,816,918,1020",
                         "endColumns": "69,83,83,95,101,101,93",
                         "endOffsets": "547,631,715,811,913,1015,1109"
+                    }
+                },
+                {
+                    "source": "/home/sang/Desktop/new mobile/mobile/app/src/main/res/values-night/colors.xml",
+                    "from": {
+                        "startLines": "6,10,11,7,12,4,2,3",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "220,352,415,277,471,153,55,102",
+                        "endColumns": "56,62,55,55,50,45,46,50",
+                        "endOffsets": "272,410,466,328,517,194,97,148"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8,9",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,112,175,231,287,338,384,431",
+                        "endColumns": "56,62,55,55,50,45,46,50",
+                        "endOffsets": "107,170,226,282,333,379,426,477"
                     }
                 }
             ]

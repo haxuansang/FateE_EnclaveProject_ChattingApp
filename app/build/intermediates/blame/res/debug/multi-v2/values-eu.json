@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-eu/values-eu.xml",
+            "outputFile": "/home/sang/Desktop/new mobile/mobile/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-eu/values-eu.xml",
             "map": [
                 {
-                    "source": "/home/loc/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/b724ece56b4bee46d6ca2a08c6230349/res/values-eu/values-eu.xml",
+                    "source": "/home/sang/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/1c5d1dff7c7e37df4ce60ad78cb69218/res/values-eu/values-eu.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "/home/loc/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/43adc393056e573f9732cb95c22975e4/res/values-eu/values-eu.xml",
+                    "source": "/home/sang/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/c81a4c497a741e917116edf3c3fc534c/res/values-eu/values-eu.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

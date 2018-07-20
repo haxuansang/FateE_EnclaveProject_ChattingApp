@@ -1,19 +1,11 @@
 #Internal package file, do not edit.
-#Thu Jul 19 17:23:06 ICT 2018
-1.base=/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/transforms/dexMerger/debug/14
-2.path=classes.dex
+#Fri Jul 20 14:01:21 ICT 2018
+1.base=/home/sang/Desktop/new mobile/mobile/app/build/intermediates/transforms/dexMerger/debug/31
 0.baseType=DIRECTORY
-3.baseType=DIRECTORY
-2.base=/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/transforms/dexMerger/debug/13
-3.set=ASSET
-2.set=DEX
 1.baseType=DIRECTORY
-3.path=fonts/Pacifico.ttf
-count=4
+count=2
 1.set=DEX
-0.path=classes.dex
-3.base=/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/assets/debug
-0.set=DEX
-0.base=/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/transforms/dexMerger/debug/12
-2.baseType=DIRECTORY
+0.path=fonts/Pacifico.ttf
+0.set=ASSET
+0.base=/home/sang/Desktop/new mobile/mobile/app/build/intermediates/assets/debug
 1.path=classes.dex
