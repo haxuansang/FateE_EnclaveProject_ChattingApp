@@ -113,6 +113,7 @@ public class SurveyFragment extends Fragment implements SurveyView, OnReceiveSur
 
     @Override
     public void viewSurvey(SurveyResponse surveyResponse) {
+        System.out.println("Demo");
         String surveyStatus = UserUtil.getSurveyStatus();
         if (surveyStatus.equals(SurveyConstant.USER_NO_FINISH_SURVEY_STATUS)) {
             String surveyResponseCode = surveyResponse.getResponseCode();

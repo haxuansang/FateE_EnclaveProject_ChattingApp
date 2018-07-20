@@ -13,18 +13,17 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:animateLayoutChanges="true"
-        android:padding="10dp"
-        >
+        android:padding="10dp">
 
         <ImageView
             android:id="@+id/imgview_icon"
-            android:layout_width="@dimen/size_icon"
+            android:layout_width="282dp"
             android:layout_height="@dimen/size_icon"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="20dp"
             android:adjustViewBounds="true"
             android:scaleType="fitCenter"
-            android:src="@drawable/background" />
+            android:src="@drawable/main_logo" />
 
         <RelativeLayout
             android:id="@+id/relativeLayout_Login"
@@ -32,7 +31,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/imgview_icon"
             android:layout_marginTop="30dp"
-            android:visibility="gone">
+            android:visibility="visible">
 
             <LinearLayout
                 android:id="@+id/linear_Username"
@@ -47,13 +46,10 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
-                    android:drawableLeft="@drawable/user_icon"
+                    android:drawableLeft="@drawable/user_icon_png"
                     android:hint="@string/login_username"
                     android:maxLines="1"
-                    android:ems="10"
-
-
-                    />
+                    android:ems="10" />
             </LinearLayout>
 
             <LinearLayout
@@ -61,9 +57,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/linear_Username"
-
                 android:orientation="horizontal">
-
 
                 <EditText
                     android:id="@+id/edt_Password"
@@ -105,7 +99,8 @@
                 android:text="Register new account"
                 android:textAllCaps="false"
                 android:textColor="@android:color/holo_blue_light"
-                android:textSize="15sp" />
+                android:textSize="15sp"
+                android:onClick="registerFromLogin"/>
 
             <LinearLayout
                 android:id="@+id/linear_warning"
@@ -132,8 +127,6 @@
                     android:textColor="@android:color/holo_red_light"
                     android:textSize="15sp" />
             </LinearLayout>
-
-
         </RelativeLayout>
     </RelativeLayout>
 </RelativeLayout>

@@ -59,7 +59,7 @@ public class LoginActivity extends AppCompatActivity implements ViewProcessLogin
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.login_layout);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         viewProcessLogin = this;
         delayLogin();
@@ -364,5 +364,10 @@ public class LoginActivity extends AppCompatActivity implements ViewProcessLogin
     private boolean isTempBannedUser() {
         String user = sharedPreferences.getString(LoginConstant.TEMP_BANNED_USER_NAME, "null");
         return wrong_info_times >= 2 && user.equals(edtUsername.getText().toString());
+    }
+
+    public void registerFromLogin(View view){
+        Intent intent = new Intent(this, RegisterActivity.class);
+        startActivity(intent);
     }
 }

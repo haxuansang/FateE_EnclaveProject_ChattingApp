@@ -1,0 +1,175 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml:2:1-49:12
+INJECTED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml:2:1-49:12
+INJECTED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml:2:1-49:12
+INJECTED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml:2:1-49:12
+MERGED from [com.android.support:design:27.1.1] /home/loc/.gradle/caches/transforms-1/files-1.1/design-27.1.1.aar/8a48543de7706e05edcebf79de66a226/AndroidManifest.xml:17:1-22:12
+MERGED from [com.borjabravo:readmoretextview:2.0.1] /home/loc/.gradle/caches/transforms-1/files-1.1/readmoretextview-2.0.1.aar/3c2bcb3295abfbee98865ad30a36ff9e/AndroidManifest.xml:2:1-16:12
+MERGED from [com.android.support:appcompat-v7:27.1.1] /home/loc/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/b724ece56b4bee46d6ca2a08c6230349/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:recyclerview-v7:27.1.1] /home/loc/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-27.1.1.aar/30044b4c2a6c587e2215cb4e851084d6/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support.constraint:constraint-layout:1.1.1] /home/loc/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.1.aar/9183aee9f583c7ac91c125059fa0e9dd/AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:support-v4:27.1.1] /home/loc/.gradle/caches/transforms-1/files-1.1/support-v4-27.1.1.aar/7c90b593899e2519d59593ba5a017517/AndroidManifest.xml:17:1-22:12
+MERGED from [de.hdodenhof:circleimageview:2.1.0] /home/loc/.gradle/caches/transforms-1/files-1.1/circleimageview-2.1.0.aar/8fb8b4ddd6d6b9bde776939ccbb7d2d9/AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:cardview-v7:27.1.1] /home/loc/.gradle/caches/transforms-1/files-1.1/cardview-v7-27.1.1.aar/42cb8d9376725c152dfa2d42fb442437/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-fragment:27.1.1] /home/loc/.gradle/caches/transforms-1/files-1.1/support-fragment-27.1.1.aar/09e7988eb01bd9a02d80e97d513575b1/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] /home/loc/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.1.1.aar/1e838d1d0f8a42d5b6a15e84c4140249/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:27.1.1] /home/loc/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.1.1.aar/852982986e16d3d0151c29d212174a49/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:27.1.1] /home/loc/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.1.1.aar/3bd926c4775222303fa46988d79e5224/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-media-compat:27.1.1] /home/loc/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.1.1.aar/100bd9a55546779a79e6760b0794a17a/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:transition:27.1.1] /home/loc/.gradle/caches/transforms-1/files-1.1/transition-27.1.1.aar/69ad0db6dce4c8bcb46f8b55761c38db/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:27.1.1] /home/loc/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.1.1.aar/1c10009cd888e87bf2a8dc30733cf37d/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:27.1.1] /home/loc/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/43adc393056e573f9732cb95c22975e4/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /home/loc/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.0.aar/2750e89e38b4619f3109e5b94f160eb4/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /home/loc/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.0.aar/1c793429e796b5518cf5a4f16519a99a/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:runtime:1.1.0] /home/loc/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/834d15dedd061a409205ea6a3c49ec68/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.core:runtime:1.1.0] /home/loc/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/a103fc322f423938d3b78f41c30b2e4d/AndroidManifest.xml:17:1-22:12
+INJECTED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml:2:1-49:12
+INJECTED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml:2:1-49:12
+INJECTED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml:2:1-49:12
+	package
+		ADDED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml:3:5-44
+		INJECTED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml
+		INJECTED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml
+		ADDED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml:2:1-49:12
+		INJECTED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml
+	android:versionCode
+		INJECTED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml
+		ADDED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml:2:1-49:12
+		INJECTED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml:2:11-69
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml:5:5-79
+	android:name
+		ADDED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml:5:22-76
+uses-permission#android.permission.ACCESS_WIFI_STATE
+ADDED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml:6:5-76
+	android:name
+		ADDED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml:6:22-73
+uses-permission#android.permission.INTERNET
+ADDED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml:7:5-67
+	android:name
+		ADDED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml:7:22-64
+application
+ADDED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml:9:5-48:19
+MERGED from [com.borjabravo:readmoretextview:2.0.1] /home/loc/.gradle/caches/transforms-1/files-1.1/readmoretextview-2.0.1.aar/3c2bcb3295abfbee98865ad30a36ff9e/AndroidManifest.xml:11:5-14:19
+MERGED from [com.borjabravo:readmoretextview:2.0.1] /home/loc/.gradle/caches/transforms-1/files-1.1/readmoretextview-2.0.1.aar/3c2bcb3295abfbee98865ad30a36ff9e/AndroidManifest.xml:11:5-14:19
+MERGED from [com.android.support.constraint:constraint-layout:1.1.1] /home/loc/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.1.aar/9183aee9f583c7ac91c125059fa0e9dd/AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.1.1] /home/loc/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.1.aar/9183aee9f583c7ac91c125059fa0e9dd/AndroidManifest.xml:9:5-20
+MERGED from [de.hdodenhof:circleimageview:2.1.0] /home/loc/.gradle/caches/transforms-1/files-1.1/circleimageview-2.1.0.aar/8fb8b4ddd6d6b9bde776939ccbb7d2d9/AndroidManifest.xml:9:5-20
+MERGED from [de.hdodenhof:circleimageview:2.1.0] /home/loc/.gradle/caches/transforms-1/files-1.1/circleimageview-2.1.0.aar/8fb8b4ddd6d6b9bde776939ccbb7d2d9/AndroidManifest.xml:9:5-20
+	android:supportsRtl
+		ADDED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml:14:9-35
+	android:label
+		ADDED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml:12:9-41
+	android:roundIcon
+		ADDED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml:13:9-54
+	android:icon
+		ADDED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml:11:9-43
+	android:allowBackup
+		ADDED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml:10:9-35
+	android:theme
+		ADDED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml:15:9-65
+activity#application.android.com.fatee.views.LoginActivity
+ADDED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml:16:9-24:20
+	android:theme
+		ADDED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml:18:13-44
+	android:name
+		ADDED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml:17:13-48
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml:19:13-23:29
+action#android.intent.action.MAIN
+ADDED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml:20:17-69
+	android:name
+		ADDED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml:20:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml:22:17-77
+	android:name
+		ADDED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml:22:27-74
+activity#application.android.com.fatee.views.fragments.AboutFragment
+ADDED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml:25:9-66
+	android:name
+		ADDED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml:25:19-64
+activity#application.android.com.fatee.views.MainActivity
+ADDED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml:26:9-30:20
+	android:label
+		ADDED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml:28:13-56
+	android:theme
+		ADDED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml:29:13-44
+	android:name
+		ADDED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml:27:13-47
+activity#application.android.com.fatee.views.RegisterActivity
+ADDED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml:31:9-38:20
+	android:theme
+		ADDED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml:32:13-44
+	android:name
+		ADDED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml:31:19-57
+receiver#application.android.com.fatee.utils.ConnectionBroadcastReceiver
+ADDED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml:40:9-80
+	android:name
+		ADDED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml:40:19-68
+service#application.android.com.fatee.models.services.CheckTempBannedUserService
+ADDED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml:42:9-45:47
+	android:enabled
+		ADDED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml:44:13-35
+	android:exported
+		ADDED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml:45:13-36
+	android:name
+		ADDED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml:43:13-71
+uses-sdk
+INJECTED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml
+INJECTED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml
+MERGED from [com.android.support:design:27.1.1] /home/loc/.gradle/caches/transforms-1/files-1.1/design-27.1.1.aar/8a48543de7706e05edcebf79de66a226/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design:27.1.1] /home/loc/.gradle/caches/transforms-1/files-1.1/design-27.1.1.aar/8a48543de7706e05edcebf79de66a226/AndroidManifest.xml:20:5-44
+MERGED from [com.borjabravo:readmoretextview:2.0.1] /home/loc/.gradle/caches/transforms-1/files-1.1/readmoretextview-2.0.1.aar/3c2bcb3295abfbee98865ad30a36ff9e/AndroidManifest.xml:7:5-9:41
+MERGED from [com.borjabravo:readmoretextview:2.0.1] /home/loc/.gradle/caches/transforms-1/files-1.1/readmoretextview-2.0.1.aar/3c2bcb3295abfbee98865ad30a36ff9e/AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:appcompat-v7:27.1.1] /home/loc/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/b724ece56b4bee46d6ca2a08c6230349/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.1.1] /home/loc/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/b724ece56b4bee46d6ca2a08c6230349/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:27.1.1] /home/loc/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-27.1.1.aar/30044b4c2a6c587e2215cb4e851084d6/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:27.1.1] /home/loc/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-27.1.1.aar/30044b4c2a6c587e2215cb4e851084d6/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support.constraint:constraint-layout:1.1.1] /home/loc/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.1.aar/9183aee9f583c7ac91c125059fa0e9dd/AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.1.1] /home/loc/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.1.aar/9183aee9f583c7ac91c125059fa0e9dd/AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:support-v4:27.1.1] /home/loc/.gradle/caches/transforms-1/files-1.1/support-v4-27.1.1.aar/7c90b593899e2519d59593ba5a017517/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:27.1.1] /home/loc/.gradle/caches/transforms-1/files-1.1/support-v4-27.1.1.aar/7c90b593899e2519d59593ba5a017517/AndroidManifest.xml:20:5-44
+MERGED from [de.hdodenhof:circleimageview:2.1.0] /home/loc/.gradle/caches/transforms-1/files-1.1/circleimageview-2.1.0.aar/8fb8b4ddd6d6b9bde776939ccbb7d2d9/AndroidManifest.xml:5:5-7:41
+MERGED from [de.hdodenhof:circleimageview:2.1.0] /home/loc/.gradle/caches/transforms-1/files-1.1/circleimageview-2.1.0.aar/8fb8b4ddd6d6b9bde776939ccbb7d2d9/AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:cardview-v7:27.1.1] /home/loc/.gradle/caches/transforms-1/files-1.1/cardview-v7-27.1.1.aar/42cb8d9376725c152dfa2d42fb442437/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:27.1.1] /home/loc/.gradle/caches/transforms-1/files-1.1/cardview-v7-27.1.1.aar/42cb8d9376725c152dfa2d42fb442437/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.1.1] /home/loc/.gradle/caches/transforms-1/files-1.1/support-fragment-27.1.1.aar/09e7988eb01bd9a02d80e97d513575b1/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.1.1] /home/loc/.gradle/caches/transforms-1/files-1.1/support-fragment-27.1.1.aar/09e7988eb01bd9a02d80e97d513575b1/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] /home/loc/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.1.1.aar/1e838d1d0f8a42d5b6a15e84c4140249/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] /home/loc/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.1.1.aar/1e838d1d0f8a42d5b6a15e84c4140249/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] /home/loc/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.1.1.aar/852982986e16d3d0151c29d212174a49/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] /home/loc/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.1.1.aar/852982986e16d3d0151c29d212174a49/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] /home/loc/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.1.1.aar/3bd926c4775222303fa46988d79e5224/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] /home/loc/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.1.1.aar/3bd926c4775222303fa46988d79e5224/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.1.1] /home/loc/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.1.1.aar/100bd9a55546779a79e6760b0794a17a/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.1.1] /home/loc/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.1.1.aar/100bd9a55546779a79e6760b0794a17a/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:27.1.1] /home/loc/.gradle/caches/transforms-1/files-1.1/transition-27.1.1.aar/69ad0db6dce4c8bcb46f8b55761c38db/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:27.1.1] /home/loc/.gradle/caches/transforms-1/files-1.1/transition-27.1.1.aar/69ad0db6dce4c8bcb46f8b55761c38db/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.1] /home/loc/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.1.1.aar/1c10009cd888e87bf2a8dc30733cf37d/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.1] /home/loc/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.1.1.aar/1c10009cd888e87bf2a8dc30733cf37d/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] /home/loc/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/43adc393056e573f9732cb95c22975e4/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] /home/loc/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/43adc393056e573f9732cb95c22975e4/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /home/loc/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.0.aar/2750e89e38b4619f3109e5b94f160eb4/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /home/loc/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.0.aar/2750e89e38b4619f3109e5b94f160eb4/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /home/loc/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.0.aar/1c793429e796b5518cf5a4f16519a99a/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /home/loc/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.0.aar/1c793429e796b5518cf5a4f16519a99a/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] /home/loc/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/834d15dedd061a409205ea6a3c49ec68/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] /home/loc/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/834d15dedd061a409205ea6a3c49ec68/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] /home/loc/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/a103fc322f423938d3b78f41c30b2e4d/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] /home/loc/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/a103fc322f423938d3b78f41c30b2e4d/AndroidManifest.xml:20:5-44
+INJECTED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml
+INJECTED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml
+		ADDED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml
+		INJECTED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml
+		ADDED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml
+		INJECTED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml

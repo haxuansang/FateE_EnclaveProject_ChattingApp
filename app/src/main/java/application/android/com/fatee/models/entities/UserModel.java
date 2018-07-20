@@ -7,9 +7,9 @@ public class UserModel{
     @SerializedName("id")
     @Expose
     private String id;
-    @SerializedName("firebaseChatId")
+    @SerializedName("quickBloxChatId")
     @Expose
-    private String firebaseChatId;
+    private String quickBloxChatId;
     @SerializedName("gender")
     @Expose
     private Boolean gender;
@@ -31,11 +31,12 @@ public class UserModel{
     @SerializedName("reportNumbers")
     @Expose
     private Integer reportNumbers;
-
+    @SerializedName("avatar")
+    @Expose
+    private String avatar;
     @SerializedName("surveyStatus")
     @Expose
     private String surveyStatus;
-
 
     public UserModel() {
     }
@@ -49,11 +50,11 @@ public class UserModel{
     }
 
     public String getFirebaseChatId() {
-        return firebaseChatId;
+        return quickBloxChatId;
     }
 
     public void setFirebaseChatId(String firebaseChatId) {
-        this.firebaseChatId = firebaseChatId;
+        this.quickBloxChatId = firebaseChatId;
     }
 
     public Boolean getGender() {
@@ -112,11 +113,34 @@ public class UserModel{
         this.reportNumbers = reportNumbers;
     }
 
+    public String getAvatar() {
+        return avatar;
+    }
+
+    public void setAvatar(String avatar) {
+        this.avatar = avatar;
+    }
+
+    public String getQuickBloxChatId() {
+        return quickBloxChatId;
+    }
+
+    public void setQuickBloxChatId(String quickBloxChatId) {
+        this.quickBloxChatId = quickBloxChatId;
+    }
+
     public String getSurveyStatus() {
         return surveyStatus;
     }
 
     public void setSurveyStatus(String surveyStatus) {
         this.surveyStatus = surveyStatus;
+    }
+
+    public UserModel(String id, String nickname, String description, String avatar) {
+        this.id = id;
+        this.nickname = nickname;
+        this.description = description;
+        this.avatar = avatar;
     }
 }

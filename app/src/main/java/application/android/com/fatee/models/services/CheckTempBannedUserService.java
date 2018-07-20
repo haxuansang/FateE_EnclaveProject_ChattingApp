@@ -1,3 +1,4 @@
+
 package application.android.com.fatee.models.services;
 
 import android.app.Service;
@@ -9,13 +10,14 @@ import android.widget.Toast;
 
 import application.android.com.fatee.utils.LoginConstant;
 
-public class CheckTempBannedUserService extends Service{
+public class CheckTempBannedUserService extends Service {
     SharedPreferences sharedPreferences;
     SharedPreferences.Editor editor;
 
     public CheckTempBannedUserService() {
 
     }
+
     @Override
     public IBinder onBind(Intent intent) {
         return null;
@@ -33,7 +35,7 @@ public class CheckTempBannedUserService extends Service{
     public void onDestroy() {
         super.onDestroy();
         sharedPreferences = getSharedPreferences(LoginConstant.SHARED_PREFERENCES_NAME_MESSAGE, Context.MODE_PRIVATE);
-        editor =  sharedPreferences.edit();
+        editor = sharedPreferences.edit();
         editor.remove(LoginConstant.TEMP_BANNED_USER_NAME);
     }
 }

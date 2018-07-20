@@ -7,14 +7,13 @@ import android.os.Bundle;
 
 import android.support.design.widget.NavigationView;
 
-import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-;
+import android.support.v4.view.GravityCompat;
 
 import application.android.com.fatee.R;
 import application.android.com.fatee.utils.SurveyConstant;
@@ -45,10 +44,10 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
         String surveyStatus = getIntent().getExtras().getString(SurveyConstant.USER_SURVEY_STATUS_KEY);
-
         fragmentManager= getFragmentManager();
         fragmentTransaction=fragmentManager.beginTransaction();
         if(surveyStatus.equals(SurveyConstant.USER_NO_FINISH_SURVEY_STATUS)) {
+
             UserUtil.getInstance(UserUtil.getUser(), SurveyConstant.USER_NO_FINISH_SURVEY_STATUS);
             fragmentTransaction.add(R.id.frame_layout, SurveyFragment.getInstance());
         } else {
@@ -128,8 +127,8 @@ public class MainActivity extends AppCompatActivity
 
                 break;
             case R.id.about:
-                fragmentTransaction.replace(R.id.frame_layout,new AboutFragment());
-                fragmentTransaction.commit();
+                Intent intentAbout = new Intent(MainActivity.this, AboutFragment.class);
+                this.startActivity(intentAbout);
                 break;
             case R.id.signout:
                 Intent intent = new Intent(MainActivity.this,LoginActivity.class);
