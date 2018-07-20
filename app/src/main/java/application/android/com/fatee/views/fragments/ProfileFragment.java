@@ -38,9 +38,9 @@ public class ProfileFragment extends Fragment implements ProfileView{
         View view = inflater.inflate(R.layout.profile_layout, container, false);
         profilePresenter = new ProfilePresenterImpl(profileView);
         no1 = (EditText) view.findViewById(R.id.description);
-        no2 = (EditText) view.findViewById(R.id.description);
-        no3 = (EditText) view.findViewById(R.id.description);
-        Button btn = (Button) view.findViewById(R.id.submit);
+        no2 = (EditText) view.findViewById(R.id.avatar);
+        no3 = (EditText) view.findViewById(R.id.nickname);
+        btn = (Button) view.findViewById(R.id.submit);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

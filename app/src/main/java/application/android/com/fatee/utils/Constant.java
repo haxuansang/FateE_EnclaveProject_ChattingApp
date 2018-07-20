@@ -14,6 +14,7 @@ public final class Constant {
     public final static String DELAY_AFTER_WRONG_5_TIMES = "You put a wrong password 5 times, now the login process is delayed";
     public final static String LOCKED_USERNAME = "You can't login with this username anymore";
     public final static String EMAIL_ERROR = "Your email must be formatted right";
+    public final static String COMFIRM_ERROR = "Your password and comfirmed password are not the same";
     private Constant() {
 
     }

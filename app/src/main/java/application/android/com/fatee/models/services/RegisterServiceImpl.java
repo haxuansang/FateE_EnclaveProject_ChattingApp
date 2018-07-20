@@ -26,7 +26,8 @@ public class RegisterServiceImpl implements RegisterService {
         call.enqueue(new retrofit2.Callback<RegisterResponse>() {
             @Override
             public void onResponse(Call<RegisterResponse> call, Response<RegisterResponse> response) {
-                if (response.code() == 200) {
+                System.out.println("Code:" + response.code());
+                if (response.isSuccessful()) {
                     registercallback.onSuccess(response.body());
                 }
 //                if (response.code() == 400) {

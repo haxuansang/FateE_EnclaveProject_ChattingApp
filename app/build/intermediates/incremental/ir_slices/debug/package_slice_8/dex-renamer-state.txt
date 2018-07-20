@@ -1,4 +1,4 @@
-#Thu Jul 19 13:58:02 ICT 2018
-base.0=/home/anh/Downloads/mobile/app/build/intermediates/transforms/dexMerger/debug/72
+#Fri Jul 20 11:26:58 ICT 2018
+base.0=/home/anh/Downloads/mobile/app/build/intermediates/transforms/dexMerger/debug/8
 path.0=classes.dex
 renamed.0=classes.dex

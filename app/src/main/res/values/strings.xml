@@ -16,7 +16,6 @@
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="copy_right" translatable="false">Copyrights © %1$d</string>
     <string name="about_page_description" translatable="false">I would like to send my sincere thanks to Enclave for helping me complete this project.</string>
@@ -33,4 +32,5 @@
     <string name="registered_email">Please enter your Registered Email below:</string>
     <string name="submit">SUBMIT</string>
     <string name="back">BACK</string>
+    <string name="register_password">Password</string>
 </resources>

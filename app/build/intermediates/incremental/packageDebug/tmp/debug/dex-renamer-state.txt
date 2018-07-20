@@ -1,10 +1,10 @@
-#Thu Jul 19 13:58:02 ICT 2018
+#Fri Jul 20 12:47:32 ICT 2018
 path.2=classes.dex
 path.1=classes.dex
 path.0=classes.dex
 renamed.2=classes3.dex
 renamed.1=classes2.dex
 renamed.0=classes.dex
-base.2=/home/anh/Downloads/mobile/app/build/intermediates/transforms/dexMerger/debug/75
-base.1=/home/anh/Downloads/mobile/app/build/intermediates/transforms/dexMerger/debug/76
-base.0=/home/anh/Downloads/mobile/app/build/intermediates/transforms/dexMerger/debug/77
+base.2=/home/anh/Downloads/mobile/app/build/intermediates/transforms/dexMerger/debug/11
+base.1=/home/anh/Downloads/mobile/app/build/intermediates/transforms/dexMerger/debug/13
+base.0=/home/anh/Downloads/mobile/app/build/intermediates/transforms/dexMerger/debug/12

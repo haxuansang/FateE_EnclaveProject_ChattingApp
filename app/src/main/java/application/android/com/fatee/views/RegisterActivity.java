@@ -2,7 +2,19 @@ package application.android.com.fatee.views;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.res.ColorStateList;
+import android.content.res.XmlResourceParser;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+<<<<<<< HEAD
+=======
+import android.support.annotation.Nullable;
+import android.support.v7.app.AlertDialog;
+import android.support.v7.app.AppCompatActivity;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.view.LayoutInflater;
+>>>>>>> 3c4b3b16bf71f83df5325b74ac0fc6b63a66ad50
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
@@ -43,7 +55,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnFocusC
         setContentView(R.layout.register_layout);
         initView();
         initFocusChangeListener();
-        registerPresenter = new RegisterPresenterImpl(registerView);
+        registerPresenter = new RegisterPresenterImpl(this);
 //        btn.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {
@@ -53,6 +65,28 @@ public class RegisterActivity extends AppCompatActivity implements View.OnFocusC
 //                }
 //            }
 //        });
+//        final Drawable drawable = getResources().getDrawable(R.drawable.about_icon_copy_right);
+//        drawable.setBounds(0, 0, drawable.getIntrinsicWidth(), drawable.getIntrinsicHeight());
+        edtRegisterConfirmPassword.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                if (edtRegisterPassword.getText().toString().equals(edtRegisterConfirmPassword.getText().toString())){
+                    edtRegisterConfirmPassword.setError(Constant.COMFIRM_ERROR,customizeErrorIcon());
+                    Toast.makeText(getApplicationContext(),"OK",Toast.LENGTH_SHORT).show();
+                }else edtRegisterConfirmPassword.setError(Constant.COMFIRM_ERROR);
+            }
+        });
+
     }
 
     public void initView() {
@@ -64,7 +98,15 @@ public class RegisterActivity extends AppCompatActivity implements View.OnFocusC
         radiogrGender = (RadioGroup) findViewById(R.id.radiogr_gender);
         radiobtnMale = (RadioButton) findViewById(R.id.radiobtn_gender_Male);
         radiobtnFemale = (RadioButton) findViewById(R.id.radiobtn_gender_Female);
-
+        btnRegister = (Button) findViewById(R.id.btn_RegisterSubmit);
+//        XmlResourceParser xrp = getResources().getXml(R.drawable.text_selector);
+//        try {
+//            ColorStateList csl = ColorStateList.createFromXml(getResources(),
+//                    xrp);
+//
+//            btnRegister.setTextColor(csl);
+//        } catch (Exception e) {
+//        }
     }
 
     public void registerSubmit(View view) {
@@ -75,7 +117,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnFocusC
         String mail = edtRegisterEmail.getText().toString();
 //        getContentfromEditText();
         if (!"".equals(username) && !"".equals(password) && !"".equals(confirmpassword) && !"".equals(nickname) && !"".equals(mail)) {
-            registerPresenter.createNewAccount(new User(username, password, confirmpassword, nickname, mail, gender));
+            registerPresenter.createNewAccount(new User(username, password, nickname, mail, gender));
         } else {
             showDiaglogMessage("Please complete putting your information before registering!");
         }
@@ -139,6 +181,11 @@ public class RegisterActivity extends AppCompatActivity implements View.OnFocusC
                     if (!isValidPassword(edtRegisterConfirmPassword.getText().toString())) {
                         edtRegisterConfirmPassword.setError(Constant.PASSWORD_ERROR);
                     }
+//                    else if (edtRegisterPassword.getText().toString().equals(edtRegisterPassword.getText().toString())){
+//                        edtRegisterConfirmPassword.setError(Constant.COMFIRM_ERROR);
+//                        Toast.makeText(getApplicationContext(),"OK",Toast.LENGTH_SHORT).show();
+//                    }else Toast.makeText(getApplicationContext(),"NOK",Toast.LENGTH_SHORT).show();
+
                 }
             }
         });
@@ -220,9 +267,6 @@ public class RegisterActivity extends AppCompatActivity implements View.OnFocusC
         String accountStatus = getAccountStatus(registerResponse);
             if ("success".equals(accountStatus)){
                 showDiaglogMessage("You had a new account now. Let's login");
-                Intent intent = new Intent(RegisterActivity.this,LoginActivity.class);
-                this.startActivity(intent);
-                finish();
             }
             else if ("failure".equals(accountStatus)){
                 showDiaglogMessage(registerResponse.getMessage());
@@ -242,10 +286,19 @@ public class RegisterActivity extends AppCompatActivity implements View.OnFocusC
                 .setCancelable(false)
                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
-
+                        Intent intent = new Intent(RegisterActivity.this,LoginActivity.class);
+                        startActivity(intent);
+                        finish();
                     }
                 });
         AlertDialog alert = builder.create();
         alert.show();
+
     }
+    public Drawable customizeErrorIcon(){
+        Drawable drawable = getResources().getDrawable(R.drawable.checked);
+        drawable.setBounds(0, 0, drawable.getIntrinsicWidth(), drawable.getIntrinsicHeight());
+        return drawable;
+    }
+
 }

@@ -244,6 +244,7 @@
         "source": "/home/loc/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/43adc393056e573f9732cb95c22975e4/res/drawable-hdpi-v4/notify_panel_notification_icon_bg.png"
     },
     {
+<<<<<<< HEAD
         "merged": "/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_list_divider_mtrl_alpha.9.png.flat",
         "source": "/home/loc/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/b724ece56b4bee46d6ca2a08c6230349/res/drawable-mdpi-v4/abc_list_divider_mtrl_alpha.9.png"
     },
@@ -254,6 +255,18 @@
     {
         "merged": "/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/res/merged/debug/drawable_disableshape.xml.flat",
         "source": "/home/loc/Desktop/Mobile demo/mobile/app/src/main/res/drawable/disableshape.xml"
+=======
+        "merged": "/home/anh/Downloads/mobile/app/build/intermediates/res/merged/debug/layout_notification_media_cancel_action.xml.flat",
+        "source": "/home/anh/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.1.1.aar/7dea7d6cc3302a89184bb848e02453c7/res/layout/notification_media_cancel_action.xml"
+    },
+    {
+        "merged": "/home/anh/Downloads/mobile/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_ic_menu_paste_mtrl_am_alpha.png.flat",
+        "source": "/home/anh/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/cbdf7017e8e550a55b9a87ff2851b643/res/drawable-hdpi-v4/abc_ic_menu_paste_mtrl_am_alpha.png"
+    },
+    {
+        "merged": "/home/anh/Downloads/mobile/app/build/intermediates/res/merged/debug/anim_abc_tooltip_exit.xml.flat",
+        "source": "/home/anh/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/cbdf7017e8e550a55b9a87ff2851b643/res/anim/abc_tooltip_exit.xml"
+>>>>>>> 3c4b3b16bf71f83df5325b74ac0fc6b63a66ad50
     },
     {
         "merged": "/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_list_longpressed_holo.9.png.flat",
@@ -288,12 +301,17 @@
         "source": "/home/loc/Desktop/Mobile demo/mobile/app/src/main/res/drawable/ic_newroom_black_24dp.xml"
     },
     {
+<<<<<<< HEAD
         "merged": "/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_abc_btn_switch_to_on_mtrl_00001.9.png.flat",
         "source": "/home/loc/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/b724ece56b4bee46d6ca2a08c6230349/res/drawable-xxxhdpi-v4/abc_btn_switch_to_on_mtrl_00001.9.png"
     },
     {
         "merged": "/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/res/merged/debug/layout_fragment_survey.xml.flat",
         "source": "/home/loc/Desktop/Mobile demo/mobile/app/src/main/res/layout/fragment_survey.xml"
+=======
+        "merged": "/home/anh/Downloads/mobile/app/build/intermediates/res/merged/debug/color-v23_abc_tint_seek_thumb.xml.flat",
+        "source": "/home/anh/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/cbdf7017e8e550a55b9a87ff2851b643/res/color-v23/abc_tint_seek_thumb.xml"
+>>>>>>> 3c4b3b16bf71f83df5325b74ac0fc6b63a66ad50
     },
     {
         "merged": "/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/res/merged/debug/layout_design_bottom_sheet_dialog.xml.flat",
@@ -332,20 +350,34 @@
         "source": "/home/loc/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/b724ece56b4bee46d6ca2a08c6230349/res/drawable-xxhdpi-v4/abc_ic_commit_search_api_mtrl_alpha.png"
     },
     {
+<<<<<<< HEAD
         "merged": "/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/res/merged/debug/color_abc_background_cache_hint_selector_material_dark.xml.flat",
         "source": "/home/loc/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/b724ece56b4bee46d6ca2a08c6230349/res/color/abc_background_cache_hint_selector_material_dark.xml"
+=======
+        "merged": "/home/anh/Downloads/mobile/app/build/intermediates/res/merged/debug/drawable_password_icon_png.png.flat",
+        "source": "/home/anh/Downloads/mobile/app/src/main/res/drawable/password_icon_png.png"
+    },
+    {
+        "merged": "/home/anh/Downloads/mobile/app/build/intermediates/res/merged/debug/color_abc_hint_foreground_material_light.xml.flat",
+        "source": "/home/anh/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/cbdf7017e8e550a55b9a87ff2851b643/res/color/abc_hint_foreground_material_light.xml"
+>>>>>>> 3c4b3b16bf71f83df5325b74ac0fc6b63a66ad50
     },
     {
         "merged": "/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/res/merged/debug/anim_design_snackbar_in.xml.flat",
         "source": "/home/loc/.gradle/caches/transforms-1/files-1.1/design-27.1.1.aar/8a48543de7706e05edcebf79de66a226/res/anim/design_snackbar_in.xml"
     },
     {
+<<<<<<< HEAD
         "merged": "/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_switch_track_mtrl_alpha.9.png.flat",
         "source": "/home/loc/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/b724ece56b4bee46d6ca2a08c6230349/res/drawable-mdpi-v4/abc_switch_track_mtrl_alpha.9.png"
     },
     {
         "merged": "/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/res/merged/debug/drawable_abc_switch_thumb_material.xml.flat",
         "source": "/home/loc/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/b724ece56b4bee46d6ca2a08c6230349/res/drawable/abc_switch_thumb_material.xml"
+=======
+        "merged": "/home/anh/Downloads/mobile/app/build/intermediates/res/merged/debug/drawable_design_fab_background.xml.flat",
+        "source": "/home/anh/.gradle/caches/transforms-1/files-1.1/design-27.1.1.aar/7418363d931d7312b2b5fbb1d96693b6/res/drawable/design_fab_background.xml"
+>>>>>>> 3c4b3b16bf71f83df5325b74ac0fc6b63a66ad50
     },
     {
         "merged": "/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/res/merged/debug/menu_drawermenu.xml.flat",
@@ -396,8 +428,17 @@
         "source": "/home/loc/.gradle/caches/transforms-1/files-1.1/design-27.1.1.aar/8a48543de7706e05edcebf79de66a226/res/drawable/design_fab_background.xml"
     },
     {
+<<<<<<< HEAD
         "merged": "/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/res/merged/debug/layout_fragment_buddy.xml.flat",
         "source": "/home/loc/Desktop/Mobile demo/mobile/app/src/main/res/layout/fragment_buddy.xml"
+=======
+        "merged": "/home/anh/Downloads/mobile/app/build/intermediates/res/merged/debug/drawable_ic_if_pwd.xml.flat",
+        "source": "/home/anh/Downloads/mobile/app/src/main/res/drawable/ic_if_pwd.xml"
+    },
+    {
+        "merged": "/home/anh/Downloads/mobile/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_notification_bg_normal_pressed.9.png.flat",
+        "source": "/home/anh/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/9136ed460ec6484a4b67ceda00ae0782/res/drawable-hdpi-v4/notification_bg_normal_pressed.9.png"
+>>>>>>> 3c4b3b16bf71f83df5325b74ac0fc6b63a66ad50
     },
     {
         "merged": "/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_btn_check_to_on_mtrl_000.png.flat",
@@ -552,6 +593,7 @@
         "source": "/home/loc/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/b724ece56b4bee46d6ca2a08c6230349/res/drawable-hdpi-v4/abc_textfield_search_default_mtrl_alpha.9.png"
     },
     {
+<<<<<<< HEAD
         "merged": "/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/res/merged/debug/color_abc_tint_default.xml.flat",
         "source": "/home/loc/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/b724ece56b4bee46d6ca2a08c6230349/res/color/abc_tint_default.xml"
     },
@@ -562,6 +604,18 @@
     {
         "merged": "/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/res/merged/debug/drawable-v21_design_password_eye.xml.flat",
         "source": "/home/loc/.gradle/caches/transforms-1/files-1.1/design-27.1.1.aar/8a48543de7706e05edcebf79de66a226/res/drawable-v21/design_password_eye.xml"
+=======
+        "merged": "/home/anh/Downloads/mobile/app/build/intermediates/res/merged/debug/drawable-v23_abc_control_background_material.xml.flat",
+        "source": "/home/anh/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/cbdf7017e8e550a55b9a87ff2851b643/res/drawable-v23/abc_control_background_material.xml"
+    },
+    {
+        "merged": "/home/anh/Downloads/mobile/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_abc_ic_star_half_black_16dp.png.flat",
+        "source": "/home/anh/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/cbdf7017e8e550a55b9a87ff2851b643/res/drawable-xxxhdpi-v4/abc_ic_star_half_black_16dp.png"
+    },
+    {
+        "merged": "/home/anh/Downloads/mobile/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_list_longpressed_holo.9.png.flat",
+        "source": "/home/anh/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/cbdf7017e8e550a55b9a87ff2851b643/res/drawable-hdpi-v4/abc_list_longpressed_holo.9.png"
+>>>>>>> 3c4b3b16bf71f83df5325b74ac0fc6b63a66ad50
     },
     {
         "merged": "/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_list_selector_disabled_holo_light.9.png.flat",
@@ -836,8 +890,17 @@
         "source": "/home/loc/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/b724ece56b4bee46d6ca2a08c6230349/res/drawable-v21/abc_btn_colored_material.xml"
     },
     {
+<<<<<<< HEAD
         "merged": "/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/res/merged/debug/drawable_register_email.xml.flat",
         "source": "/home/loc/Desktop/Mobile demo/mobile/app/src/main/res/drawable/register_email.xml"
+=======
+        "merged": "/home/anh/Downloads/mobile/app/build/intermediates/res/merged/debug/drawable_checked.png.flat",
+        "source": "/home/anh/Downloads/mobile/app/src/main/res/drawable/checked.png"
+    },
+    {
+        "merged": "/home/anh/Downloads/mobile/app/build/intermediates/res/merged/debug/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "/home/anh/Downloads/mobile/app/src/main/res/mipmap-xxhdpi/ic_launcher.png"
+>>>>>>> 3c4b3b16bf71f83df5325b74ac0fc6b63a66ad50
     },
     {
         "merged": "/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_design_ic_visibility.png.flat",
@@ -1120,20 +1183,34 @@
         "source": "/home/loc/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/b724ece56b4bee46d6ca2a08c6230349/res/drawable-xhdpi-v4/abc_ic_star_half_black_36dp.png"
     },
     {
+<<<<<<< HEAD
         "merged": "/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/res/merged/debug/drawable_error.png.flat",
         "source": "/home/loc/Desktop/Mobile demo/mobile/app/src/main/res/drawable/error.png"
+=======
+        "merged": "/home/anh/Downloads/mobile/app/build/intermediates/res/merged/debug/drawable_user_icon_png.png.flat",
+        "source": "/home/anh/Downloads/mobile/app/src/main/res/drawable/user_icon_png.png"
+    },
+    {
+        "merged": "/home/anh/Downloads/mobile/app/build/intermediates/res/merged/debug/anim_left_enter.xml.flat",
+        "source": "/home/anh/Downloads/mobile/app/src/main/res/anim/left_enter.xml"
+>>>>>>> 3c4b3b16bf71f83df5325b74ac0fc6b63a66ad50
     },
     {
         "merged": "/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_ic_star_half_black_48dp.png.flat",
         "source": "/home/loc/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/b724ece56b4bee46d6ca2a08c6230349/res/drawable-xhdpi-v4/abc_ic_star_half_black_48dp.png"
     },
     {
+<<<<<<< HEAD
         "merged": "/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_abc_ic_menu_share_mtrl_alpha.png.flat",
         "source": "/home/loc/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/b724ece56b4bee46d6ca2a08c6230349/res/drawable-xxxhdpi-v4/abc_ic_menu_share_mtrl_alpha.png"
     },
     {
         "merged": "/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_ic_menu_selectall_mtrl_alpha.png.flat",
         "source": "/home/loc/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/b724ece56b4bee46d6ca2a08c6230349/res/drawable-xxhdpi-v4/abc_ic_menu_selectall_mtrl_alpha.png"
+=======
+        "merged": "/home/anh/Downloads/mobile/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_textfield_activated_mtrl_alpha.9.png.flat",
+        "source": "/home/anh/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/cbdf7017e8e550a55b9a87ff2851b643/res/drawable-mdpi-v4/abc_textfield_activated_mtrl_alpha.9.png"
+>>>>>>> 3c4b3b16bf71f83df5325b74ac0fc6b63a66ad50
     },
     {
         "merged": "/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/res/merged/debug/layout_design_navigation_item_separator.xml.flat",
@@ -2012,8 +2089,17 @@
         "source": "/home/loc/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/b724ece56b4bee46d6ca2a08c6230349/res/drawable-xxhdpi-v4/abc_ic_menu_cut_mtrl_alpha.png"
     },
     {
+<<<<<<< HEAD
         "merged": "/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_spinner_mtrl_am_alpha.9.png.flat",
         "source": "/home/loc/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/b724ece56b4bee46d6ca2a08c6230349/res/drawable-hdpi-v4/abc_spinner_mtrl_am_alpha.9.png"
+=======
+        "merged": "/home/anh/Downloads/mobile/app/build/intermediates/res/merged/debug/drawable_ic_if_user.xml.flat",
+        "source": "/home/anh/Downloads/mobile/app/src/main/res/drawable/ic_if_user.xml"
+    },
+    {
+        "merged": "/home/anh/Downloads/mobile/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_notification_bg_low_pressed.9.png.flat",
+        "source": "/home/anh/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/9136ed460ec6484a4b67ceda00ae0782/res/drawable-xhdpi-v4/notification_bg_low_pressed.9.png"
+>>>>>>> 3c4b3b16bf71f83df5325b74ac0fc6b63a66ad50
     },
     {
         "merged": "/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/res/merged/debug/drawable_abc_item_background_holo_dark.xml.flat",
