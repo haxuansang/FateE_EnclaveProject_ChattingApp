@@ -2,9 +2,12 @@ package application.android.com.fatee.views;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
@@ -20,8 +23,10 @@ import application.android.com.fatee.R;
 import application.android.com.fatee.models.entities.RegisterResponse;
 import application.android.com.fatee.models.entities.User;
 import application.android.com.fatee.presenters.RegisterPresenterImpl;
+import application.android.com.fatee.utils.DiaglogConstant;
 import application.android.com.fatee.utils.LoginConstant;
 import application.android.com.fatee.utils.MailConstant;
+import application.android.com.fatee.utils.RegisterConstant;
 import application.android.com.fatee.views.interfaces.RegisterView;
 
 public class RegisterActivity extends AppCompatActivity implements View.OnFocusChangeListener, RegisterView {
@@ -46,16 +51,27 @@ public class RegisterActivity extends AppCompatActivity implements View.OnFocusC
         setContentView(R.layout.register_layout);
         initView();
         initFocusChangeListener();
-        registerPresenter = new RegisterPresenterImpl(registerView);
-//        btn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                if (no1.getText().toString().isEmpty() && no2.getText().toString().isEmpty()){
-//                    Toast.makeText(RegisterActivity.this,"Done",Toast.LENGTH_SHORT).show();
-//                    dialog.dismiss();
-//                }
-//            }
-//        });
+        registerPresenter = new RegisterPresenterImpl(this);
+        edtRegisterConfirmPassword.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                if (edtRegisterPassword.getText().toString().equals(edtRegisterConfirmPassword.getText().toString())){
+                    edtRegisterConfirmPassword.setError(RegisterConstant.COMFIRM_ERROR,customizeErrorIcon());
+                    Toast.makeText(getApplicationContext(),"OK",Toast.LENGTH_SHORT).show();
+                }else edtRegisterConfirmPassword.setError(RegisterConstant.COMFIRM_ERROR);
+            }
+        });
+
     }
 
     public void initView() {
@@ -67,7 +83,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnFocusC
         radiogrGender = (RadioGroup) findViewById(R.id.radiogr_gender);
         radiobtnMale = (RadioButton) findViewById(R.id.radiobtn_gender_Male);
         radiobtnFemale = (RadioButton) findViewById(R.id.radiobtn_gender_Female);
-
+        btnRegister = (Button) findViewById(R.id.btn_RegisterSubmit);
     }
 
     public void registerSubmit(View view) {
@@ -76,16 +92,11 @@ public class RegisterActivity extends AppCompatActivity implements View.OnFocusC
         String confirmpassword = edtRegisterConfirmPassword.getText().toString();
         String nickname = edtRegisterNickname.getText().toString();
         String mail = edtRegisterEmail.getText().toString();
-//        getContentfromEditText();
         if (!"".equals(username) && !"".equals(password) && !"".equals(confirmpassword) && !"".equals(nickname) && !"".equals(mail)) {
-            registerPresenter.createNewAccount(new User(username, password, confirmpassword, nickname, mail, gender));
+            registerPresenter.createNewAccount(new User(username, password, nickname, mail, gender));
         } else {
             showDiaglogMessage("Please complete putting your information before registering!");
         }
-
-//        Toast.makeText(RegisterActivity.this, "Done", Toast.LENGTH_SHORT).show();
-//        Intent intent = new Intent(this, LoginActivity.class);
-//        startActivity(intent);
     }
 
     public boolean isValidPassword(String password) {
@@ -169,30 +180,6 @@ public class RegisterActivity extends AppCompatActivity implements View.OnFocusC
         inputMethodManager.hideSoftInputFromWindow(view.getWindowToken(), 0);
     }
 
-    //    public void onRadioButtonClicked(View v) {
-//        int idChecked = radiogrGender.getCheckedRadioButtonId();
-//        boolean checked = ((RadioButton) v).isChecked();
-//        switch (v.getId()) {
-//            case R.id.radiobtn_gender_Male:
-//                if(checked)
-//                Toast.makeText(this,"Male",Toast.LENGTH_SHORT).show();
-//                break;
-//            case R.id.radiobtn_gender_Female:
-//                if (checked )
-//                Toast.makeText(this,"Female",Toast.LENGTH_SHORT).show();
-//                break;
-//        }
-//
-//    }
-//    public boolean onRadioButtonClickedMale(View view) {
-//        Toast.makeText(this, "Male", Toast.LENGTH_SHORT).show();
-//        return checkGender;
-//    }
-//
-//    public boolean onRadioButtonClickedFemale(View view) {
-//        Toast.makeText(this, "Female", Toast.LENGTH_SHORT).show();
-//        return !checkGender;
-//    }
     public void onRadioButtonClicked(View view) {
         boolean checked = ((RadioButton) view).isChecked();
 
@@ -209,13 +196,6 @@ public class RegisterActivity extends AppCompatActivity implements View.OnFocusC
         }
     }
 
-//    private void getContentfromEditText() {
-//        String username = edtRegisterUsername.getText().toString();
-//        String password = edtRegisterPassword.getText().toString();
-//        String confirmPassword = edtRegisterConfirmPassword.getText().toString();
-//        String nickname = edtRegisterNickname.getText().toString();
-//        String email = edtRegisterEmail.getText().toString();
-//    }
 
     @Override
     public void notificationsAfterRegisteration(RegisterResponse registerResponse) {
@@ -223,9 +203,6 @@ public class RegisterActivity extends AppCompatActivity implements View.OnFocusC
         String accountStatus = getAccountStatus(registerResponse);
             if ("success".equals(accountStatus)){
                 showDiaglogMessage("You had a new account now. Let's login");
-                Intent intent = new Intent(RegisterActivity.this,LoginActivity.class);
-                this.startActivity(intent);
-                finish();
             }
             else if ("failure".equals(accountStatus)){
                 showDiaglogMessage(registerResponse.getMessage());
@@ -243,12 +220,21 @@ public class RegisterActivity extends AppCompatActivity implements View.OnFocusC
         AlertDialog.Builder builder= new AlertDialog.Builder(RegisterActivity.this);
         builder.setMessage(message)
                 .setCancelable(false)
-                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                .setPositiveButton(DiaglogConstant.OK_ACTION, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
-
+                        Intent intent = new Intent(RegisterActivity.this,LoginActivity.class);
+                        startActivity(intent);
+                        finish();
                     }
                 });
         AlertDialog alert = builder.create();
         alert.show();
+
     }
+    public Drawable customizeErrorIcon(){
+        Drawable drawable = getResources().getDrawable(R.drawable.checked);
+        drawable.setBounds(0, 0, drawable.getIntrinsicWidth(), drawable.getIntrinsicHeight());
+        return drawable;
+    }
+
 }

@@ -22,7 +22,7 @@ public class ProfileServiceImpl implements ProfileService{
         call.enqueue(new retrofit2.Callback<ProfileResponse>() {
             @Override
             public void onResponse(Call<ProfileResponse> call, Response<ProfileResponse> response) {
-                if (response.code() == 200) {
+                if (response.isSuccessful()) {
                     profileCallback.onSuccess(response.body());
                 }
 //                if (response.code() == 400) {

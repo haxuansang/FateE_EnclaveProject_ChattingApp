@@ -1,4 +1,4 @@
-#Thu Jul 19 17:23:04 ICT 2018
+#Fri Jul 20 13:29:59 ICT 2018
 base.0=/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/transforms/dexMerger/debug/2
 path.0=classes.dex
 renamed.0=classes.dex

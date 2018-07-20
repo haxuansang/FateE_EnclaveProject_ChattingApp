@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml:2:1-49:12
-INJECTED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml:2:1-49:12
-INJECTED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml:2:1-49:12
-INJECTED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml:2:1-49:12
+ADDED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml:2:1-57:12
+INJECTED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml:2:1-57:12
+INJECTED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml:2:1-57:12
+INJECTED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml:2:1-57:12
 MERGED from [com.android.support:design:27.1.1] /home/loc/.gradle/caches/transforms-1/files-1.1/design-27.1.1.aar/8a48543de7706e05edcebf79de66a226/AndroidManifest.xml:17:1-22:12
 MERGED from [com.borjabravo:readmoretextview:2.0.1] /home/loc/.gradle/caches/transforms-1/files-1.1/readmoretextview-2.0.1.aar/3c2bcb3295abfbee98865ad30a36ff9e/AndroidManifest.xml:2:1-16:12
 MERGED from [com.android.support:appcompat-v7:27.1.1] /home/loc/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/b724ece56b4bee46d6ca2a08c6230349/AndroidManifest.xml:17:1-22:12
@@ -24,20 +24,20 @@ MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /home/loc/.gradle/cache
 MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /home/loc/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.0.aar/1c793429e796b5518cf5a4f16519a99a/AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.lifecycle:runtime:1.1.0] /home/loc/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/834d15dedd061a409205ea6a3c49ec68/AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.core:runtime:1.1.0] /home/loc/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/a103fc322f423938d3b78f41c30b2e4d/AndroidManifest.xml:17:1-22:12
-INJECTED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml:2:1-49:12
-INJECTED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml:2:1-49:12
-INJECTED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml:2:1-49:12
+INJECTED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml:2:1-57:12
+INJECTED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml:2:1-57:12
+INJECTED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml:2:1-57:12
 	package
 		ADDED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml:3:5-44
 		INJECTED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml
 		INJECTED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml
 	android:versionName
 		INJECTED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml
-		ADDED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml:2:1-49:12
+		ADDED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml:2:1-57:12
 		INJECTED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml
 	android:versionCode
 		INJECTED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml
-		ADDED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml:2:1-49:12
+		ADDED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml:2:1-57:12
 		INJECTED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml:2:11-69
@@ -54,7 +54,7 @@ ADDED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml
 	android:name
 		ADDED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml:7:22-64
 application
-ADDED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml:9:5-48:19
+ADDED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml:9:5-56:19
 MERGED from [com.borjabravo:readmoretextview:2.0.1] /home/loc/.gradle/caches/transforms-1/files-1.1/readmoretextview-2.0.1.aar/3c2bcb3295abfbee98865ad30a36ff9e/AndroidManifest.xml:11:5-14:19
 MERGED from [com.borjabravo:readmoretextview:2.0.1] /home/loc/.gradle/caches/transforms-1/files-1.1/readmoretextview-2.0.1.aar/3c2bcb3295abfbee98865ad30a36ff9e/AndroidManifest.xml:11:5-14:19
 MERGED from [com.android.support.constraint:constraint-layout:1.1.1] /home/loc/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.1.aar/9183aee9f583c7ac91c125059fa0e9dd/AndroidManifest.xml:9:5-20
@@ -90,35 +90,37 @@ ADDED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml
 	android:name
 		ADDED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml:22:27-74
 activity#application.android.com.fatee.views.fragments.AboutFragment
-ADDED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml:25:9-66
+ADDED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml:25:9-33:20
+	android:theme
+		ADDED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml:27:13-44
 	android:name
-		ADDED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml:25:19-64
+		ADDED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml:26:13-58
 activity#application.android.com.fatee.views.MainActivity
-ADDED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml:26:9-30:20
+ADDED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml:34:9-38:20
 	android:label
-		ADDED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml:28:13-56
+		ADDED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml:36:13-56
 	android:theme
-		ADDED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml:29:13-44
+		ADDED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml:37:13-44
 	android:name
-		ADDED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml:27:13-47
+		ADDED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml:35:13-47
 activity#application.android.com.fatee.views.RegisterActivity
-ADDED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml:31:9-38:20
+ADDED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml:39:9-46:20
 	android:theme
-		ADDED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml:32:13-44
+		ADDED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml:40:13-44
 	android:name
-		ADDED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml:31:19-57
+		ADDED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml:39:19-57
 receiver#application.android.com.fatee.utils.ConnectionBroadcastReceiver
-ADDED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml:40:9-80
+ADDED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml:48:9-80
 	android:name
-		ADDED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml:40:19-68
+		ADDED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml:48:19-68
 service#application.android.com.fatee.models.services.CheckTempBannedUserService
-ADDED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml:42:9-45:47
+ADDED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml:50:9-53:47
 	android:enabled
-		ADDED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml:44:13-35
+		ADDED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml:52:13-35
 	android:exported
-		ADDED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml:45:13-36
+		ADDED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml:53:13-36
 	android:name
-		ADDED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml:43:13-71
+		ADDED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml:51:13-71
 uses-sdk
 INJECTED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /home/loc/Desktop/Mobile demo/mobile/app/src/main/AndroidManifest.xml
