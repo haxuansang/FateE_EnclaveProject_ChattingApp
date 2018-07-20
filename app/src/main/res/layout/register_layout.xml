@@ -73,7 +73,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:background="@android:color/transparent"
-            android:drawableLeft="@drawable/password_confirm_icon"
+            android:drawableLeft="@drawable/nickname_icon"
             android:drawablePadding="8dp"
             android:gravity="center_vertical"
             android:hint="Nickname"

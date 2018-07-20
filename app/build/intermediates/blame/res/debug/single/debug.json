@@ -268,12 +268,16 @@
         "source": "/home/loc/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/b724ece56b4bee46d6ca2a08c6230349/res/drawable-ldrtl-xhdpi-v17/abc_ic_menu_copy_mtrl_am_alpha.png"
     },
     {
+        "merged": "/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_scrubber_control_to_pressed_mtrl_000.png.flat",
+        "source": "/home/loc/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/b724ece56b4bee46d6ca2a08c6230349/res/drawable-mdpi-v4/abc_scrubber_control_to_pressed_mtrl_000.png"
+    },
+    {
         "merged": "/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/res/merged/debug/anim_left_enter.xml.flat",
         "source": "/home/loc/Desktop/Mobile demo/mobile/app/src/main/res/anim/left_enter.xml"
     },
     {
-        "merged": "/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_scrubber_control_to_pressed_mtrl_000.png.flat",
-        "source": "/home/loc/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/b724ece56b4bee46d6ca2a08c6230349/res/drawable-mdpi-v4/abc_scrubber_control_to_pressed_mtrl_000.png"
+        "merged": "/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/res/merged/debug/drawable_ic_smile.xml.flat",
+        "source": "/home/loc/Desktop/Mobile demo/mobile/app/src/main/res/drawable/ic_smile.xml"
     },
     {
         "merged": "/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
@@ -1738,6 +1742,10 @@
     {
         "merged": "/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_notification_bg_low_pressed.9.png.flat",
         "source": "/home/loc/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/43adc393056e573f9732cb95c22975e4/res/drawable-hdpi-v4/notification_bg_low_pressed.9.png"
+    },
+    {
+        "merged": "/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/res/merged/debug/drawable_nick_name_icon.xml.flat",
+        "source": "/home/loc/Desktop/Mobile demo/mobile/app/src/main/res/drawable/nick_name_icon.xml"
     },
     {
         "merged": "/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_scrubber_control_to_pressed_mtrl_005.png.flat",

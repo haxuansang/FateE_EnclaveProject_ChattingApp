@@ -2,13 +2,13 @@
 <instant-run
     abi="x86"
     api-level="24"
-    build-mode="COLD"
+    build-mode="HOT_WARM"
     density="xhdpi"
     format="10"
     plugin-version="3.1.3"
-    timestamp="1532068961071"
+    timestamp="1532069978618"
     token="902580268002583190"
-    verifier="COLD_SWAP_REQUESTED" >
+    verifier="COMPATIBLE" >
 
     <task
         name="javac"
@@ -24,8 +24,8 @@
         duration="0" />
 
     <artifact
-        location="/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/instant-run-apk/debug/app-debug.apk"
-        type="SPLIT_MAIN" />
+        location="/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/instant-run-resources/resources-debug.ir.ap_"
+        type="RESOURCES" />
 
     <build
         build-mode="FULL"
@@ -70,11 +70,43 @@
     </build>
     <build
         build-mode="COLD"
-        timestamp="1532068961071"
-        verifier="COLD_SWAP_REQUESTED" >
+        timestamp="1532069807279"
+        verifier="R_CLASS_CHANGE" >
+        <artifact
+            location="/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/split-apk/debug/slices/slice_0.apk"
+            type="SPLIT" />
+        <artifact
+            location="/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/split-apk/debug/slices/slice_1.apk"
+            type="SPLIT" />
+        <artifact
+            location="/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/split-apk/debug/slices/slice_3.apk"
+            type="SPLIT" />
+        <artifact
+            location="/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/split-apk/debug/slices/slice_4.apk"
+            type="SPLIT" />
+        <artifact
+            location="/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/split-apk/debug/slices/slice_5.apk"
+            type="SPLIT" />
+        <artifact
+            location="/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/split-apk/debug/slices/slice_6.apk"
+            type="SPLIT" />
+        <artifact
+            location="/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/split-apk/debug/slices/slice_7.apk"
+            type="SPLIT" />
+        <artifact
+            location="/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/split-apk/debug/slices/slice_9.apk"
+            type="SPLIT" />
         <artifact
             location="/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/instant-run-apk/debug/app-debug.apk"
             type="SPLIT_MAIN" />
+    </build>
+    <build
+        build-mode="HOT_WARM"
+        timestamp="1532069978618"
+        verifier="COMPATIBLE" >
+        <artifact
+            location="/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/instant-run-resources/resources-debug.ir.ap_"
+            type="RESOURCES" />
     </build>
 
 </instant-run>

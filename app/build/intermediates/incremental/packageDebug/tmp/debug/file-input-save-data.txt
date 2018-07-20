@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Fri Jul 20 13:42:50 ICT 2018
+#Fri Jul 20 13:57:18 ICT 2018
 1.base=/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/transforms/dexMerger/debug/14
 2.path=classes.dex
 0.baseType=DIRECTORY
