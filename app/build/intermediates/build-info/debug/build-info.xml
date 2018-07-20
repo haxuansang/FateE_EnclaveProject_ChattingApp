@@ -5,23 +5,28 @@
     build-mode="COLD"
     density="xhdpi"
     format="10"
+    ir-eligibility="COMPATIBLE"
     plugin-version="3.1.3"
-    timestamp="1532057774463"
+    timestamp="1532061824282"
     token="902580268002583190"
     verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="0" />
+        duration="390" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="0" />
+        duration="40" />
     <task
         name="verifier"
-        duration="0" />
+        duration="5" />
+
+    <artifact
+        location="/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/split-apk/debug/slices/slice_7.apk"
+        type="SPLIT" />
 
     <build
         build-mode="FULL"
@@ -79,18 +84,26 @@
         timestamp="1532057640059"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
-            location="/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/split-apk/debug/slices/slice_0.apk"
-            type="SPLIT" />
-        <artifact
             location="/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/split-apk/debug/slices/slice_6.apk"
-            type="SPLIT" />
-        <artifact
-            location="/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/split-apk/debug/slices/slice_7.apk"
             type="SPLIT" />
     </build>
     <build
         build-mode="COLD"
-        timestamp="1532057774463"
-        verifier="COLD_SWAP_REQUESTED" />
+        ir-eligibility="COMPATIBLE"
+        timestamp="1532061655884"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/split-apk/debug/slices/slice_0.apk"
+            type="SPLIT" />
+    </build>
+    <build
+        build-mode="COLD"
+        ir-eligibility="COMPATIBLE"
+        timestamp="1532061824282"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/split-apk/debug/slices/slice_7.apk"
+            type="SPLIT" />
+    </build>
 
 </instant-run>

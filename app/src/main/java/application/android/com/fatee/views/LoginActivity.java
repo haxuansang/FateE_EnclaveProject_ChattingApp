@@ -237,18 +237,21 @@ public class LoginActivity extends AppCompatActivity implements ViewProcessLogin
     }
 
     public void login(View v) {
-        String currentUsername = edtUsername.getText().toString();
-        String password = edtPassword.getText().toString();
-        if (!preUsername.equals(currentUsername)) {
-            count = 0;
-            wrong_info_times = 0;
-            countdown = 5;
-        }
-        if (!currentUsername.equals(LoginConstant.USERNAME_EMPTY) && !password.equals(LoginConstant.PASSWORD_EMPTY)) {
-            presenterLogicProcessLogin.getDataFromServer(new User(currentUsername, password));
-            preUsername = currentUsername;
-        } else {
-            showNoticeDiaglogMessage(LoginConstant.USER_INFO_REQUIREMENT_MESSAGE);
+        System.out.println(UserUtil.getUser());
+        if(UserUtil.getUser() == null) {
+            String currentUsername = edtUsername.getText().toString();
+            String password = edtPassword.getText().toString();
+            if (!preUsername.equals(currentUsername)) {
+                count = 0;
+                wrong_info_times = 0;
+                countdown = 5;
+            }
+            if (!currentUsername.equals(LoginConstant.USERNAME_EMPTY) && !password.equals(LoginConstant.PASSWORD_EMPTY)) {
+                presenterLogicProcessLogin.getDataFromServer(new User(currentUsername, password));
+                preUsername = currentUsername;
+            } else {
+                showNoticeDiaglogMessage(LoginConstant.USER_INFO_REQUIREMENT_MESSAGE);
+            }
         }
     }
 

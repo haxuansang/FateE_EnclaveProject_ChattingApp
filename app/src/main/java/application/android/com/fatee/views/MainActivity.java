@@ -131,9 +131,10 @@ public class MainActivity extends AppCompatActivity
                 this.startActivity(intentAbout);
                 break;
             case R.id.signout:
+                UserUtil.getInstance(null, null);
                 Intent intent = new Intent(MainActivity.this,LoginActivity.class);
-                this.startActivity(intent);
-                this.finish();
+                startActivity(intent);
+                finish();
                 break;
 
 

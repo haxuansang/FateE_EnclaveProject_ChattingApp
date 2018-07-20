@@ -11,9 +11,9 @@ public class UserUtil {
     public static UserUtil getInstance(UserModel u, String s) {
         if(instance == null) {
             instance = new UserUtil();
-            user = u;
-            surveyStatus = s;
         }
+        user = u;
+        surveyStatus = s;
         return instance;
     }
 
