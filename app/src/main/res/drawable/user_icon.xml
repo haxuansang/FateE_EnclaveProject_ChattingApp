@@ -14,7 +14,7 @@
         </shape>
     </item>
     <item
-        android:drawable="@drawable/ic_username_black_24dp"
+        android:drawable="@drawable/ic_if_user"
         android:gravity="center" />
 
 

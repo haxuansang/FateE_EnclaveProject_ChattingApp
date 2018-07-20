@@ -50,7 +50,7 @@ public class User {
         this.password = password;
     }
 
-    public User(String username, String password, String confirmPassword, String mail, String nickname, Boolean gender) {
+    public User(String username, String password, String mail, String nickname, Boolean gender) {
         this.username = username;
         this.password = password;
         this.confirmPassword = confirmPassword;

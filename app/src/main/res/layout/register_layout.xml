@@ -4,7 +4,7 @@
     android:layout_height="fill_parent"
     android:focusableInTouchMode="true"
     android:orientation="vertical"
-    android:padding="20dp">>
+    android:padding="20dp">
 
     <TextView
         android:layout_width="fill_parent"
@@ -27,7 +27,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:background="@android:color/transparent"
-            android:drawableLeft="@drawable/user_icon_png"
+            android:drawableLeft="@drawable/user_icon"
             android:drawablePadding="8dp"
             android:gravity="center_vertical"
             android:hint="Username"
@@ -55,7 +55,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:background="@android:color/transparent"
-            android:drawableLeft="@drawable/mail_icon_png"
+            android:drawableLeft="@drawable/mail_icon"
             android:drawablePadding="8dp"
             android:gravity="center_vertical"
             android:hint="Email"
@@ -83,11 +83,11 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:background="@android:color/transparent"
-            android:drawableLeft="@drawable/mail_icon_png"
+            android:drawableLeft="@drawable/password_confirm_icon"
             android:drawablePadding="8dp"
             android:gravity="center_vertical"
             android:hint="Nickname"
-            android:inputType="phone"
+            android:inputType="text"
             android:padding="10dp"
             android:singleLine="true"
             android:textColor="#9E9E9E"
@@ -109,10 +109,10 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:background="@android:color/transparent"
-            android:drawableLeft="@drawable/mail_icon_png"
+            android:drawableLeft="@drawable/password_icon"
             android:drawablePadding="8dp"
             android:gravity="center_vertical"
-            android:hint="@string/register_nickname"
+            android:hint="@string/register_password"
             android:inputType="textPassword"
             android:padding="10dp"
             android:singleLine="true"
@@ -134,7 +134,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:background="@android:color/transparent"
-            android:drawableLeft="@drawable/password_icon_png"
+            android:drawableLeft="@drawable/password_confirm_icon"
             android:drawablePadding="8dp"
             android:gravity="center_vertical"
             android:hint="@string/register_password_verify"
@@ -154,21 +154,24 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_gravity="center">
+        android:layout_gravity="center"
+        android:padding="15dp">
 
         <RadioButton
             android:id="@+id/radiobtn_gender_Male"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:text="Male"
-            android:textColor="#33b5e5"/>
+            android:textColor="#33b5e5"
+            android:onClick="onRadioButtonClicked"/>
 
         <RadioButton
             android:id="@+id/radiobtn_gender_Female"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:text="Female"
-            android:textColor="#33b5e5"/>
+            android:textColor="#33b5e5"
+            android:onClick="onRadioButtonClicked"/>
     </RadioGroup>
     <CheckBox
         android:id="@+id/terms_conditions"
@@ -187,9 +190,10 @@
         android:background="@drawable/loginbutton_selector"
         android:padding="3dp"
         android:text="SUBMIT"
-        android:textColor="#33b5e5"
+        android:textColor="#FAFAFA"
         android:textSize="17sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:onClick="registerSubmit"/>
 
     <TextView
         android:id="@+id/already_user"
