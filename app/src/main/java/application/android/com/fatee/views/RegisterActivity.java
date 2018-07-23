@@ -67,7 +67,6 @@ public class RegisterActivity extends AppCompatActivity implements View.OnFocusC
             public void afterTextChanged(Editable editable) {
                 if (edtRegisterPassword.getText().toString().equals(edtRegisterConfirmPassword.getText().toString())){
                     edtRegisterConfirmPassword.setError(RegisterConstant.COMFIRM_ERROR,customizeErrorIcon());
-                    Toast.makeText(getApplicationContext(),"OK",Toast.LENGTH_SHORT).show();
                 }else edtRegisterConfirmPassword.setError(RegisterConstant.COMFIRM_ERROR);
             }
         });
@@ -199,7 +198,6 @@ public class RegisterActivity extends AppCompatActivity implements View.OnFocusC
 
     @Override
     public void notificationsAfterRegisteration(RegisterResponse registerResponse) {
-        Toast.makeText(this,"A",Toast.LENGTH_SHORT).show();
         String accountStatus = getAccountStatus(registerResponse);
             if ("success".equals(accountStatus)){
                 showDiaglogMessage("You had a new account now. Let's login");

@@ -1,9 +1,13 @@
 package application.android.com.fatee.utils;
 
+import application.android.com.fatee.models.entities.User;
 import application.android.com.fatee.models.entities.UserModel;
 
 public class UserUtil {
-    private static UserModel user;
+    private static UserModel userModel;
+
+    private static User user;
+
     private static String surveyStatus;
 
     private static UserUtil instance;
@@ -12,13 +16,13 @@ public class UserUtil {
         if(instance == null) {
             instance = new UserUtil();
         }
-        user = u;
+        userModel = u;
         surveyStatus = s;
         return instance;
     }
 
-    public static UserModel getUser() {
-        return user;
+    public static UserModel getUserModel() {
+        return userModel;
     }
 
     public static String getSurveyStatus() {
@@ -27,5 +31,13 @@ public class UserUtil {
 
     public static void setSurveyStatus(String s) {
         surveyStatus = s;
+    }
+
+    public static User getUser() {
+        return user;
+    }
+
+    public static void setUser(User user) {
+        UserUtil.user = user;
     }
 }

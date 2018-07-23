@@ -72,6 +72,8 @@ public class SurveyFragment extends Fragment implements SurveyView, OnReceiveSur
                     pd.show();
                     getAllInfoSurvey();
                     surveyPresenter.addAnswers(recyclerViewSurvey.getAnswerRequest());
+                    System.out.println("Username:" + UserUtil.getUser().getUsername());
+                    System.out.println("Password:" + UserUtil.getUser().getPassword());
                     pd.dismiss();
                     showNoticeDiaglogMessage(DiaglogConstant.ADD_DIAGLOG_MESSAGE);
                     UserUtil.setSurveyStatus(SurveyConstant.USER_FINISHED_SURVEY_STATUS);
@@ -113,7 +115,6 @@ public class SurveyFragment extends Fragment implements SurveyView, OnReceiveSur
 
     @Override
     public void viewSurvey(SurveyResponse surveyResponse) {
-        System.out.println("Demo");
         String surveyStatus = UserUtil.getSurveyStatus();
         if (surveyStatus.equals(SurveyConstant.USER_NO_FINISH_SURVEY_STATUS)) {
             String surveyResponseCode = surveyResponse.getResponseCode();
@@ -180,7 +181,7 @@ public class SurveyFragment extends Fragment implements SurveyView, OnReceiveSur
 
     @Override
     public void onReceiveSurveyResultResponse(SurveyResponse surveyResponse) {
-        surveyPresenter.getAnswers(surveyResponse, UserUtil.getUser());
+        surveyPresenter.getAnswers(surveyResponse, UserUtil.getUserModel());
     }
 
     @Override

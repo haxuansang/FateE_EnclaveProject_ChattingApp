@@ -22,6 +22,8 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
+import com.quickblox.auth.session.QBSettings;
+
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -61,6 +63,9 @@ public class LoginActivity extends AppCompatActivity implements ViewProcessLogin
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_layout);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
+        QBSettings.getInstance().init(getApplicationContext(), LoginConstant.APP_ID, LoginConstant.AUTH_KEY, LoginConstant.AUTH_SECRET);
+        QBSettings.getInstance().setAccountKey(LoginConstant.ACCOUNT_KEY);
         viewProcessLogin = this;
         delayLogin();
         initView();
@@ -237,8 +242,8 @@ public class LoginActivity extends AppCompatActivity implements ViewProcessLogin
     }
 
     public void login(View v) {
-        System.out.println(UserUtil.getUser());
-        if(UserUtil.getUser() == null) {
+        System.out.println(UserUtil.getUserModel());
+        if(UserUtil.getUserModel() == null) {
             String currentUsername = edtUsername.getText().toString();
             String password = edtPassword.getText().toString();
             if (!preUsername.equals(currentUsername)) {
@@ -247,7 +252,9 @@ public class LoginActivity extends AppCompatActivity implements ViewProcessLogin
                 countdown = 5;
             }
             if (!currentUsername.equals(LoginConstant.USERNAME_EMPTY) && !password.equals(LoginConstant.PASSWORD_EMPTY)) {
-                presenterLogicProcessLogin.getDataFromServer(new User(currentUsername, password));
+                User user = new User(currentUsername, password);
+                UserUtil.setUser(user);
+                presenterLogicProcessLogin.getDataFromServer(user);
                 preUsername = currentUsername;
             } else {
                 showNoticeDiaglogMessage(LoginConstant.USER_INFO_REQUIREMENT_MESSAGE);

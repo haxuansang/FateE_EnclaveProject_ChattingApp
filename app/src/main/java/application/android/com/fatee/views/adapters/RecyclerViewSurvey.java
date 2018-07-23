@@ -84,7 +84,7 @@ public class RecyclerViewSurvey extends RecyclerView.Adapter<RecyclerViewSurvey.
                 LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
         layoutParams.setMargins(0, 7, 0, 0);
         QuestionResponse questionResponse = surveyResponse.getQuestionResponses().get(position);
-        answerRequest.setUserId(UserUtil.getUser().getId());
+        answerRequest.setUserId(UserUtil.getUserModel().getId());
         showFormAfterGetQuestionsAndAnswers(position, questionResponse, layoutParams, holder);
     }
 

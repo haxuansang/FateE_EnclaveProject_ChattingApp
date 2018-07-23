@@ -23,4 +23,10 @@ public final class LoginConstant {
     public final static String USERNAME_EMPTY = "";
     public final static String PASSWORD_EMPTY = "";
     public final static String BANNED_STATUS_CHARACTER = "b";
+    public static final String APP_ID="72018";
+    public static final String AUTH_KEY="Xp6Y24yq25GO3zc";
+    public static final String AUTH_SECRET="cT8PxwdYYkROL3S";
+    public static final String ACCOUNT_KEY="7yc_WUA_shXrP1YqRznJ";
+    public static final String USERNAME="UsernameAll";
+    public static final String PASSWORD="PasswordAll";
 }
