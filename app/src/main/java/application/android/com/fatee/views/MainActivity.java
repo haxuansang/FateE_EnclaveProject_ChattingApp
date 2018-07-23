@@ -76,15 +76,14 @@ public class MainActivity extends AppCompatActivity
         String surveyStatus = getIntent().getExtras().getString(SurveyConstant.USER_SURVEY_STATUS_KEY);
         username = getIntent().getExtras().getString(LoginConstant.USERNAME);
         password = getIntent().getExtras().getString(LoginConstant.PASSWORD);
-        loadBitmapUsers();
-        createSessionForChat();
 
         fragmentManager= getFragmentManager();
         fragmentTransaction=fragmentManager.beginTransaction();
         if(surveyStatus.equals(SurveyConstant.USER_NO_FINISH_SURVEY_STATUS)) {
-
             UserUtil.getInstance(UserUtil.getUserModel(), SurveyConstant.USER_NO_FINISH_SURVEY_STATUS);
             fragmentTransaction.add(R.id.frame_layout, SurveyFragment.getInstance());
+            loadBitmapUsers();
+            createSessionForChat();
         } else {
             UserUtil.getInstance(UserUtil.getUserModel(), SurveyConstant.USER_FINISHED_SURVEY_STATUS);
             fragmentTransaction.add(R.id.frame_layout, RoomFragment.getInstance());
