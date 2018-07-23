@@ -57,6 +57,7 @@ public class LoginActivity extends AppCompatActivity implements ViewProcessLogin
     private Intent service;
     private String preUsername = "";
     private ImageView imageViewIcon;
+    String currentUsername,password;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -167,6 +168,8 @@ public class LoginActivity extends AppCompatActivity implements ViewProcessLogin
         intent.putExtra(SurveyConstant.USER_SURVEY_STATUS_KEY, surveyStatus);
         String userId = loginResponse.getUserModel().getId();
         intent.putExtra(LoginConstant.USER_ID_MESSAGE, userId);
+        intent.putExtra(LoginConstant.USERNAME,currentUsername);
+        intent.putExtra(LoginConstant.PASSWORD,password);
         this.startActivity(intent);
         finish();
     }
@@ -244,8 +247,8 @@ public class LoginActivity extends AppCompatActivity implements ViewProcessLogin
     public void login(View v) {
         System.out.println(UserUtil.getUserModel());
         if(UserUtil.getUserModel() == null) {
-            String currentUsername = edtUsername.getText().toString();
-            String password = edtPassword.getText().toString();
+            currentUsername = edtUsername.getText().toString();
+            password = edtPassword.getText().toString();
             if (!preUsername.equals(currentUsername)) {
                 count = 0;
                 wrong_info_times = 0;

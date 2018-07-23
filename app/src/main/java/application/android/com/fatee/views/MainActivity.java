@@ -75,9 +75,7 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
         String surveyStatus = getIntent().getExtras().getString(SurveyConstant.USER_SURVEY_STATUS_KEY);
         username = getIntent().getExtras().getString(LoginConstant.USERNAME);
-//        password = getIntent().getExtras().getString(LoginConstant.PASSWORD);
-            username = "haxuansang12345";
-            password = "Anhsang123!@#";
+        password = getIntent().getExtras().getString(LoginConstant.PASSWORD);
         loadBitmapUsers();
         createSessionForChat();
 
