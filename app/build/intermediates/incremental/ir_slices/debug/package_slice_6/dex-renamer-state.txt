@@ -1,4 +1,4 @@
-#Fri Jul 20 13:03:38 ICT 2018
-base.0=/home/sang/Desktop/new mobile/mobile/app/build/intermediates/transforms/dexMerger/debug/22
+#Mon Jul 23 10:04:26 ICT 2018
+base.0=/home/sang/Desktop/new mobile/mobile/app/build/intermediates/transforms/dexMerger/debug/70
 path.0=classes.dex
 renamed.0=classes.dex

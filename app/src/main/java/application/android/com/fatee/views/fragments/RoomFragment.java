@@ -41,7 +41,7 @@ import application.android.com.fatee.views.MainActivity;
 import application.android.com.fatee.views.adapters.ChatMessageAdapter;
 
 public class RoomFragment extends Fragment implements QBChatDialogMessageListener {
-    QBChatDialog qbChatDialog;
+    QBChatDialog qbChatDialogCurrent;
     RecyclerView lvChatting;
     ImageButton btnsendMessage;
     TextView contentMessage;
@@ -66,8 +66,9 @@ public class RoomFragment extends Fragment implements QBChatDialogMessageListene
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         view=inflater.inflate(R.layout.fragment_room, container, false);
-        initView();
+      initView();
         qbChatMessagesArray=new ArrayList<QBChatMessage>();
         initChatDilalog();
         retrieveMessages();
@@ -79,13 +80,9 @@ public class RoomFragment extends Fragment implements QBChatDialogMessageListene
                 chatMessage.setSenderId(QBChatService.getInstance().getUser().getId());
                 chatMessage.setSaveToHistory(true);
                 try {
-                    qbChatDialog.sendMessage(chatMessage);
+                    qbChatDialogCurrent.sendMessage(chatMessage);
                 } catch (SmackException.NotConnectedException e) {
                     e.printStackTrace();
-                }
-                if(qbChatDialog.getType()==QBDialogType.PRIVATE)
-                {
-                    qbChatMessagesArray.add(chatMessage);
                 }
                 adapter.notifyDataSetChanged();
                 contentMessage.setText("");
@@ -99,7 +96,7 @@ public class RoomFragment extends Fragment implements QBChatDialogMessageListene
     @Override
     public void onStart() {
         super.onStart();
-        if(QBFileHolder.getInstance().sizeOfImages()>0) {
+        if(QBFileHolder.getInstance().sizeOfImages()>=qbChatDialogCurrent.getOccupants().size()-1) {
             progressBar.setVisibility(View.GONE);
             chatView.setVisibility(View.VISIBLE);
         }
@@ -107,7 +104,7 @@ public class RoomFragment extends Fragment implements QBChatDialogMessageListene
     @Override
     public void onDestroy() {
         super.onDestroy();
-        qbChatDialog.removeMessageListrener(this);
+       qbChatDialogCurrent.removeMessageListrener(this);
 
 
     }
@@ -115,8 +112,25 @@ public class RoomFragment extends Fragment implements QBChatDialogMessageListene
     @Override
     public void onStop() {
         super.onStop();
-        qbChatDialog.removeMessageListrener(this);
+        qbChatDialogCurrent.removeMessageListrener(this);
 
+    }
+    private void getDialogGroupChat()
+    {
+
+        QBRestChatService.getChatDialogById("5b486a4fa28f9a13f725ebf3").performAsync(new QBEntityCallback<QBChatDialog>() {
+
+            @Override
+            public void onSuccess(QBChatDialog qbChatDialog, Bundle bundle) {
+                 qbChatDialogCurrent=qbChatDialog;
+            }
+
+            @Override
+            public void onError(QBResponseException e) {
+
+
+            }
+        });
     }
 
 
@@ -125,9 +139,9 @@ public class RoomFragment extends Fragment implements QBChatDialogMessageListene
 
         QBMessageGetBuilder qbMessageGetBuilder = new QBMessageGetBuilder();
         qbMessageGetBuilder.setLimit(500);
-        if(qbChatDialog!=null)
+        if(qbChatDialogCurrent!=null)
         {
-            QBRestChatService.getDialogMessages(qbChatDialog,qbMessageGetBuilder).performAsync(new QBEntityCallback<ArrayList<QBChatMessage>>() {
+            QBRestChatService.getDialogMessages(qbChatDialogCurrent,qbMessageGetBuilder).performAsync(new QBEntityCallback<ArrayList<QBChatMessage>>() {
                 @Override
                 public void onSuccess(ArrayList<QBChatMessage> qbChatMessages, Bundle bundle) {
                     for (QBChatMessage  qbChatMessage: qbChatMessages
@@ -135,7 +149,7 @@ public class RoomFragment extends Fragment implements QBChatDialogMessageListene
                         qbChatMessagesArray.add(qbChatMessage);
                     }
                     LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity().getBaseContext());
-                    adapter = new ChatMessageAdapter(getActivity().getBaseContext(),qbChatMessagesArray);
+                    adapter = new ChatMessageAdapter(getActivity().getBaseContext(),qbChatMessagesArray,qbChatDialogCurrent.getOccupants().size()-1);
                     lvChatting.setLayoutManager(layoutManager);
                     lvChatting.setAdapter(adapter);
                     scroolSmooth();
@@ -159,8 +173,8 @@ public class RoomFragment extends Fragment implements QBChatDialogMessageListene
     }
     private void initChatDilalog() {
 
-        qbChatDialog=MainActivity.currentQBChatDialog;
-        qbChatDialog.initForChat(QBChatService.getInstance());
+        qbChatDialogCurrent=MainActivity.currentQBChatDialog;
+        qbChatDialogCurrent.initForChat(QBChatService.getInstance());
         QBIncomingMessagesManager incomingMessagesManager = QBChatService.getInstance().getIncomingMessagesManager();
         incomingMessagesManager.addDialogMessageListener(new QBChatDialogMessageListener() {
             @Override
@@ -174,11 +188,11 @@ public class RoomFragment extends Fragment implements QBChatDialogMessageListene
             }
         });
 
-        if (!qbChatDialog.getType().equals(QBDialogType.PRIVATE))
+        if (!qbChatDialogCurrent.getType().equals(QBDialogType.PRIVATE))
         {
             DiscussionHistory discussionHistory = new DiscussionHistory();
             discussionHistory.setMaxStanzas(0);
-            qbChatDialog.join(discussionHistory, new QBEntityCallback() {
+            qbChatDialogCurrent.join(discussionHistory, new QBEntityCallback() {
                 @Override
                 public void onSuccess(Object o, Bundle bundle) {
 
@@ -190,7 +204,7 @@ public class RoomFragment extends Fragment implements QBChatDialogMessageListene
                 }
             });
         }
-        qbChatDialog.addMessageListener(this);
+        qbChatDialogCurrent.addMessageListener(this);
     }
 
     private void initView() {

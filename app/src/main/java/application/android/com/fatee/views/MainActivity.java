@@ -15,9 +15,11 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.support.v4.view.GravityCompat;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -27,6 +29,7 @@ import com.quickblox.auth.session.QBSession;
 import com.quickblox.chat.QBChatService;
 import com.quickblox.chat.QBRestChatService;
 import com.quickblox.chat.model.QBChatDialog;
+import com.quickblox.chat.utils.DialogUtils;
 import com.quickblox.content.QBContent;
 import com.quickblox.content.model.QBFile;
 import com.quickblox.core.QBEntityCallback;
@@ -45,6 +48,7 @@ import application.android.com.fatee.models.quickbloxholder.QBUserHolder;
 import application.android.com.fatee.utils.LoginConstant;
 import application.android.com.fatee.utils.SurveyConstant;
 import application.android.com.fatee.utils.UserUtil;
+import application.android.com.fatee.views.adapters.ChatMessageAdapter;
 import application.android.com.fatee.views.fragments.AboutFragment;
 import application.android.com.fatee.views.fragments.NotificationsFragment;
 import application.android.com.fatee.views.fragments.ProfileFragment;
@@ -82,20 +86,14 @@ public class MainActivity extends AppCompatActivity
         String surveyStatus = getIntent().getExtras().getString(SurveyConstant.USER_SURVEY_STATUS_KEY);
         username = getIntent().getExtras().getString(LoginConstant.USERNAME);
         password = getIntent().getExtras().getString(LoginConstant.PASSWORD);
-        loadBitmapUsers();
+
         createSessionForChat();
+        getQBChatDialog();
+        loadBitmapUsers();
+
 
         fragmentManager= getFragmentManager();
-        fragmentTransaction=fragmentManager.beginTransaction();
-        if(surveyStatus.equals(SurveyConstant.USER_NO_FINISH_SURVEY_STATUS)) {
 
-            UserUtil.getInstance(UserUtil.getUser(), SurveyConstant.USER_NO_FINISH_SURVEY_STATUS);
-            fragmentTransaction.add(R.id.frame_layout, SurveyFragment.getInstance());
-        } else {
-            UserUtil.getInstance(UserUtil.getUser(), SurveyConstant.USER_FINISHED_SURVEY_STATUS);
-            fragmentTransaction.add(R.id.frame_layout, RoomFragment.getInstance());
-        }
-        fragmentTransaction.commit();
     }
 
    /* private void getImageUser() {
@@ -143,6 +141,7 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onSuccess(QBChatDialog qbChatDialog, Bundle bundle) {
                 currentQBChatDialog=qbChatDialog;
+                Toast.makeText(MainActivity.this, "load Group thanh cong", Toast.LENGTH_SHORT).show();
                 progressDialog.dismiss();
 
             }
@@ -266,7 +265,7 @@ public class MainActivity extends AppCompatActivity
                     public void onSuccess(Object o, Bundle bundle) {
 
                         Toast.makeText(MainActivity.this, "Login Successfully", Toast.LENGTH_SHORT).show();
-                        getQBChatDialog();
+
 
 
                     }
@@ -310,5 +309,7 @@ public class MainActivity extends AppCompatActivity
 
 
     }
+
+
 
 }

@@ -1,6 +1,6 @@
 #Internal package file, do not edit.
-#Fri Jul 20 14:01:21 ICT 2018
-1.base=/home/sang/Desktop/new mobile/mobile/app/build/intermediates/transforms/dexMerger/debug/31
+#Mon Jul 23 11:46:21 ICT 2018
+1.base=/home/sang/Desktop/new mobile/mobile/app/build/intermediates/transforms/dexMerger/debug/79
 0.baseType=DIRECTORY
 1.baseType=DIRECTORY
 count=2

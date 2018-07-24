@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/sang/Desktop/new mobile/mobile/app/src/main/AndroidManifest.xml:2:1-47:12
-INJECTED from /home/sang/Desktop/new mobile/mobile/app/src/main/AndroidManifest.xml:2:1-47:12
-INJECTED from /home/sang/Desktop/new mobile/mobile/app/src/main/AndroidManifest.xml:2:1-47:12
-INJECTED from /home/sang/Desktop/new mobile/mobile/app/src/main/AndroidManifest.xml:2:1-47:12
+ADDED from /home/sang/Desktop/new mobile/mobile/app/src/main/AndroidManifest.xml:2:1-52:12
+INJECTED from /home/sang/Desktop/new mobile/mobile/app/src/main/AndroidManifest.xml:2:1-52:12
+INJECTED from /home/sang/Desktop/new mobile/mobile/app/src/main/AndroidManifest.xml:2:1-52:12
+INJECTED from /home/sang/Desktop/new mobile/mobile/app/src/main/AndroidManifest.xml:2:1-52:12
 MERGED from [com.github.stfalcon:chatkit:0.3.0] /home/sang/.gradle/caches/transforms-1/files-1.1/chatkit-0.3.0.aar/c15984556790061c608e2b78784a859b/AndroidManifest.xml:2:1-9:12
 MERGED from [com.android.support:design:27.1.1] /home/sang/.gradle/caches/transforms-1/files-1.1/design-27.1.1.aar/f0b510559dde684f5d96b3f8084bba37/AndroidManifest.xml:17:1-22:12
 MERGED from [com.borjabravo:readmoretextview:2.0.1] /home/sang/.gradle/caches/transforms-1/files-1.1/readmoretextview-2.0.1.aar/67e09907694e9f3ee3b419b27a9ab51e/AndroidManifest.xml:2:1-16:12
@@ -32,20 +32,20 @@ MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /home/sang/.gradle/cach
 MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /home/sang/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.0.aar/ba16a3527c9a7b40814690010988e99e/AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.lifecycle:runtime:1.1.0] /home/sang/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/f5b3b72759409d4b716ce552f7525097/AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.core:runtime:1.1.0] /home/sang/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/b9a416a4a11912a9450555d2014d819c/AndroidManifest.xml:17:1-22:12
-INJECTED from /home/sang/Desktop/new mobile/mobile/app/src/main/AndroidManifest.xml:2:1-47:12
-INJECTED from /home/sang/Desktop/new mobile/mobile/app/src/main/AndroidManifest.xml:2:1-47:12
-INJECTED from /home/sang/Desktop/new mobile/mobile/app/src/main/AndroidManifest.xml:2:1-47:12
+INJECTED from /home/sang/Desktop/new mobile/mobile/app/src/main/AndroidManifest.xml:2:1-52:12
+INJECTED from /home/sang/Desktop/new mobile/mobile/app/src/main/AndroidManifest.xml:2:1-52:12
+INJECTED from /home/sang/Desktop/new mobile/mobile/app/src/main/AndroidManifest.xml:2:1-52:12
 	package
 		ADDED from /home/sang/Desktop/new mobile/mobile/app/src/main/AndroidManifest.xml:3:5-44
 		INJECTED from /home/sang/Desktop/new mobile/mobile/app/src/main/AndroidManifest.xml
 		INJECTED from /home/sang/Desktop/new mobile/mobile/app/src/main/AndroidManifest.xml
 	android:versionName
 		INJECTED from /home/sang/Desktop/new mobile/mobile/app/src/main/AndroidManifest.xml
-		ADDED from /home/sang/Desktop/new mobile/mobile/app/src/main/AndroidManifest.xml:2:1-47:12
+		ADDED from /home/sang/Desktop/new mobile/mobile/app/src/main/AndroidManifest.xml:2:1-52:12
 		INJECTED from /home/sang/Desktop/new mobile/mobile/app/src/main/AndroidManifest.xml
 	android:versionCode
 		INJECTED from /home/sang/Desktop/new mobile/mobile/app/src/main/AndroidManifest.xml
-		ADDED from /home/sang/Desktop/new mobile/mobile/app/src/main/AndroidManifest.xml:2:1-47:12
+		ADDED from /home/sang/Desktop/new mobile/mobile/app/src/main/AndroidManifest.xml:2:1-52:12
 		INJECTED from /home/sang/Desktop/new mobile/mobile/app/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /home/sang/Desktop/new mobile/mobile/app/src/main/AndroidManifest.xml:2:11-69
@@ -68,15 +68,15 @@ MERGED from [com.quickblox:quickblox-android-sdk-content:3.7.0] /home/sang/.grad
 	android:name
 		ADDED from /home/sang/Desktop/new mobile/mobile/app/src/main/AndroidManifest.xml:7:22-64
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
-ADDED from /home/sang/Desktop/new mobile/mobile/app/src/main/AndroidManifest.xml:9:5-79
+ADDED from /home/sang/Desktop/new mobile/mobile/app/src/main/AndroidManifest.xml:9:5-80
 	android:name
 		ADDED from /home/sang/Desktop/new mobile/mobile/app/src/main/AndroidManifest.xml:9:22-77
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from /home/sang/Desktop/new mobile/mobile/app/src/main/AndroidManifest.xml:10:5-80
+ADDED from /home/sang/Desktop/new mobile/mobile/app/src/main/AndroidManifest.xml:10:5-81
 	android:name
 		ADDED from /home/sang/Desktop/new mobile/mobile/app/src/main/AndroidManifest.xml:10:22-78
 application
-ADDED from /home/sang/Desktop/new mobile/mobile/app/src/main/AndroidManifest.xml:11:5-46:19
+ADDED from /home/sang/Desktop/new mobile/mobile/app/src/main/AndroidManifest.xml:12:5-50:19
 MERGED from [com.borjabravo:readmoretextview:2.0.1] /home/sang/.gradle/caches/transforms-1/files-1.1/readmoretextview-2.0.1.aar/67e09907694e9f3ee3b419b27a9ab51e/AndroidManifest.xml:11:5-14:19
 MERGED from [com.borjabravo:readmoretextview:2.0.1] /home/sang/.gradle/caches/transforms-1/files-1.1/readmoretextview-2.0.1.aar/67e09907694e9f3ee3b419b27a9ab51e/AndroidManifest.xml:11:5-14:19
 MERGED from [com.github.lguipeng:BubbleView:1.0.1] /home/sang/.gradle/caches/transforms-1/files-1.1/BubbleView-1.0.1.aar/1e3d74d7651ce9d7c7e7d0e77b64f38c/AndroidManifest.xml:11:5-14:19
@@ -88,63 +88,71 @@ MERGED from [de.hdodenhof:circleimageview:2.1.0] /home/sang/.gradle/caches/trans
 MERGED from [com.amulyakhare:com.amulyakhare.textdrawable:1.0.1] /home/sang/.gradle/caches/transforms-1/files-1.1/com.amulyakhare.textdrawable-1.0.1.aar/92c6aea66b7fced6ab5d1453dc7983a3/AndroidManifest.xml:12:5-20
 MERGED from [com.amulyakhare:com.amulyakhare.textdrawable:1.0.1] /home/sang/.gradle/caches/transforms-1/files-1.1/com.amulyakhare.textdrawable-1.0.1.aar/92c6aea66b7fced6ab5d1453dc7983a3/AndroidManifest.xml:12:5-20
 	android:supportsRtl
-		ADDED from /home/sang/Desktop/new mobile/mobile/app/src/main/AndroidManifest.xml:16:9-35
+		ADDED from /home/sang/Desktop/new mobile/mobile/app/src/main/AndroidManifest.xml:17:9-35
 	android:label
-		ADDED from /home/sang/Desktop/new mobile/mobile/app/src/main/AndroidManifest.xml:14:9-41
+		ADDED from /home/sang/Desktop/new mobile/mobile/app/src/main/AndroidManifest.xml:15:9-41
 	android:roundIcon
-		ADDED from /home/sang/Desktop/new mobile/mobile/app/src/main/AndroidManifest.xml:15:9-54
+		ADDED from /home/sang/Desktop/new mobile/mobile/app/src/main/AndroidManifest.xml:16:9-54
 	android:icon
-		ADDED from /home/sang/Desktop/new mobile/mobile/app/src/main/AndroidManifest.xml:13:9-43
+		ADDED from /home/sang/Desktop/new mobile/mobile/app/src/main/AndroidManifest.xml:14:9-43
 	android:allowBackup
-		ADDED from /home/sang/Desktop/new mobile/mobile/app/src/main/AndroidManifest.xml:12:9-35
+		ADDED from /home/sang/Desktop/new mobile/mobile/app/src/main/AndroidManifest.xml:13:9-35
 	android:theme
-		ADDED from /home/sang/Desktop/new mobile/mobile/app/src/main/AndroidManifest.xml:17:9-65
+		ADDED from /home/sang/Desktop/new mobile/mobile/app/src/main/AndroidManifest.xml:18:9-65
 activity#application.android.com.fatee.views.LoginActivity
-ADDED from /home/sang/Desktop/new mobile/mobile/app/src/main/AndroidManifest.xml:18:9-26:20
+ADDED from /home/sang/Desktop/new mobile/mobile/app/src/main/AndroidManifest.xml:19:9-27:20
 	android:theme
-		ADDED from /home/sang/Desktop/new mobile/mobile/app/src/main/AndroidManifest.xml:20:13-44
+		ADDED from /home/sang/Desktop/new mobile/mobile/app/src/main/AndroidManifest.xml:21:13-44
 	android:name
-		ADDED from /home/sang/Desktop/new mobile/mobile/app/src/main/AndroidManifest.xml:19:13-48
+		ADDED from /home/sang/Desktop/new mobile/mobile/app/src/main/AndroidManifest.xml:20:13-48
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /home/sang/Desktop/new mobile/mobile/app/src/main/AndroidManifest.xml:21:13-25:29
+ADDED from /home/sang/Desktop/new mobile/mobile/app/src/main/AndroidManifest.xml:22:13-26:29
 action#android.intent.action.MAIN
-ADDED from /home/sang/Desktop/new mobile/mobile/app/src/main/AndroidManifest.xml:22:17-69
+ADDED from /home/sang/Desktop/new mobile/mobile/app/src/main/AndroidManifest.xml:23:17-69
 	android:name
-		ADDED from /home/sang/Desktop/new mobile/mobile/app/src/main/AndroidManifest.xml:22:25-66
+		ADDED from /home/sang/Desktop/new mobile/mobile/app/src/main/AndroidManifest.xml:23:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /home/sang/Desktop/new mobile/mobile/app/src/main/AndroidManifest.xml:24:17-77
+ADDED from /home/sang/Desktop/new mobile/mobile/app/src/main/AndroidManifest.xml:25:17-77
 	android:name
-		ADDED from /home/sang/Desktop/new mobile/mobile/app/src/main/AndroidManifest.xml:24:27-74
+		ADDED from /home/sang/Desktop/new mobile/mobile/app/src/main/AndroidManifest.xml:25:27-74
 activity#application.android.com.fatee.views.fragments.AboutFragment
-ADDED from /home/sang/Desktop/new mobile/mobile/app/src/main/AndroidManifest.xml:27:9-66
+ADDED from /home/sang/Desktop/new mobile/mobile/app/src/main/AndroidManifest.xml:28:9-67
 	android:name
-		ADDED from /home/sang/Desktop/new mobile/mobile/app/src/main/AndroidManifest.xml:27:19-64
+		ADDED from /home/sang/Desktop/new mobile/mobile/app/src/main/AndroidManifest.xml:28:19-64
 activity#application.android.com.fatee.views.MainActivity
-ADDED from /home/sang/Desktop/new mobile/mobile/app/src/main/AndroidManifest.xml:28:9-32:20
+ADDED from /home/sang/Desktop/new mobile/mobile/app/src/main/AndroidManifest.xml:29:9-32:56
 	android:label
-		ADDED from /home/sang/Desktop/new mobile/mobile/app/src/main/AndroidManifest.xml:30:13-56
+		ADDED from /home/sang/Desktop/new mobile/mobile/app/src/main/AndroidManifest.xml:31:13-56
 	android:theme
-		ADDED from /home/sang/Desktop/new mobile/mobile/app/src/main/AndroidManifest.xml:31:13-44
+		ADDED from /home/sang/Desktop/new mobile/mobile/app/src/main/AndroidManifest.xml:32:13-44
 	android:name
-		ADDED from /home/sang/Desktop/new mobile/mobile/app/src/main/AndroidManifest.xml:29:13-47
+		ADDED from /home/sang/Desktop/new mobile/mobile/app/src/main/AndroidManifest.xml:30:13-47
 activity#application.android.com.fatee.views.RegisterActivity
-ADDED from /home/sang/Desktop/new mobile/mobile/app/src/main/AndroidManifest.xml:33:9-36:20
+ADDED from /home/sang/Desktop/new mobile/mobile/app/src/main/AndroidManifest.xml:33:9-35:56
 	android:theme
-		ADDED from /home/sang/Desktop/new mobile/mobile/app/src/main/AndroidManifest.xml:34:13-44
+		ADDED from /home/sang/Desktop/new mobile/mobile/app/src/main/AndroidManifest.xml:35:13-44
 	android:name
-		ADDED from /home/sang/Desktop/new mobile/mobile/app/src/main/AndroidManifest.xml:33:19-57
+		ADDED from /home/sang/Desktop/new mobile/mobile/app/src/main/AndroidManifest.xml:34:13-51
 receiver#application.android.com.fatee.utils.ConnectionBroadcastReceiver
-ADDED from /home/sang/Desktop/new mobile/mobile/app/src/main/AndroidManifest.xml:38:9-80
+ADDED from /home/sang/Desktop/new mobile/mobile/app/src/main/AndroidManifest.xml:37:9-71
 	android:name
-		ADDED from /home/sang/Desktop/new mobile/mobile/app/src/main/AndroidManifest.xml:38:19-68
+		ADDED from /home/sang/Desktop/new mobile/mobile/app/src/main/AndroidManifest.xml:37:19-68
 service#application.android.com.fatee.models.services.CheckTempBannedUserService
-ADDED from /home/sang/Desktop/new mobile/mobile/app/src/main/AndroidManifest.xml:40:9-43:47
+ADDED from /home/sang/Desktop/new mobile/mobile/app/src/main/AndroidManifest.xml:39:9-42:39
 	android:enabled
-		ADDED from /home/sang/Desktop/new mobile/mobile/app/src/main/AndroidManifest.xml:42:13-35
+		ADDED from /home/sang/Desktop/new mobile/mobile/app/src/main/AndroidManifest.xml:41:13-35
 	android:exported
-		ADDED from /home/sang/Desktop/new mobile/mobile/app/src/main/AndroidManifest.xml:43:13-36
+		ADDED from /home/sang/Desktop/new mobile/mobile/app/src/main/AndroidManifest.xml:42:13-36
 	android:name
-		ADDED from /home/sang/Desktop/new mobile/mobile/app/src/main/AndroidManifest.xml:41:13-71
+		ADDED from /home/sang/Desktop/new mobile/mobile/app/src/main/AndroidManifest.xml:40:13-71
+activity#application.android.com.fatee.views.PrivateChat
+ADDED from /home/sang/Desktop/new mobile/mobile/app/src/main/AndroidManifest.xml:46:9-49:56
+	android:label
+		ADDED from /home/sang/Desktop/new mobile/mobile/app/src/main/AndroidManifest.xml:48:13-64
+	android:theme
+		ADDED from /home/sang/Desktop/new mobile/mobile/app/src/main/AndroidManifest.xml:49:13-44
+	android:name
+		ADDED from /home/sang/Desktop/new mobile/mobile/app/src/main/AndroidManifest.xml:47:13-46
 uses-sdk
 INJECTED from /home/sang/Desktop/new mobile/mobile/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /home/sang/Desktop/new mobile/mobile/app/src/main/AndroidManifest.xml

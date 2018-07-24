@@ -35,4 +35,6 @@
     <string name="submit_button_name">Submit</string>
     <string name="update_button_name">Update</string>
     <string name="add_diaglog_name">Adding</string>
+    <string name="register_password">Password</string>
+    <string name="title_activity_private_chat">PrivateChat</string>
 </resources>

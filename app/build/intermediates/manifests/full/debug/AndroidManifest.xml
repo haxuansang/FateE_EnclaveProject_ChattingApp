@@ -5,7 +5,7 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="19"
+        android:minSdkVersion="21"
         android:targetSdkVersion="27" />
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -37,12 +37,10 @@
         <activity
             android:name="application.android.com.fatee.views.MainActivity"
             android:label="@string/title_activity_main"
-            android:theme="@style/AppTheme" >
-        </activity>
+            android:theme="@style/AppTheme" />
         <activity
             android:name="application.android.com.fatee.views.RegisterActivity"
-            android:theme="@style/AppTheme" >
-        </activity>
+            android:theme="@style/AppTheme" />
 
         <receiver android:name="application.android.com.fatee.utils.ConnectionBroadcastReceiver" />
 
@@ -52,6 +50,11 @@
             android:exported="true" />
 
         <receiver android:name="application.android.com.fatee.utils.ConnectionBroadcastReceiver" />
+
+        <activity
+            android:name="application.android.com.fatee.views.PrivateChat"
+            android:label="@string/title_activity_private_chat"
+            android:theme="@style/AppTheme" />
     </application>
 
 </manifest>

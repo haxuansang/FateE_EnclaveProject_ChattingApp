@@ -18,7 +18,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class setImageToImageView {
     public static Boolean status=false;
-    public  static void loadImageToImageView(final Context context, String URL, final CircleImageView userImage, final int idUser, final RelativeLayout progressBar, final  RelativeLayout chatView)
+    public  static void loadImageToImageView(final Context context, String URL, final CircleImageView userImage, final int idUser, final RelativeLayout progressBar, final  RelativeLayout chatView, final int countOfUsers)
     {
         Target t = new Target() {
             @Override
@@ -26,7 +26,7 @@ public class setImageToImageView {
                 QBFileHolder.getInstance().putQBFileUser(idUser,bitmap);
 
 
-                    if (QBFileHolder.getInstance().sizeOfImages()==4) {
+                    if (QBFileHolder.getInstance().sizeOfImages()==countOfUsers) {
                         RoomFragment.adapter.notifyDataSetChanged();
                         chatView.setVisibility(View.VISIBLE);
                         progressBar.setVisibility(View.GONE);

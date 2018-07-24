@@ -4,28 +4,38 @@
     android:layout_height="match_parent"
     android:padding="20dp"
     android:focusableInTouchMode="true"
-    android:background="#FAFAFA">
+    android:background="#FAFAFA"
+    android:clickable="true">
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:animateLayoutChanges="true"
+        android:padding="10dp">
 
         <ImageView
             android:id="@+id/imgview_icon"
             android:layout_width="350dp"
             android:layout_height="113dp"
-            android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="16dp"
-            android:src="@drawable/main_logo" />
+            android:src="@drawable/main_logo"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+
+            />
 
     <RelativeLayout
         android:id="@+id/relativeLayout_Login"
-        android:layout_width="fill_parent"
-        android:layout_height="399dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_below="@id/imgview_icon"
-        android:layout_marginTop="-1dp"
-        android:visibility="visible">
+        android:layout_marginTop="20dp"
+        android:visibility="gone">
 
         <LinearLayout
             android:id="@+id/login_layout"
-            android:layout_width="fill_parent"
+            android:layout_width="match_parent"
             android:layout_height="382dp"
             android:layout_centerInParent="true"
             android:orientation="vertical"
@@ -45,22 +55,19 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
                     android:background="@android:color/transparent"
-                    android:drawableLeft="@drawable/user_icon_png"
+                    android:drawableLeft="@drawable/user_icon"
                     android:drawablePadding="8dp"
                     android:gravity="center_vertical"
                     android:hint="@string/login_username"
                     android:inputType="text"
                     android:padding="10dp"
                     android:singleLine="true"
-                    android:textColor="#9E9E9E"
+                    android:textColor="#33b5e5"
                     android:textColorHint="#33b5e5"
                     android:textSize="16sp" />
             </android.support.design.widget.TextInputLayout>
 
-            <View
-            android:layout_width="fill_parent"
-            android:layout_height="2px"
-            android:background="#33b5e5" />
+
 
             <android.support.design.widget.TextInputLayout
                 android:id="@+id/input_layout_password"
@@ -72,7 +79,7 @@
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:background="@android:color/transparent"
-                    android:drawableLeft="@drawable/password_icon_png"
+                    android:drawableLeft="@drawable/password_icon"
                     android:drawablePadding="8dp"
                     android:gravity="center_vertical"
                     android:hint="@string/login_password"
@@ -142,36 +149,38 @@
                 android:layout_below="@id/btn_Login"/>
 
         </LinearLayout>
+        <LinearLayout
+            android:id="@+id/linear_warning"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+
+            android:orientation="horizontal"
+            android:visibility="visible"
+            >
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/error" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:gravity="bottom"
+                android:text="@string/login_warning"
+                android:textColor="@android:color/holo_red_light"
+                android:textSize="15sp" />
+        </LinearLayout>
+    </RelativeLayout>
 
 
 
     </RelativeLayout>
 
-    <LinearLayout
-        android:id="@+id/linear_warning"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="33dp"
-        android:orientation="horizontal"
-        android:visibility="visible"
-        >
 
-        <ImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:src="@drawable/error" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginLeft="10dp"
-            android:gravity="bottom"
-            android:text="@string/login_warning"
-            android:textColor="@android:color/holo_red_light"
-            android:textSize="15sp" />
-    </LinearLayout>
 
 </RelativeLayout>

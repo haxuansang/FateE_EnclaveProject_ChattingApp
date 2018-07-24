@@ -1,20 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:focusableInTouchMode="true"
     android:orientation="vertical"
-    android:padding="20dp">>
-
-    <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:padding="10dp"
-        android:text="SIGN UP"
-        android:textColor="#33b5e5"
-        android:textSize="25sp"
-        android:textStyle="bold" />
+    android:padding="20dp">
 
     <android.support.design.widget.TextInputLayout
         android:id="@+id/input_layout_register_username"
@@ -27,7 +16,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:background="@android:color/transparent"
-            android:drawableLeft="@drawable/user_icon_png"
+            android:drawableLeft="@drawable/user_icon"
             android:drawablePadding="8dp"
             android:gravity="center_vertical"
             android:hint="Username"
@@ -55,7 +44,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:background="@android:color/transparent"
-            android:drawableLeft="@drawable/mail_icon_png"
+            android:drawableLeft="@drawable/mail_icon"
             android:drawablePadding="8dp"
             android:gravity="center_vertical"
             android:hint="Email"
@@ -83,7 +72,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:background="@android:color/transparent"
-            android:drawableLeft="@drawable/mail_icon_png"
+            android:drawableLeft="@drawable/nick_name_icon"
             android:drawablePadding="8dp"
             android:gravity="center_vertical"
             android:hint="Nickname"
@@ -99,20 +88,22 @@
         android:layout_width="fill_parent"
         android:layout_height="2px"
         android:background="#33b5e5" />
+
     <android.support.design.widget.TextInputLayout
         android:id="@+id/input_layout_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
         <EditText
             android:id="@+id/edt_register_Password"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:background="@android:color/transparent"
-            android:drawableLeft="@drawable/mail_icon_png"
+            android:drawableLeft="@drawable/password_icon"
             android:drawablePadding="8dp"
             android:gravity="center_vertical"
-            android:hint="Password"
+            android:hint="@string/register_password"
             android:inputType="textPassword"
             android:padding="10dp"
             android:singleLine="true"
@@ -120,21 +111,24 @@
             android:textColorHint="#33b5e5"
             android:textSize="16sp" />
     </android.support.design.widget.TextInputLayout>
+
     <View
         android:layout_width="fill_parent"
         android:layout_height="2px"
         android:background="#33b5e5" />
+
     <android.support.design.widget.TextInputLayout
         android:id="@+id/input_layout_name2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
         <EditText
             android:id="@+id/edt_register_PassworkVerify"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:background="@android:color/transparent"
-            android:drawableLeft="@drawable/password_icon_png"
+            android:drawableLeft="@drawable/password_confirm_icon"
             android:drawablePadding="8dp"
             android:gravity="center_vertical"
             android:hint="@string/register_password_verify"
@@ -145,31 +139,37 @@
             android:textColorHint="#33b5e5"
             android:textSize="16sp" />
     </android.support.design.widget.TextInputLayout>
+
     <View
         android:layout_width="fill_parent"
         android:layout_height="2px"
         android:background="#33b5e5" />
+
     <RadioGroup
         android:id="@+id/radiogr_gender"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:orientation="horizontal"
-        android:layout_gravity="center">
+        android:padding="15dp">
 
         <RadioButton
             android:id="@+id/radiobtn_gender_Male"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
+            android:onClick="onRadioButtonClicked"
             android:text="Male"
-            android:textColor="#33b5e5"/>
+            android:textColor="#33b5e5" />
 
         <RadioButton
             android:id="@+id/radiobtn_gender_Female"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
+            android:onClick="onRadioButtonClicked"
             android:text="Female"
-            android:textColor="#33b5e5"/>
+            android:textColor="#33b5e5" />
     </RadioGroup>
+
     <CheckBox
         android:id="@+id/terms_conditions"
         android:layout_width="wrap_content"
@@ -183,11 +183,12 @@
         android:id="@+id/btn_RegisterSubmit"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="0dp"
         android:background="@drawable/loginbutton_selector"
-        android:padding="3dp"
+        android:onClick="registerSubmit"
+        android:padding="10dp"
         android:text="SUBMIT"
-        android:textColor="#33b5e5"
+        android:textColor="#FAFAFA"
         android:textSize="17sp"
         android:textStyle="bold" />
 
@@ -202,5 +203,4 @@
         android:text="@string/already_user"
         android:textColor="#33b5e5"
         android:textSize="15sp" />
-
 </LinearLayout>
