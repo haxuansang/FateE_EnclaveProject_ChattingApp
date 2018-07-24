@@ -25,6 +25,7 @@ import org.jivesoftware.smackx.carbons.packet.CarbonExtension;
 import java.util.ArrayList;
 
 import application.android.com.fatee.R;
+import application.android.com.fatee.models.quickbloxholder.QBUserHolder;
 import application.android.com.fatee.views.MainActivity;
 import application.android.com.fatee.views.PrivateChat;
 import application.android.com.fatee.views.adapters.ChatDialogsAdapter;
@@ -36,9 +37,18 @@ public class BuddyFragment extends Fragment {
     View view;
     ListView lvChatting;
     int userIDBuddy;
+    private static BuddyFragment instance;
     public BuddyFragment() {
         // Required empty public constructor
     }
+
+    public static BuddyFragment getInstance() {
+        if(instance == null)
+            instance = new BuddyFragment();
+        return instance;
+    }
+
+
 
 
     @Override
@@ -55,6 +65,7 @@ public class BuddyFragment extends Fragment {
                 QBChatDialog qbChatDialog = (QBChatDialog) lvChatting.getAdapter().getItem(i);
                 Intent intent1 = new Intent(getActivity(), PrivateChat.class);
                 intent1.putExtra("private_dialog",qbChatDialog);
+                intent1.putExtra("buddy_name", QBUserHolder.getInstance().getUserById(ChatDialogsAdapter.getUserIDBuddy(qbChatDialog)).getFullName());
                 startActivity(intent1);
 
             }

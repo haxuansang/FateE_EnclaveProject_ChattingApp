@@ -164,12 +164,12 @@
         "source": "/home/sang/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/1c5d1dff7c7e37df4ce60ad78cb69218/res/drawable-xhdpi-v4/abc_textfield_activated_mtrl_alpha.9.png"
     },
     {
-        "merged": "/home/sang/Desktop/new mobile/mobile/app/build/intermediates/res/merged/debug/drawable_abc_ic_go_search_api_material.xml.flat",
-        "source": "/home/sang/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/1c5d1dff7c7e37df4ce60ad78cb69218/res/drawable/abc_ic_go_search_api_material.xml"
-    },
-    {
         "merged": "/home/sang/Desktop/new mobile/mobile/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_btn_check_to_on_mtrl_000.png.flat",
         "source": "/home/sang/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/1c5d1dff7c7e37df4ce60ad78cb69218/res/drawable-xxhdpi-v4/abc_btn_check_to_on_mtrl_000.png"
+    },
+    {
+        "merged": "/home/sang/Desktop/new mobile/mobile/app/build/intermediates/res/merged/debug/drawable_abc_ic_go_search_api_material.xml.flat",
+        "source": "/home/sang/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/1c5d1dff7c7e37df4ce60ad78cb69218/res/drawable/abc_ic_go_search_api_material.xml"
     },
     {
         "merged": "/home/sang/Desktop/new mobile/mobile/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_btn_switch_to_on_mtrl_00001.9.png.flat",
@@ -346,6 +346,10 @@
     {
         "merged": "/home/sang/Desktop/new mobile/mobile/app/build/intermediates/res/merged/debug/menu_bottom_home.xml.flat",
         "source": "/home/sang/Desktop/new mobile/mobile/app/src/main/res/menu/bottom_home.xml"
+    },
+    {
+        "merged": "/home/sang/Desktop/new mobile/mobile/app/build/intermediates/res/merged/debug/menu_private_menu_main.xml.flat",
+        "source": "/home/sang/Desktop/new mobile/mobile/app/src/main/res/menu/private_menu_main.xml"
     },
     {
         "merged": "/home/sang/Desktop/new mobile/mobile/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_btn_radio_to_on_mtrl_015.png.flat",

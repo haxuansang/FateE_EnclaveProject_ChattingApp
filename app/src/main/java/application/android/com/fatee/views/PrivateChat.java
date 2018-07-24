@@ -8,11 +8,14 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -44,6 +47,7 @@ public class PrivateChat extends AppCompatActivity implements QBChatDialogMessag
     TextView contentMessage;
     ChatMessageAdapter adapter;
     List<QBChatMessage> qbChatMessagesArray;
+    String nameOfUser;
     public static RelativeLayout progressBar;
     public static RelativeLayout chatView;
     public static int countUsers=0;
@@ -56,6 +60,7 @@ public class PrivateChat extends AppCompatActivity implements QBChatDialogMessag
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
+
         initView();
         qbChatMessagesArray=new ArrayList<QBChatMessage>();
         initChatDilalog();
@@ -107,7 +112,7 @@ public class PrivateChat extends AppCompatActivity implements QBChatDialogMessag
     private void retrieveMessages() {
 
         QBMessageGetBuilder qbMessageGetBuilder = new QBMessageGetBuilder();
-        qbMessageGetBuilder.setLimit(100);
+        qbMessageGetBuilder.setLimit(200);
         if(qbChatDialog!=null)
         {
             QBRestChatService.getDialogMessages(qbChatDialog,qbMessageGetBuilder).performAsync(new QBEntityCallback<ArrayList<QBChatMessage>>() {
@@ -144,6 +149,9 @@ public class PrivateChat extends AppCompatActivity implements QBChatDialogMessag
     }
     private void initChatDilalog() {
         qbChatDialog=(QBChatDialog)getIntent().getSerializableExtra("private_dialog");
+        nameOfUser= (String) getIntent().getSerializableExtra("buddy_name");
+        getSupportActionBar().setTitle(nameOfUser);
+
         qbChatDialog.initForChat(QBChatService.getInstance());
         QBIncomingMessagesManager incomingMessagesManager = QBChatService.getInstance().getIncomingMessagesManager();
         incomingMessagesManager.addDialogMessageListener(new QBChatDialogMessageListener() {
@@ -182,5 +190,41 @@ public class PrivateChat extends AppCompatActivity implements QBChatDialogMessag
     public boolean onSupportNavigateUp() {
         onBackPressed();
         return true;
+    }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.private_menu_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId())
+        {
+            case R.id.delete_setting_private:
+                deleteDialog();
+                break;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    private void deleteDialog() {
+            QBRestChatService.deleteDialog(qbChatDialog.getDialogId(),true).performAsync(new QBEntityCallback<Void>() {
+                @Override
+                public void onSuccess(Void aVoid, Bundle bundle) {
+                    Toast.makeText(PrivateChat.this, "Delete the dialogue successfully", Toast.LENGTH_SHORT).show();
+                    onBackPressed();
+                }
+
+                @Override
+                public void onError(QBResponseException e) {
+
+                }
+            });
+
     }
 }

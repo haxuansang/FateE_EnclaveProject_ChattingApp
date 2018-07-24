@@ -54,7 +54,7 @@ public class ChatDialogsAdapter extends BaseAdapter {
         return i;
     }
 
-    private int getUserIDBuddy(QBChatDialog qbChatDialog)
+    public static int getUserIDBuddy(QBChatDialog qbChatDialog)
     {
         int currentId=0;
         for (int i : qbChatDialog.getOccupants())
@@ -85,7 +85,7 @@ public class ChatDialogsAdapter extends BaseAdapter {
                 if (QBFileHolder.getInstance().getFileUserById(idUserBuddy) != null)
                     buddyImage.setImageBitmap(QBFileHolder.getInstance().getFileUserById(idUserBuddy));
                 else {
-                    if (QBUserHolder.getInstance().getUserById(idUserBuddy) != null) {
+
                         QBUser qbUser = QBUserHolder.getInstance().getUserById(idUserBuddy);
                         QBContent.getFile(qbUser.getFileId()).performAsync(new QBEntityCallback<QBFile>() {
                             @Override
@@ -94,7 +94,6 @@ public class ChatDialogsAdapter extends BaseAdapter {
                                     @Override
                                     public void onBitmapLoaded(Bitmap bitmap, Picasso.LoadedFrom from) {
                                         QBFileHolder.getInstance().putQBFileUser(idUserBuddy, bitmap);
-
                                     }
 
                                     @Override
@@ -117,7 +116,7 @@ public class ChatDialogsAdapter extends BaseAdapter {
                             }
                         });
 
-                    }
+
                 }
             }
         }

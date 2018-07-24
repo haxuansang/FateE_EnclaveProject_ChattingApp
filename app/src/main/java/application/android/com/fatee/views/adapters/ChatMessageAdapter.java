@@ -249,12 +249,14 @@ public class ChatMessageAdapter extends RecyclerView.Adapter {
             public void onSuccess(QBChatDialog qbChatDialog, Bundle bundle) {
                   Intent intent = new Intent(mContext,PrivateChat.class);
                   intent.putExtra("private_dialog",qbChatDialog);
+                  intent.putExtra("buddy_name",QBUserHolder.getInstance().getUserById(ChatDialogsAdapter.getUserIDBuddy(qbChatDialog)).getFullName());
                  intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                    mContext.startActivity(intent);
             }
 
             @Override
             public void onError(QBResponseException e) {
+                Toast.makeText(mContext, "You already made friend each other", Toast.LENGTH_SHORT).show();
 
             }
         });
