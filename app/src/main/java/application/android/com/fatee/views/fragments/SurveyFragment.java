@@ -41,6 +41,7 @@ import application.android.com.fatee.views.interfaces.ChattingView;
 import application.android.com.fatee.views.interfaces.OnChangeStateAddOrUpdateSurveyButtonListenter;
 import application.android.com.fatee.views.interfaces.OnReceiveSurveyListener;
 import application.android.com.fatee.views.interfaces.SurveyView;
+import de.hdodenhof.circleimageview.CircleImageView;
 
 
 public class SurveyFragment extends Fragment implements SurveyView, OnReceiveSurveyListener, OnChangeStateAddOrUpdateSurveyButtonListenter, ChattingView {
@@ -217,6 +218,6 @@ public class SurveyFragment extends Fragment implements SurveyView, OnReceiveSur
         QBUser qbUser = new QBUser(username, password);
         chattingGroupPresenter.loadBitmapUsers();
         FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-        chattingGroupPresenter.createSessionForChat(quickBloxResponse.getQuickBloxId(), qbUser, progressDialog, fragmentTransaction);
+        chattingGroupPresenter.createSessionForChat(quickBloxResponse.getQuickBloxId(), qbUser, progressDialog, fragmentTransaction,null,null);
     }
 }

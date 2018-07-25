@@ -33,21 +33,21 @@ public final class R {
     }
     public static final class id {
         public static final int auto = 0x7f080026;
-        public static final int baseline = 0x7f08002b;
-        public static final int center = 0x7f08003c;
-        public static final int column = 0x7f080047;
-        public static final int column_reverse = 0x7f080048;
-        public static final int flex_end = 0x7f08007e;
-        public static final int flex_start = 0x7f08007f;
-        public static final int nowrap = 0x7f0800d1;
-        public static final int row = 0x7f0800ee;
-        public static final int row_reverse = 0x7f0800ef;
-        public static final int space_around = 0x7f080114;
-        public static final int space_between = 0x7f080115;
-        public static final int space_evenly = 0x7f080116;
-        public static final int stretch = 0x7f080122;
-        public static final int wrap = 0x7f080152;
-        public static final int wrap_reverse = 0x7f080154;
+        public static final int baseline = 0x7f08002a;
+        public static final int center = 0x7f08003b;
+        public static final int column = 0x7f080046;
+        public static final int column_reverse = 0x7f080047;
+        public static final int flex_end = 0x7f08007d;
+        public static final int flex_start = 0x7f08007e;
+        public static final int nowrap = 0x7f0800d2;
+        public static final int row = 0x7f0800ef;
+        public static final int row_reverse = 0x7f0800f0;
+        public static final int space_around = 0x7f080115;
+        public static final int space_between = 0x7f080116;
+        public static final int space_evenly = 0x7f080117;
+        public static final int stretch = 0x7f080123;
+        public static final int wrap = 0x7f080153;
+        public static final int wrap_reverse = 0x7f080155;
     }
     public static final class styleable {
         public static final int[] FlexboxLayout = { 0x7f030029, 0x7f03002a, 0x7f030112, 0x7f030113, 0x7f030114, 0x7f030176, 0x7f030177, 0x7f0301c7, 0x7f03023e, 0x7f0302c7, 0x7f0302c8, 0x7f0302c9 };

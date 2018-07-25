@@ -150,7 +150,7 @@ public class RoomFragment extends Fragment implements QBChatDialogMessageListene
                         qbChatMessagesArray.add(qbChatMessage);
                     }
                     LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity().getBaseContext());
-                    adapter = new ChatMessageAdapter(getActivity().getBaseContext(),qbChatMessagesArray,qbChatDialogCurrent.getOccupants().size()-1);
+                    adapter = new ChatMessageAdapter(getActivity().getBaseContext(),qbChatMessagesArray,qbChatDialogCurrent.getOccupants().size()-1,getActivity());
                     lvChatting.setLayoutManager(layoutManager);
                     lvChatting.setAdapter(adapter);
                     scroolSmooth();

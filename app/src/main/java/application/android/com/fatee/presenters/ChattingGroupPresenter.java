@@ -4,6 +4,8 @@ import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
@@ -14,19 +16,25 @@ import com.quickblox.auth.session.QBSession;
 import com.quickblox.chat.QBChatService;
 import com.quickblox.chat.QBRestChatService;
 import com.quickblox.chat.model.QBChatDialog;
+import com.quickblox.content.QBContent;
+import com.quickblox.content.model.QBFile;
 import com.quickblox.core.QBEntityCallback;
 import com.quickblox.core.exception.BaseServiceException;
 import com.quickblox.core.exception.QBResponseException;
 import com.quickblox.users.QBUsers;
 import com.quickblox.users.model.QBUser;
+import com.squareup.picasso.Picasso;
+import com.squareup.picasso.Target;
 
 import java.util.ArrayList;
 
 import application.android.com.fatee.R;
+import application.android.com.fatee.models.quickbloxholder.QBFileHolder;
 import application.android.com.fatee.models.quickbloxholder.QBUserHolder;
 import application.android.com.fatee.presenters.interfaces.ChattingPresenter;
 import application.android.com.fatee.views.MainActivity;
 import application.android.com.fatee.views.fragments.RoomFragment;
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class ChattingGroupPresenter {
     public static QBChatDialog currentQBChatDialog;
@@ -45,7 +53,7 @@ public class ChattingGroupPresenter {
         QBChatService.getInstance().setReconnectionAllowed(true);
     }
 
-    public void createSessionForChat(final String quickBloxId, final QBUser qbUser, final ProgressDialog progressDialog, final FragmentTransaction fragmentTransaction) {
+    public void createSessionForChat(final String quickBloxId, final QBUser qbUser, final ProgressDialog progressDialog, final FragmentTransaction fragmentTransaction, final CircleImageView imageView, final Context context) {
 //        progressDialog  = new ProgressDialog(mContext);
         progressDialog.setMessage("Please Waiting...");
         progressDialog.setCanceledOnTouchOutside(false);
@@ -66,6 +74,10 @@ public class ChattingGroupPresenter {
 
                         QBChatService.getInstance().getUser().getId();
                         getQBChatDialog(quickBloxId,  progressDialog, fragmentTransaction);
+                        if(imageView!=null) {
+                            setImageForUser(imageView, context);
+                        }
+
                     }
 
                     @Override
@@ -87,6 +99,7 @@ public class ChattingGroupPresenter {
             @Override
             public void onSuccess(ArrayList<QBUser> qbUsers, Bundle bundle) {
                 QBUserHolder.getInstance().putUsers(qbUsers);
+
             }
 
             @Override
@@ -112,5 +125,57 @@ public class ChattingGroupPresenter {
 //                Toast.makeText(MainActivity.this, "" + e.getMessage(), Toast.LENGTH_LONG).show();
             }
         });
+    }
+    public void setImageForUser(final CircleImageView imageuser, final Context context) {
+        if (QBFileHolder.getInstance().getFileUserById(QBChatService.getInstance().getUser().getId()) != null) {
+            imageuser.setImageBitmap(QBFileHolder.getInstance().getFileUserById(QBChatService.getInstance().getUser().getId()));
+        } else
+
+        {
+            QBUsers.getUser(QBChatService.getInstance().getUser().getId()).performAsync(new QBEntityCallback<QBUser>() {
+                @Override
+                public void onSuccess(QBUser qbUser, Bundle bundle) {
+                    QBContent.getFile(qbUser.getFileId()).performAsync(new QBEntityCallback<QBFile>() {
+                        @Override
+                        public void onSuccess(QBFile qbFile, Bundle bundle) {
+
+                            Picasso.with(context).load(qbFile.getPublicUrl()).into(new Target() {
+                                @Override
+                                public void onBitmapLoaded(Bitmap bitmap, Picasso.LoadedFrom from) {
+                                    QBFileHolder.getInstance().putQBFileUser(QBChatService.getInstance().getUser().getId(), bitmap);
+                                    imageuser.setImageBitmap(bitmap);
+
+                                }
+
+                                @Override
+                                public void onBitmapFailed(Drawable errorDrawable) {
+
+                                }
+
+                                @Override
+                                public void onPrepareLoad(Drawable placeHolderDrawable) {
+
+                                }
+                            });
+
+                            Picasso.with(context).load(qbFile.getPublicUrl()).into(imageuser);
+
+
+                        }
+
+                        @Override
+                        public void onError(QBResponseException e) {
+
+                        }
+                    });
+                }
+
+                @Override
+                public void onError(QBResponseException e) {
+
+                }
+            });
+
+        }
     }
 }

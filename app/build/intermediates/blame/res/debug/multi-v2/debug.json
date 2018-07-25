@@ -1,28 +1,6 @@
 {
     "logs": [
         {
-            "outputFile": "/home/sang/Desktop/TheFinalFatee/mobile/app/build/intermediates/res/merged/debug/values-notnight-v8_values-notnight-v8.arsc.flat",
-            "map": [
-                {
-                    "source": "/home/sang/Desktop/TheFinalFatee/mobile/app/src/main/res/values-notnight/colors.xml",
-                    "from": {
-                        "startLines": "6,10,11,7,12,4,2,3",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "220,352,415,277,471,153,55,102",
-                        "endColumns": "56,62,55,55,50,45,46,50",
-                        "endOffsets": "272,410,466,328,517,194,97,148"
-                    },
-                    "to": {
-                        "startLines": "2,3,4,5,6,7,8,9",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,112,175,231,287,338,384,431",
-                        "endColumns": "56,62,55,55,50,45,46,50",
-                        "endOffsets": "107,170,226,282,333,379,426,477"
-                    }
-                }
-            ]
-        },
-        {
             "outputFile": "/home/sang/Desktop/TheFinalFatee/mobile/app/build/intermediates/res/merged/debug/values-sr_values-sr.arsc.flat",
             "map": [
                 {
@@ -50,6 +28,28 @@
                         "startOffsets": "1955",
                         "endColumns": "100",
                         "endOffsets": "2051"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "/home/sang/Desktop/TheFinalFatee/mobile/app/build/intermediates/res/merged/debug/values-notnight-v8_values-notnight-v8.arsc.flat",
+            "map": [
+                {
+                    "source": "/home/sang/Desktop/TheFinalFatee/mobile/app/src/main/res/values-notnight/colors.xml",
+                    "from": {
+                        "startLines": "6,10,11,7,12,4,2,3",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "220,352,415,277,471,153,55,102",
+                        "endColumns": "56,62,55,55,50,45,46,50",
+                        "endOffsets": "272,410,466,328,517,194,97,148"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8,9",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,112,175,231,287,338,384,431",
+                        "endColumns": "56,62,55,55,50,45,46,50",
+                        "endOffsets": "107,170,226,282,333,379,426,477"
                     }
                 }
             ]
@@ -558,20 +558,20 @@
             ]
         },
         {
-            "outputFile": "/home/sang/Desktop/TheFinalFatee/mobile/app/build/intermediates/res/merged/debug/values-sw_values-sw.arsc.flat",
+            "outputFile": "/home/sang/Desktop/TheFinalFatee/mobile/app/build/intermediates/res/merged/debug/values-fa_values-fa.arsc.flat",
             "map": [
                 {
-                    "source": "/home/sang/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/1c5d1dff7c7e37df4ce60ad78cb69218/res/values-sw/values-sw.xml",
+                    "source": "/home/sang/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/1c5d1dff7c7e37df4ce60ad78cb69218/res/values-fa/values-fa.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,208,306,414,504,609,726,808,891,973,1074,1183,1282,1389,1498,1603,1765,1862",
-                        "endColumns": "102,97,107,89,104,116,81,82,81,100,108,98,106,108,104,161,96,81",
-                        "endOffsets": "203,301,409,499,604,721,803,886,968,1069,1178,1277,1384,1493,1598,1760,1857,1939"
+                        "startOffsets": "105,215,318,429,513,616,731,810,888,969,1081,1184,1282,1392,1496,1605,1766,1867",
+                        "endColumns": "109,102,110,83,102,114,78,77,80,111,102,97,109,103,108,160,100,80",
+                        "endOffsets": "210,313,424,508,611,726,805,883,964,1076,1179,1277,1387,1491,1600,1761,1862,1943"
                     }
                 },
                 {
-                    "source": "/home/sang/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/c81a4c497a741e917116edf3c3fc534c/res/values-sw/values-sw.xml",
+                    "source": "/home/sang/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/c81a4c497a741e917116edf3c3fc534c/res/values-fa/values-fa.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -582,9 +582,9 @@
                     "to": {
                         "startLines": "20",
                         "startColumns": "4",
-                        "startOffsets": "1944",
+                        "startOffsets": "1948",
                         "endColumns": "100",
-                        "endOffsets": "2040"
+                        "endOffsets": "2044"
                     }
                 }
             ]
@@ -622,20 +622,20 @@
             ]
         },
         {
-            "outputFile": "/home/sang/Desktop/TheFinalFatee/mobile/app/build/intermediates/res/merged/debug/values-fa_values-fa.arsc.flat",
+            "outputFile": "/home/sang/Desktop/TheFinalFatee/mobile/app/build/intermediates/res/merged/debug/values-sw_values-sw.arsc.flat",
             "map": [
                 {
-                    "source": "/home/sang/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/1c5d1dff7c7e37df4ce60ad78cb69218/res/values-fa/values-fa.xml",
+                    "source": "/home/sang/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/1c5d1dff7c7e37df4ce60ad78cb69218/res/values-sw/values-sw.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,215,318,429,513,616,731,810,888,969,1081,1184,1282,1392,1496,1605,1766,1867",
-                        "endColumns": "109,102,110,83,102,114,78,77,80,111,102,97,109,103,108,160,100,80",
-                        "endOffsets": "210,313,424,508,611,726,805,883,964,1076,1179,1277,1387,1491,1600,1761,1862,1943"
+                        "startOffsets": "105,208,306,414,504,609,726,808,891,973,1074,1183,1282,1389,1498,1603,1765,1862",
+                        "endColumns": "102,97,107,89,104,116,81,82,81,100,108,98,106,108,104,161,96,81",
+                        "endOffsets": "203,301,409,499,604,721,803,886,968,1069,1178,1277,1384,1493,1598,1760,1857,1939"
                     }
                 },
                 {
-                    "source": "/home/sang/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/c81a4c497a741e917116edf3c3fc534c/res/values-fa/values-fa.xml",
+                    "source": "/home/sang/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/c81a4c497a741e917116edf3c3fc534c/res/values-sw/values-sw.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -646,9 +646,9 @@
                     "to": {
                         "startLines": "20",
                         "startColumns": "4",
-                        "startOffsets": "1948",
+                        "startOffsets": "1944",
                         "endColumns": "100",
-                        "endOffsets": "2044"
+                        "endOffsets": "2040"
                     }
                 }
             ]
@@ -688,6 +688,21 @@
             ]
         },
         {
+            "outputFile": "/home/sang/Desktop/TheFinalFatee/mobile/app/build/intermediates/res/merged/debug/values-port_values-port.arsc.flat",
+            "map": [
+                {
+                    "source": "/home/sang/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/1c5d1dff7c7e37df4ce60ad78cb69218/res/values-port/values-port.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "55",
+                        "endOffsets": "106"
+                    }
+                }
+            ]
+        },
+        {
             "outputFile": "/home/sang/Desktop/TheFinalFatee/mobile/app/build/intermediates/res/merged/debug/values-bs_values-bs.arsc.flat",
             "map": [
                 {
@@ -715,21 +730,6 @@
                         "startOffsets": "105,224,333,440,526,630,752,834,915,1001,1104,1209,1307,1412,1525,1630,1805,1902",
                         "endColumns": "118,108,106,85,103,121,81,80,85,102,104,97,104,112,104,174,96,83",
                         "endOffsets": "219,328,435,521,625,747,829,910,996,1099,1204,1302,1407,1520,1625,1800,1897,1981"
-                    }
-                }
-            ]
-        },
-        {
-            "outputFile": "/home/sang/Desktop/TheFinalFatee/mobile/app/build/intermediates/res/merged/debug/values-port_values-port.arsc.flat",
-            "map": [
-                {
-                    "source": "/home/sang/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/1c5d1dff7c7e37df4ce60ad78cb69218/res/values-port/values-port.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "55",
-                        "endOffsets": "106"
                     }
                 }
             ]
@@ -991,38 +991,6 @@
             ]
         },
         {
-            "outputFile": "/home/sang/Desktop/TheFinalFatee/mobile/app/build/intermediates/res/merged/debug/values-ur_values-ur.arsc.flat",
-            "map": [
-                {
-                    "source": "/home/sang/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/c81a4c497a741e917116edf3c3fc534c/res/values-ur/values-ur.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "102",
-                        "endOffsets": "153"
-                    },
-                    "to": {
-                        "startLines": "20",
-                        "startColumns": "4",
-                        "startOffsets": "1958",
-                        "endColumns": "102",
-                        "endOffsets": "2056"
-                    }
-                },
-                {
-                    "source": "/home/sang/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/1c5d1dff7c7e37df4ce60ad78cb69218/res/values-ur/values-ur.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,215,321,430,516,620,740,816,892,977,1085,1194,1296,1407,1507,1615,1780,1878",
-                        "endColumns": "109,105,108,85,103,119,75,75,84,107,108,101,110,99,107,164,97,79",
-                        "endOffsets": "210,316,425,511,615,735,811,887,972,1080,1189,1291,1402,1502,1610,1775,1873,1953"
-                    }
-                }
-            ]
-        },
-        {
             "outputFile": "/home/sang/Desktop/TheFinalFatee/mobile/app/build/intermediates/res/merged/debug/values-et_values-et.arsc.flat",
             "map": [
                 {
@@ -1050,6 +1018,38 @@
                         "startOffsets": "1965",
                         "endColumns": "100",
                         "endOffsets": "2061"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "/home/sang/Desktop/TheFinalFatee/mobile/app/build/intermediates/res/merged/debug/values-ur_values-ur.arsc.flat",
+            "map": [
+                {
+                    "source": "/home/sang/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/c81a4c497a741e917116edf3c3fc534c/res/values-ur/values-ur.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "102",
+                        "endOffsets": "153"
+                    },
+                    "to": {
+                        "startLines": "20",
+                        "startColumns": "4",
+                        "startOffsets": "1958",
+                        "endColumns": "102",
+                        "endOffsets": "2056"
+                    }
+                },
+                {
+                    "source": "/home/sang/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/1c5d1dff7c7e37df4ce60ad78cb69218/res/values-ur/values-ur.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,215,321,430,516,620,740,816,892,977,1085,1194,1296,1407,1507,1615,1780,1878",
+                        "endColumns": "109,105,108,85,103,119,75,75,84,107,108,101,110,99,107,164,97,79",
+                        "endOffsets": "210,316,425,511,615,735,811,887,972,1080,1189,1291,1402,1502,1610,1775,1873,1953"
                     }
                 }
             ]

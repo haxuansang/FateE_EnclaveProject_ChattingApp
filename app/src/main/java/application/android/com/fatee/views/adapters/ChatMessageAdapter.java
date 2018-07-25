@@ -1,5 +1,7 @@
 package application.android.com.fatee.views.adapters;
 
+import android.app.Activity;
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -42,16 +44,18 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class ChatMessageAdapter extends RecyclerView.Adapter {
     private static final int VIEW_TYPE_MESSAGE_SENT = 1;
     private static final int VIEW_TYPE_MESSAGE_RECEIVED = 2;
-
+    private Dialog dialog;
     private Context mContext;
     private List<QBChatMessage> mMessageList;
-
+    Activity mActivity;
+    CircleImageView imageViewUser;
+    TextView tvUser;
     Integer userID;
     int countOfUsers;
     public static int currentUserBuddy=0;
 
 
-    public ChatMessageAdapter(Context context, List<QBChatMessage> messageList,int countOfUser) {
+    public ChatMessageAdapter(Context context, List<QBChatMessage> messageList, int countOfUser) {
         mContext = context;
         mMessageList = messageList;
         userID = QBChatService.getInstance().getUser().getId();
@@ -62,6 +66,20 @@ public class ChatMessageAdapter extends RecyclerView.Adapter {
             PrivateChat.progressBar.setVisibility(View.GONE);
         }
 
+
+    }
+    public ChatMessageAdapter(Context context, List<QBChatMessage> messageList, int countOfUser,Activity activity) {
+        mContext = context;
+        mMessageList = messageList;
+        userID = QBChatService.getInstance().getUser().getId();
+        countOfUsers=countOfUser;
+        if (countOfUser==0)
+        {
+            PrivateChat.chatView.setVisibility(View.VISIBLE);
+            PrivateChat.progressBar.setVisibility(View.GONE);
+        }
+
+        mActivity=activity;
 
     }
 
@@ -230,6 +248,7 @@ public class ChatMessageAdapter extends RecyclerView.Adapter {
             switch (menuItem.getItemId())
             {
                 case R.id.user_profile:
+                    showInfoUser();
                     break;
                 case R.id.user_make_buddy:
                     createPrivateChat();
@@ -238,6 +257,17 @@ public class ChatMessageAdapter extends RecyclerView.Adapter {
             }
             return false;
         }
+    }
+
+    private void showInfoUser() {
+        dialog = new Dialog(mActivity);
+        dialog.setContentView(R.layout.layout_show_profile_user_group);
+        imageViewUser=(CircleImageView)dialog.findViewById(R.id.image_user_group);
+        tvUser=(TextView)dialog.findViewById(R.id.nick_name_user_group);
+        imageViewUser.setImageBitmap(QBFileHolder.getInstance().getFileUserById(currentUserBuddy));
+        tvUser.setText(QBUserHolder.getInstance().getUserById(currentUserBuddy).getFullName());
+        dialog.show();
+
     }
 
     private void createPrivateChat() {
