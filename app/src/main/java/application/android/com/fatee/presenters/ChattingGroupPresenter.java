@@ -25,6 +25,7 @@ import java.util.ArrayList;
 import application.android.com.fatee.R;
 import application.android.com.fatee.models.quickbloxholder.QBUserHolder;
 import application.android.com.fatee.presenters.interfaces.ChattingPresenter;
+import application.android.com.fatee.views.MainActivity;
 import application.android.com.fatee.views.fragments.RoomFragment;
 
 public class ChattingGroupPresenter {
@@ -62,8 +63,8 @@ public class ChattingGroupPresenter {
                 QBChatService.getInstance().login(qbUser, new QBEntityCallback() {
                     @Override
                     public void onSuccess(Object o, Bundle bundle) {
-//                        Toast.makeText(MainActivity.this, "Login Successfully", Toast.LENGTH_SHORT).show();
-//                        QBChatService.getInstance().getUser().getId();
+
+                        QBChatService.getInstance().getUser().getId();
                         getQBChatDialog(quickBloxId,  progressDialog, fragmentTransaction);
                     }
 
@@ -100,8 +101,6 @@ public class ChattingGroupPresenter {
             public void onSuccess(QBChatDialog qbChatDialog, Bundle bundle) {
                 currentQBChatDialog = qbChatDialog;
                 progressDialog.dismiss();
-
-
                 fragmentTransaction.replace(R.id.frame_layout, RoomFragment.getInstance());
                 fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);

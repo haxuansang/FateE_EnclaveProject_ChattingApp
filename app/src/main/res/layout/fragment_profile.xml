@@ -55,18 +55,14 @@
                 android:layout_width="match_parent"
                 android:orientation="horizontal">
 
-                <com.alexzh.circleimageview.CircleImageView
-                    android:id="@+id/circleview"
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/imageview_profile"
                     android:layout_height="100dp"
-                    android:layout_marginLeft="5dp"
                     android:layout_marginTop="70dp"
                     android:layout_width="100dp"
-                    android:src="@drawable/kamran1"
-                    app:view_borderColor="#cccccc"
-                    app:view_borderWidth="2dp"
-                    app:view_shadowDx="2dp"
-                    app:view_shadowDy="0dp"
-                    app:view_shadowRadius="2dp" />
+                    android:layout_marginLeft="5dp"
+
+                  />
             </LinearLayout>
         </FrameLayout>
 

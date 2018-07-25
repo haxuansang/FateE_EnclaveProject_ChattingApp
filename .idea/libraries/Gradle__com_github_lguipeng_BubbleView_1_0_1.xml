@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="Gradle: com.github.lguipeng:BubbleView-1.0.1">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/BubbleView-1.0.1.aar/ff20e653c4aa863f871a6396eeb93284/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/BubbleView-1.0.1.aar/ff20e653c4aa863f871a6396eeb93284/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/BubbleView-1.0.1.aar/1e3d74d7651ce9d7c7e7d0e77b64f38c/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/BubbleView-1.0.1.aar/1e3d74d7651ce9d7c7e7d0e77b64f38c/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

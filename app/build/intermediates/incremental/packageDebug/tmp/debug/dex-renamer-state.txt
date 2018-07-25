@@ -1,4 +1,4 @@
-#Wed Jul 25 15:01:17 ICT 2018
-base.0=/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/transforms/dexMerger/debug/16
+#Wed Jul 25 16:17:24 ICT 2018
+base.0=/home/sang/Desktop/TheFinalFatee/mobile/app/build/intermediates/transforms/dexMerger/debug/0
 path.0=classes.dex
 renamed.0=classes.dex

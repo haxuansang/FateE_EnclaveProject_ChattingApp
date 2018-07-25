@@ -214,14 +214,26 @@ public class MainActivity extends AppCompatActivity
                 this.startActivity(intentAbout);
                 break;
             case R.id.signout:
-              sharedPreferencesRememberedUser = getSharedPreferences(LoginConstant.SHARED_PREFERENCES_REMEMBERED_USER_XML_FILE_NAME, Context.MODE_PRIVATE);
-                SharedPreferences.Editor editor = sharedPreferencesRememberedUser.edit();
-                editor.clear();
-                editor.apply();
-                UserUtil.getInstance(null, null);
-                Intent intent = new Intent(MainActivity.this,LoginActivity.class);
-                this.startActivity(intent);
-                this.finish();
+                QBUsers.signOut().performAsync(new QBEntityCallback<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid, Bundle bundle) {
+                        sharedPreferencesRememberedUser = getSharedPreferences(LoginConstant.SHARED_PREFERENCES_REMEMBERED_USER_XML_FILE_NAME, Context.MODE_PRIVATE);
+                        SharedPreferences.Editor editor = sharedPreferencesRememberedUser.edit();
+                        editor.clear();
+                        editor.apply();
+                        UserUtil.getInstance(null, null);
+                        Intent intent = new Intent(MainActivity.this,LoginActivity.class);
+                        startActivity(intent);
+                        finish();
+                    }
+
+                    @Override
+                    public void onError(QBResponseException e) {
+
+                    }
+                });
+
+
                 break;
         }
 
