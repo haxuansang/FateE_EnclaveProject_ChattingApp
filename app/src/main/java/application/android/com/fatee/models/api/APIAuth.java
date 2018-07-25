@@ -14,5 +14,4 @@ public interface APIAuth {
 
     @POST("/api/register")
     Call<RegisterResponse> register(@Body User user);
-
 }

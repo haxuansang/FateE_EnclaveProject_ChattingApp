@@ -37,17 +37,17 @@ public final class R {
         public static final int center = 0x7f08003c;
         public static final int column = 0x7f080049;
         public static final int column_reverse = 0x7f08004a;
-        public static final int flex_end = 0x7f08007f;
-        public static final int flex_start = 0x7f080080;
-        public static final int nowrap = 0x7f0800cf;
-        public static final int row = 0x7f0800ed;
-        public static final int row_reverse = 0x7f0800ee;
-        public static final int space_around = 0x7f080113;
-        public static final int space_between = 0x7f080114;
-        public static final int space_evenly = 0x7f080115;
-        public static final int stretch = 0x7f080121;
-        public static final int wrap = 0x7f08014e;
-        public static final int wrap_reverse = 0x7f080150;
+        public static final int flex_end = 0x7f080080;
+        public static final int flex_start = 0x7f080081;
+        public static final int nowrap = 0x7f0800d3;
+        public static final int row = 0x7f0800f1;
+        public static final int row_reverse = 0x7f0800f2;
+        public static final int space_around = 0x7f080117;
+        public static final int space_between = 0x7f080118;
+        public static final int space_evenly = 0x7f080119;
+        public static final int stretch = 0x7f080125;
+        public static final int wrap = 0x7f080155;
+        public static final int wrap_reverse = 0x7f080157;
     }
     public static final class styleable {
         public static final int[] FlexboxLayout = { 0x7f030029, 0x7f03002a, 0x7f030112, 0x7f030113, 0x7f030114, 0x7f030176, 0x7f030177, 0x7f0301c7, 0x7f03023e, 0x7f0302d3, 0x7f0302d4, 0x7f0302d5 };

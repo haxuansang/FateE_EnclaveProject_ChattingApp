@@ -34,7 +34,7 @@ public class CheckTempBannedUserService extends Service {
     @Override
     public void onDestroy() {
         super.onDestroy();
-        sharedPreferences = getSharedPreferences(LoginConstant.SHARED_PREFERENCES_NAME_MESSAGE, Context.MODE_PRIVATE);
+        sharedPreferences = getSharedPreferences(LoginConstant.SHARED_PREFERENCES_LOCKED_USER_XML_FILE_NAME, Context.MODE_PRIVATE);
         editor = sharedPreferences.edit();
         editor.remove(LoginConstant.TEMP_BANNED_USER_NAME);
     }

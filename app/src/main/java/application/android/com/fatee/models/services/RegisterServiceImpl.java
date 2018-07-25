@@ -26,19 +26,9 @@ public class RegisterServiceImpl implements RegisterService {
         call.enqueue(new retrofit2.Callback<RegisterResponse>() {
             @Override
             public void onResponse(Call<RegisterResponse> call, Response<RegisterResponse> response) {
-                System.out.println("Code:" + response.code());
                 if (response.isSuccessful()) {
                     registercallback.onSuccess(response.body());
                 }
-//                if (response.code() == 400) {
-//                    try {
-//                        registercallback.onSuccess(createRegisterResponseFromErrorBory(response.errorBody().string()));
-//                    } catch (IOException e) {
-//                        e.printStackTrace();
-//                    } catch (JSONException e) {
-//                        e.printStackTrace();
-//                    }
-//                }
             }
 
             @Override
@@ -47,17 +37,4 @@ public class RegisterServiceImpl implements RegisterService {
             }
         });
     }
-
-//    private RegisterResponse createRegisterResponseFromErrorBory(String errorBody) throws JSONException {
-//        JSONObject jObjError = new JSONObject(errorBody);
-//        RegisterResponse registerResponse = new RegisterResponse();
-//        registerResponse.setResponseCode(jObjError.getString("responseCode"));
-//        if(!"null".equals(resetPassLink) && !"null".equals(mail)) {
-//            registerResponse.getLoginResponseInfo().setResetPassLink(jObjError.getJSONObject("loginResponseInfo").getString("resetPassLink"));
-//            registerResponse.getLoginResponseInfo().setMail(jObjError.getJSONObject("loginResponseInfo").getString("mail"));
-//        }
-//        String message = jObjError.getJSONObject("loginResponseInfo").getString("message");
-//        registerResponse.setMessage(message);
-//        return registerResponse;
-//    }
-    }
+}

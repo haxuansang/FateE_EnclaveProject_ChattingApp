@@ -51,13 +51,17 @@ public class RegisterActivity extends AppCompatActivity implements View.OnFocusC
         setContentView(R.layout.register_layout);
         initView();
         initFocusChangeListener();
-        registerPresenter = new RegisterPresenterImpl(this);
+
         edtRegisterConfirmPassword.addTextChangedListener(new TextWatcher() {
             @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
 
             @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
 
             @Override
             public void afterTextChanged(Editable editable) {
@@ -88,7 +92,8 @@ public class RegisterActivity extends AppCompatActivity implements View.OnFocusC
         String nickname = edtRegisterNickname.getText().toString();
         String mail = edtRegisterEmail.getText().toString();
         if (!"".equals(username) && !"".equals(password) && !"".equals(confirmpassword) && !"".equals(nickname) && !"".equals(mail)) {
-            registerPresenter.createNewAccount(new User(username, password, nickname, mail, gender));
+            registerPresenter = new RegisterPresenterImpl(this);
+            registerPresenter.createNewAccount(new User(username, password, mail, nickname, gender));
         } else {
             showDiaglogMessage("Please complete putting your information before registering!");
         }
@@ -182,12 +187,12 @@ public class RegisterActivity extends AppCompatActivity implements View.OnFocusC
             case R.id.radiobtn_gender_Male:
                 if (checked)
                     Toast.makeText(this, "Male", Toast.LENGTH_SHORT).show();
-                    break;
+                break;
             case R.id.radiobtn_gender_Female:
                 if (checked)
                     Toast.makeText(this, "Female", Toast.LENGTH_SHORT).show();
-                    gender = false;
-                    break;
+                gender = false;
+                break;
         }
     }
 
@@ -195,12 +200,12 @@ public class RegisterActivity extends AppCompatActivity implements View.OnFocusC
     @Override
     public void notificationsAfterRegisteration(RegisterResponse registerResponse) {
         String accountStatus = getAccountStatus(registerResponse);
-            if ("success".equals(accountStatus)){
-                showDiaglogMessage("You had a new account now. Let's login");
-            }
-            else if ("failure".equals(accountStatus)){
-                showDiaglogMessage(registerResponse.getMessage());
-            }
+        if ("success".equals(accountStatus)){
+            showDiaglogMessage("You had a new account now. Let's login");
+        }
+        else if ("failure".equals(accountStatus)){
+            showDiaglogMessage(registerResponse.getMessage());
+        }
     }
 
     public String getAccountStatus(RegisterResponse registerResponse) {
@@ -225,6 +230,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnFocusC
         alert.show();
 
     }
+
     public Drawable customizeErrorIcon(){
         Drawable drawable = getResources().getDrawable(R.drawable.checked);
         drawable.setBounds(0, 0, drawable.getIntrinsicWidth(), drawable.getIntrinsicHeight());

@@ -70,7 +70,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginBottom="52dp"
-            app:stackFromEnd="true"
+            android:stackFromBottom="true"
+
             />
     </RelativeLayout>
 </RelativeLayout>

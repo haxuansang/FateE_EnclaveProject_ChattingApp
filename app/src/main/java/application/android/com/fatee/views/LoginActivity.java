@@ -1,5 +1,6 @@
 package application.android.com.fatee.views;
 
+import android.app.ActivityOptions;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -53,7 +54,7 @@ public class LoginActivity extends AppCompatActivity implements ViewProcessLogin
     private int countdown = 5;
     private int count = 0;
     private int wrong_info_times = 0;
-    private SharedPreferences sharedPreferences;
+    private SharedPreferences sharedPreferencesLockedUser,sharedPreferencesRememberedUser;
     private Intent service;
     private String preUsername = "";
     private ImageView imageViewIcon;
@@ -63,18 +64,32 @@ public class LoginActivity extends AppCompatActivity implements ViewProcessLogin
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_layout);
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-
-        QBSettings.getInstance().init(getApplicationContext(), LoginConstant.APP_ID, LoginConstant.AUTH_KEY, LoginConstant.AUTH_SECRET);
-        QBSettings.getInstance().setAccountKey(LoginConstant.ACCOUNT_KEY);
+//        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+         QBSettings.getInstance().init(getApplicationContext(), LoginConstant.APP_ID, LoginConstant.AUTH_KEY, LoginConstant.AUTH_SECRET);
+          QBSettings.getInstance().setAccountKey(LoginConstant.ACCOUNT_KEY);
         viewProcessLogin = this;
-        delayLogin();
-        initView();
-        initFocusChangeListener();
         presenterLogicProcessLogin = new ProcessLogicPresenterImpl(viewProcessLogin);
         broadcastReceiver = new ConnectionBroadcastReceiver();
-        sharedPreferences = getSharedPreferences(LoginConstant.SHARED_PREFERENCES_NAME_MESSAGE, Context.MODE_PRIVATE);
+        sharedPreferencesLockedUser = getSharedPreferences(LoginConstant.SHARED_PREFERENCES_LOCKED_USER_XML_FILE_NAME, Context.MODE_PRIVATE);
+        sharedPreferencesRememberedUser = getSharedPreferences(LoginConstant.SHARED_PREFERENCES_REMEMBERED_USER_XML_FILE_NAME, Context.MODE_PRIVATE);
         service = new Intent(LoginActivity.this, CheckTempBannedUserService.class);
+        delayLogin();
+        initView();
+
+        if (checkRememberedUser()){
+            relativeLayoutLogin.setVisibility(View.VISIBLE);
+            loginWithoutLogin();
+        }else {
+            setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+            delayLogin();
+            initFocusChangeListener();
+        }
+//        initFocusChangeListener();
+//        presenterLogicProcessLogin = new ProcessLogicPresenterImpl(viewProcessLogin);
+//        broadcastReceiver = new ConnectionBroadcastReceiver();
+//        sharedPreferencesLockedUser = getSharedPreferences(LoginConstant.SHARED_PREFERENCES_LOCKED_USER_XML_FILE_NAME, Context.MODE_PRIVATE);
+//        sharedPreferencesRememberedUser = getSharedPreferences(LoginConstant.SHARED_PREFERENCES_REMEMBERED_USER_XML_FILE_NAME, Context.MODE_PRIVATE);
+//        service = new Intent(LoginActivity.this, CheckTempBannedUserService.class);
     }
 
     @Override
@@ -91,12 +106,12 @@ public class LoginActivity extends AppCompatActivity implements ViewProcessLogin
         super.onResume();
         edtUsername.setOnFocusChangeListener(this);
         edtPassword.setOnFocusChangeListener(this);
-        btnLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                login(view);
-            }
-        });
+//        btnLogin.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                login(view);
+//            }
+//        });
 
     }
 
@@ -135,11 +150,12 @@ public class LoginActivity extends AppCompatActivity implements ViewProcessLogin
 
     @Override
     public void noticeForUserAfterLogin(LoginResponse loginResponse) {
-        if (!isTempBannedUser()) {
+        if (!isLockedUser()) {
             String userStatus = getUserStatus(loginResponse);
             if (userStatus.equals(LoginConstant.BANNED_STATUS)) {
                 showNoticeDiaglogMessage(LoginConstant.USER_BANNED_MESSAGE);
             } else if (userStatus.equals(LoginConstant.USER_LOGIN_SUCCESS_STATUS)) {
+                rememberUserForTheNextLogin();
                 forwardFromLoginActivityToMainActivityAfterLoginSuccessfully(loginResponse);
             } else if (userStatus.equals(LoginConstant.USER_LOGIN_WRONG_USER_AND_PASS_RETURN)) {
                 showNoticeDiaglogMessage(LoginConstant.USER_LOGIN_WRONG_USER_MESSAGE);
@@ -317,8 +333,8 @@ public class LoginActivity extends AppCompatActivity implements ViewProcessLogin
         if (countdown == 0) {
             wrong_info_times++;
             if (wrong_info_times >= 2) {
-                addTempBannedUser();
-                SharedPreferences.Editor editor = sharedPreferences.edit();
+                addLockedUser();
+                SharedPreferences.Editor editor = sharedPreferencesLockedUser.edit();
                 editor.putString(LoginConstant.TEMP_BANNED_USER_NAME, edtUsername.getText().toString());
             } else if (wrong_info_times < 2) {
                 limitLoginTimer();
@@ -367,19 +383,46 @@ public class LoginActivity extends AppCompatActivity implements ViewProcessLogin
         }
     }
 
-    private void addTempBannedUser() {
-        SharedPreferences.Editor editor = sharedPreferences.edit();
+    private void addLockedUser() {
+        SharedPreferences.Editor editor = sharedPreferencesLockedUser.edit();
         editor.putString(LoginConstant.TEMP_BANNED_USER_NAME, edtUsername.getText().toString());
         editor.apply();
     }
 
-    private boolean isTempBannedUser() {
-        String user = sharedPreferences.getString(LoginConstant.TEMP_BANNED_USER_NAME, "null");
+    private boolean isLockedUser() {
+        String user = sharedPreferencesLockedUser.getString(LoginConstant.TEMP_BANNED_USER_NAME, "null");
         return wrong_info_times >= 2 && user.equals(edtUsername.getText().toString());
     }
 
     public void registerFromLogin(View view){
         Intent intent = new Intent(this, RegisterActivity.class);
+        ActivityOptions options = ActivityOptions.makeCustomAnimation(this, R.anim.left_enter, R.anim.right_out);
         startActivity(intent);
+    }
+    private void rememberUserForTheNextLogin(){
+        SharedPreferences.Editor editor = sharedPreferencesRememberedUser.edit();
+        editor.clear();
+        editor.putString(LoginConstant.REMEMBERED_USERNAME, edtUsername.getText().toString());
+        editor.putString(LoginConstant.REMEMBERED_PASSWORD, edtPassword.getText().toString());
+        editor.apply();
+    }
+    private boolean checkRememberedUser(){
+        if (sharedPreferencesRememberedUser.getString(LoginConstant.REMEMBERED_USERNAME,"null").equals("null")) {
+            Toast.makeText(this,sharedPreferencesRememberedUser.getString(LoginConstant.REMEMBERED_USERNAME,"a"),Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        else {
+//            Toast.makeText(this,sharedPreferencesRememberedUser.getString(Constant.REMEMBERED_USERNAME,"a"),Toast.LENGTH_SHORT).show();
+            return true;
+        }
+    }
+
+    private void loginWithoutLogin(){
+        String rememberedUsername = sharedPreferencesRememberedUser.getString(LoginConstant.REMEMBERED_USERNAME,"a");
+        String rememberedPassword = sharedPreferencesRememberedUser.getString(LoginConstant.REMEMBERED_PASSWORD,"a");
+        edtUsername.setText(rememberedUsername);
+        edtPassword.setText(rememberedPassword);
+        btnLogin.callOnClick();
+        btnLogin.performClick();
     }
 }

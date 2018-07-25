@@ -14,7 +14,8 @@ public final class LoginConstant {
     public static final String UER_LOGIN_WRONG_PASS_AND_USER_STATUS = "WUWP";
     public final static String PASSWORD_PATTERN = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[#?!@$%^&*-])[A-Za-z\\d#?!@$%^&*-]{8,30}";
     public final static String USERNAME_PATTERN = "^(?=.*[a-z])(?=.*\\d)[A-Za-z\\d#?!@$%^&*-]{8,30}";
-    public final static String SHARED_PREFERENCES_NAME_MESSAGE = "temp_banned_user";
+    public final static String SHARED_PREFERENCES_LOCKED_USER_XML_FILE_NAME = "locked_user";
+    public final static String SHARED_PREFERENCES_REMEMBERED_USER_XML_FILE_NAME = "remembered_user";
     public final static String TEMP_BANNED_USER_NAME = "user";
     public final static String LOST_INTERNET_CONNECTION_MESSAGE = "You lost Internet Connection. Please restart your Wifi or 3G.";
     public final static String USERNAME_ERROR_MESSAGE = "Your username must match and must be at least 8 and 30 maximum in length";
@@ -29,4 +30,6 @@ public final class LoginConstant {
     public static final String ACCOUNT_KEY="7yc_WUA_shXrP1YqRznJ";
     public static final String USERNAME="UsernameAll";
     public static final String PASSWORD="PasswordAll";
+    public final static String REMEMBERED_USERNAME = "remembered_username";
+    public final static String REMEMBERED_PASSWORD = "remembered_password";
 }

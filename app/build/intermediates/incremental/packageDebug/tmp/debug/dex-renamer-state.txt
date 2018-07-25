@@ -1,10 +1,4 @@
-#Wed Jul 25 11:37:53 ICT 2018
-path.2=classes.dex
-path.1=classes.dex
+#Wed Jul 25 15:01:17 ICT 2018
+base.0=/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/transforms/dexMerger/debug/16
 path.0=classes.dex
-renamed.2=classes3.dex
-renamed.1=classes2.dex
 renamed.0=classes.dex
-base.2=/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/transforms/dexMerger/debug/12
-base.1=/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/transforms/dexMerger/debug/13
-base.0=/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/transforms/dexMerger/debug/14

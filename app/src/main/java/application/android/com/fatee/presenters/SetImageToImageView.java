@@ -18,17 +18,23 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class SetImageToImageView {
     public static Boolean status=false;
-    public  static void loadImageToImageView(final Context context, String URL, final CircleImageView userImage, final int idUser, final RelativeLayout progressBar, final  RelativeLayout chatView)
-    {
+
+    public static void loadImageToImageView(final Context context, String URL, final CircleImageView userImage, final int idUser, final RelativeLayout progressBar, final  RelativeLayout chatView, final int countOfUsers) {
         Target t = new Target() {
             @Override
             public void onBitmapLoaded(Bitmap bitmap, Picasso.LoadedFrom from) {
-                QBFileHolder.getInstance().putQBFileUser(idUser, bitmap);
-                    if (QBFileHolder.getInstance().sizeOfImages()==4) {
+                QBFileHolder.getInstance().putQBFileUser(idUser,bitmap);
+
+
+                    if (QBFileHolder.getInstance().sizeOfImages()==countOfUsers) {
                         RoomFragment.adapter.notifyDataSetChanged();
                         chatView.setVisibility(View.VISIBLE);
                         progressBar.setVisibility(View.GONE);
+
                     }
+
+
+
             }
 
             @Override
@@ -56,4 +62,6 @@ public class SetImageToImageView {
 
 
     }
+
+
 }

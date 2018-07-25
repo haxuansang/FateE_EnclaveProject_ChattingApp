@@ -15,11 +15,11 @@ import application.android.com.fatee.models.services.interfaces.RegisterService;
 import application.android.com.fatee.presenters.interfaces.RegisterPresenter;
 import application.android.com.fatee.views.interfaces.RegisterView;
 
-public class RegisterPresenterImpl implements RegisterPresenter{
+public class RegisterPresenterImpl implements RegisterPresenter {
     private RegisterService registerService;
     private RegisterView registerView;
 
-    public RegisterPresenterImpl( RegisterView registerView) {
+    public RegisterPresenterImpl(RegisterView registerView) {
         registerService = new RegisterServiceImpl();
         this.registerView = registerView;
     }
@@ -27,7 +27,6 @@ public class RegisterPresenterImpl implements RegisterPresenter{
     @Override
     public void createNewAccount(User user) {
         registerService.createNewAccount(user, new Callback<RegisterResponse>() {
-
             @Override
             public void onSuccess(RegisterResponse result) {
                 registerView.notificationsAfterRegisteration(result);
@@ -35,7 +34,6 @@ public class RegisterPresenterImpl implements RegisterPresenter{
 
             @Override
             public void onError(Throwable what) {
-
             }
         });
     }

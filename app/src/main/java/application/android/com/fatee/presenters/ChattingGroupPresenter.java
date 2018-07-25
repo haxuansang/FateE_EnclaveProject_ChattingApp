@@ -100,6 +100,8 @@ public class ChattingGroupPresenter {
             public void onSuccess(QBChatDialog qbChatDialog, Bundle bundle) {
                 currentQBChatDialog = qbChatDialog;
                 progressDialog.dismiss();
+
+
                 fragmentTransaction.replace(R.id.frame_layout, RoomFragment.getInstance());
                 fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
