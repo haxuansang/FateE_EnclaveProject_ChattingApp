@@ -20,12 +20,12 @@
         "source": "/home/loc/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/b724ece56b4bee46d6ca2a08c6230349/res/drawable-xxhdpi-v4/abc_switch_track_mtrl_alpha.9.png"
     },
     {
-        "merged": "/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_btn_check_to_on_mtrl_015.png.flat",
-        "source": "/home/loc/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/b724ece56b4bee46d6ca2a08c6230349/res/drawable-mdpi-v4/abc_btn_check_to_on_mtrl_015.png"
-    },
-    {
         "merged": "/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/res/merged/debug/drawable_background.png.flat",
         "source": "/home/loc/Desktop/Mobile demo/mobile/app/src/main/res/drawable/background.png"
+    },
+    {
+        "merged": "/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_btn_check_to_on_mtrl_015.png.flat",
+        "source": "/home/loc/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/b724ece56b4bee46d6ca2a08c6230349/res/drawable-mdpi-v4/abc_btn_check_to_on_mtrl_015.png"
     },
     {
         "merged": "/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_text_select_handle_right_mtrl_light.png.flat",
@@ -40,12 +40,12 @@
         "source": "/home/loc/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/b724ece56b4bee46d6ca2a08c6230349/res/drawable-xxhdpi-v4/abc_scrubber_primary_mtrl_alpha.9.png"
     },
     {
-        "merged": "/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_abc_btn_check_to_on_mtrl_000.png.flat",
-        "source": "/home/loc/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/b724ece56b4bee46d6ca2a08c6230349/res/drawable-xxxhdpi-v4/abc_btn_check_to_on_mtrl_000.png"
-    },
-    {
         "merged": "/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_text_select_handle_right_mtrl_light.png.flat",
         "source": "/home/loc/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/b724ece56b4bee46d6ca2a08c6230349/res/drawable-xxhdpi-v4/abc_text_select_handle_right_mtrl_light.png"
+    },
+    {
+        "merged": "/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_abc_btn_check_to_on_mtrl_000.png.flat",
+        "source": "/home/loc/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/b724ece56b4bee46d6ca2a08c6230349/res/drawable-xxxhdpi-v4/abc_btn_check_to_on_mtrl_000.png"
     },
     {
         "merged": "/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/res/merged/debug/layout_notification_template_icon_group.xml.flat",
@@ -58,6 +58,10 @@
     {
         "merged": "/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/res/merged/debug/drawable-ldrtl-xxhdpi-v17_abc_ic_menu_cut_mtrl_alpha.png.flat",
         "source": "/home/loc/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/b724ece56b4bee46d6ca2a08c6230349/res/drawable-ldrtl-xxhdpi-v17/abc_ic_menu_cut_mtrl_alpha.png"
+    },
+    {
+        "merged": "/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/res/merged/debug/drawable_gradientbackground.xml.flat",
+        "source": "/home/loc/Desktop/Mobile demo/mobile/app/src/main/res/drawable/gradientbackground.xml"
     },
     {
         "merged": "/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/res/merged/debug/drawable_abc_dialog_material_background.xml.flat",
@@ -192,12 +196,12 @@
         "source": "/home/loc/Desktop/Mobile demo/mobile/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png"
     },
     {
-        "merged": "/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_list_selector_disabled_holo_dark.9.png.flat",
-        "source": "/home/loc/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/b724ece56b4bee46d6ca2a08c6230349/res/drawable-hdpi-v4/abc_list_selector_disabled_holo_dark.9.png"
-    },
-    {
         "merged": "/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/res/merged/debug/drawable_abc_ic_go_search_api_material.xml.flat",
         "source": "/home/loc/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/b724ece56b4bee46d6ca2a08c6230349/res/drawable/abc_ic_go_search_api_material.xml"
+    },
+    {
+        "merged": "/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_list_selector_disabled_holo_dark.9.png.flat",
+        "source": "/home/loc/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/b724ece56b4bee46d6ca2a08c6230349/res/drawable-hdpi-v4/abc_list_selector_disabled_holo_dark.9.png"
     },
     {
         "merged": "/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/res/merged/debug/drawable_abc_btn_colored_material.xml.flat",
@@ -222,6 +226,10 @@
     {
         "merged": "/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/res/merged/debug/drawable_about_icon_instagram.xml.flat",
         "source": "/home/loc/Desktop/Mobile demo/mobile/app/src/main/res/drawable/about_icon_instagram.xml"
+    },
+    {
+        "merged": "/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/res/merged/debug/xml_nav_states.xml.flat",
+        "source": "/home/loc/.gradle/caches/transforms-1/files-1.1/material-1.2.2.aar/0f6d4a2f2cf62ba7bb0a08a644d633cf/res/xml/nav_states.xml"
     },
     {
         "merged": "/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_notification_bg_normal.9.png.flat",
@@ -280,12 +288,12 @@
         "source": "/home/loc/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/b724ece56b4bee46d6ca2a08c6230349/res/drawable-ldrtl-xhdpi-v17/abc_ic_menu_copy_mtrl_am_alpha.png"
     },
     {
-        "merged": "/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/res/merged/debug/anim_left_enter.xml.flat",
-        "source": "/home/loc/Desktop/Mobile demo/mobile/app/src/main/res/anim/left_enter.xml"
-    },
-    {
         "merged": "/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_scrubber_control_to_pressed_mtrl_000.png.flat",
         "source": "/home/loc/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/b724ece56b4bee46d6ca2a08c6230349/res/drawable-mdpi-v4/abc_scrubber_control_to_pressed_mtrl_000.png"
+    },
+    {
+        "merged": "/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/res/merged/debug/anim_left_enter.xml.flat",
+        "source": "/home/loc/Desktop/Mobile demo/mobile/app/src/main/res/anim/left_enter.xml"
     },
     {
         "merged": "/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/res/merged/debug/drawable_ic_smile.xml.flat",
@@ -384,12 +392,12 @@
         "source": "/home/loc/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/b724ece56b4bee46d6ca2a08c6230349/res/drawable-xxxhdpi-v4/abc_ic_menu_cut_mtrl_alpha.png"
     },
     {
-        "merged": "/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_text_select_handle_left_mtrl_light.png.flat",
-        "source": "/home/loc/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/b724ece56b4bee46d6ca2a08c6230349/res/drawable-xhdpi-v4/abc_text_select_handle_left_mtrl_light.png"
-    },
-    {
         "merged": "/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_ic_menu_cut_mtrl_alpha.png.flat",
         "source": "/home/loc/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/b724ece56b4bee46d6ca2a08c6230349/res/drawable-mdpi-v4/abc_ic_menu_cut_mtrl_alpha.png"
+    },
+    {
+        "merged": "/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_text_select_handle_left_mtrl_light.png.flat",
+        "source": "/home/loc/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/b724ece56b4bee46d6ca2a08c6230349/res/drawable-xhdpi-v4/abc_text_select_handle_left_mtrl_light.png"
     },
     {
         "merged": "/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/res/merged/debug/mipmap-xxhdpi_ic_launcher_round.png.flat",
@@ -400,12 +408,12 @@
         "source": "/home/loc/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/b724ece56b4bee46d6ca2a08c6230349/res/drawable-mdpi-v4/abc_ic_star_black_48dp.png"
     },
     {
-        "merged": "/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/res/merged/debug/layout_register_layout.xml.flat",
-        "source": "/home/loc/Desktop/Mobile demo/mobile/app/src/main/res/layout/register_layout.xml"
-    },
-    {
         "merged": "/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_design_ic_visibility.png.flat",
         "source": "/home/loc/.gradle/caches/transforms-1/files-1.1/design-27.1.1.aar/8a48543de7706e05edcebf79de66a226/res/drawable-xhdpi-v4/design_ic_visibility.png"
+    },
+    {
+        "merged": "/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/res/merged/debug/layout_register_layout.xml.flat",
+        "source": "/home/loc/Desktop/Mobile demo/mobile/app/src/main/res/layout/register_layout.xml"
     },
     {
         "merged": "/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_ic_add_attachment.png.flat",
@@ -458,6 +466,10 @@
     {
         "merged": "/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/res/merged/debug/drawable_about_icon_email.xml.flat",
         "source": "/home/loc/Desktop/Mobile demo/mobile/app/src/main/res/drawable/about_icon_email.xml"
+    },
+    {
+        "merged": "/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/res/merged/debug/layout_spinner_item.xml.flat",
+        "source": "/home/loc/Desktop/Mobile demo/mobile/app/src/main/res/layout/spinner_item.xml"
     },
     {
         "merged": "/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_spinner_mtrl_am_alpha.9.png.flat",
@@ -1400,6 +1412,10 @@
         "source": "/home/loc/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/b724ece56b4bee46d6ca2a08c6230349/res/drawable-mdpi-v4/abc_menu_hardkey_panel_mtrl_mult.9.png"
     },
     {
+        "merged": "/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/res/merged/debug/drawable_kamran1.jpg.flat",
+        "source": "/home/loc/Desktop/Mobile demo/mobile/app/src/main/res/drawable/kamran1.jpg"
+    },
+    {
         "merged": "/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/res/merged/debug/drawable_abc_spinner_textfield_background_material.xml.flat",
         "source": "/home/loc/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/b724ece56b4bee46d6ca2a08c6230349/res/drawable/abc_spinner_textfield_background_material.xml"
     },
@@ -1616,6 +1632,10 @@
         "source": "/home/loc/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/b724ece56b4bee46d6ca2a08c6230349/res/drawable-hdpi-v4/abc_ic_menu_paste_mtrl_am_alpha.png"
     },
     {
+        "merged": "/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/res/merged/debug/drawable_gobackplease.png.flat",
+        "source": "/home/loc/Desktop/Mobile demo/mobile/app/src/main/res/drawable/gobackplease.png"
+    },
+    {
         "merged": "/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/res/merged/debug/layout_abc_action_bar_title_item.xml.flat",
         "source": "/home/loc/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/b724ece56b4bee46d6ca2a08c6230349/res/layout/abc_action_bar_title_item.xml"
     },
@@ -1812,6 +1832,10 @@
         "source": "/home/loc/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/b724ece56b4bee46d6ca2a08c6230349/res/drawable-xhdpi-v4/abc_list_selector_disabled_holo_dark.9.png"
     },
     {
+        "merged": "/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/res/merged/debug/drawable_profile_circular_border_imageview.xml.flat",
+        "source": "/home/loc/Desktop/Mobile demo/mobile/app/src/main/res/drawable/profile_circular_border_imageview.xml"
+    },
+    {
         "merged": "/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_ic_star_black_36dp.png.flat",
         "source": "/home/loc/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/b724ece56b4bee46d6ca2a08c6230349/res/drawable-mdpi-v4/abc_ic_star_black_36dp.png"
     },
@@ -1842,6 +1866,10 @@
     {
         "merged": "/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/res/merged/debug/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
         "source": "/home/loc/Desktop/Mobile demo/mobile/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/res/merged/debug/drawable_ic_des_24dp.xml.flat",
+        "source": "/home/loc/Desktop/Mobile demo/mobile/app/src/main/res/drawable/ic_des_24dp.xml"
     },
     {
         "merged": "/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_notification_bg_low_pressed.9.png.flat",
@@ -1986,6 +2014,10 @@
     {
         "merged": "/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_ic_menu_selectall_mtrl_alpha.png.flat",
         "source": "/home/loc/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/b724ece56b4bee46d6ca2a08c6230349/res/drawable-hdpi-v4/abc_ic_menu_selectall_mtrl_alpha.png"
+    },
+    {
+        "merged": "/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/res/merged/debug/drawable_ic_gender_24dp.xml.flat",
+        "source": "/home/loc/Desktop/Mobile demo/mobile/app/src/main/res/drawable/ic_gender_24dp.xml"
     },
     {
         "merged": "/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_scrubber_control_off_mtrl_alpha.png.flat",
@@ -2230,6 +2262,10 @@
     {
         "merged": "/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/res/merged/debug/color_abc_tint_edittext.xml.flat",
         "source": "/home/loc/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/b724ece56b4bee46d6ca2a08c6230349/res/color/abc_tint_edittext.xml"
+    },
+    {
+        "merged": "/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/res/merged/debug/drawable_kamran.jpg.flat",
+        "source": "/home/loc/Desktop/Mobile demo/mobile/app/src/main/res/drawable/kamran.jpg"
     },
     {
         "merged": "/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_ic_commit_search_api_mtrl_alpha.png.flat",

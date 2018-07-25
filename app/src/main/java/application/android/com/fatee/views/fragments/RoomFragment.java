@@ -36,6 +36,7 @@ import java.util.List;
 
 import application.android.com.fatee.R;
 import application.android.com.fatee.models.quickbloxholder.QBFileHolder;
+import application.android.com.fatee.presenters.ChattingGroupPresenter;
 import application.android.com.fatee.views.MainActivity;
 import application.android.com.fatee.views.adapters.ChatMessageAdapter;
 
@@ -45,7 +46,6 @@ public class RoomFragment extends Fragment implements QBChatDialogMessageListene
     ImageButton btnsendMessage;
     TextView contentMessage;
     View view;
-
     public static ChatMessageAdapter adapter;
     List<QBChatMessage> qbChatMessagesArray;
     public static RelativeLayout progressBar;
@@ -108,8 +108,6 @@ public class RoomFragment extends Fragment implements QBChatDialogMessageListene
     public void onDestroy() {
         super.onDestroy();
         qbChatDialog.removeMessageListrener(this);
-
-
     }
 
     @Override
@@ -121,15 +119,13 @@ public class RoomFragment extends Fragment implements QBChatDialogMessageListene
 
 
     private void retrieveMessages() {
-
         QBMessageGetBuilder qbMessageGetBuilder = new QBMessageGetBuilder();
         qbMessageGetBuilder.setLimit(500);
         if (qbChatDialog != null) {
             QBRestChatService.getDialogMessages(qbChatDialog, qbMessageGetBuilder).performAsync(new QBEntityCallback<ArrayList<QBChatMessage>>() {
                 @Override
                 public void onSuccess(ArrayList<QBChatMessage> qbChatMessages, Bundle bundle) {
-                    for (QBChatMessage qbChatMessage : qbChatMessages
-                            ) {
+                    for (QBChatMessage qbChatMessage : qbChatMessages) {
                         qbChatMessagesArray.add(qbChatMessage);
                     }
                     LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity().getBaseContext());
@@ -156,8 +152,7 @@ public class RoomFragment extends Fragment implements QBChatDialogMessageListene
     }
 
     private void initChatDilalog() {
-
-        qbChatDialog = MainActivity.currentQBChatDialog;
+        qbChatDialog = ChattingGroupPresenter.currentQBChatDialog;
         qbChatDialog.initForChat(QBChatService.getInstance());
         QBIncomingMessagesManager incomingMessagesManager = QBChatService.getInstance().getIncomingMessagesManager();
         incomingMessagesManager.addDialogMessageListener(new QBChatDialogMessageListener() {

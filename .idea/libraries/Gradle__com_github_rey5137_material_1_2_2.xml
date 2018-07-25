@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.rey5137:material-1.2.2">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/material-1.2.2.aar/0f6d4a2f2cf62ba7bb0a08a644d633cf/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/material-1.2.2.aar/0f6d4a2f2cf62ba7bb0a08a644d633cf/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.rey5137/material/1.2.2/7e9a0fd9b85fc6e3f0e8a3809f1908187439cd2a/material-1.2.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

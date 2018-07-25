@@ -21,7 +21,7 @@ import java.util.List;
 import application.android.com.fatee.R;
 import application.android.com.fatee.models.quickbloxholder.QBFileHolder;
 import application.android.com.fatee.models.quickbloxholder.QBUserHolder;
-import application.android.com.fatee.presenters.setImageToImageView;
+import application.android.com.fatee.presenters.SetImageToImageView;
 import application.android.com.fatee.views.fragments.RoomFragment;
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -137,7 +137,7 @@ public class ChatMessageAdapter extends RecyclerView.Adapter {
                 QBContent.getFile( QBUserHolder.getInstance().getUserById(message.getSenderId()).getFileId()).performAsync(new QBEntityCallback<QBFile>() {
                     @Override
                     public void onSuccess(QBFile qbFile, Bundle bundle) {
-                        setImageToImageView.loadImageToImageView(mContext,qbFile.getPublicUrl(),userImage,message.getSenderId(), RoomFragment.progressBar,RoomFragment.chatView);
+                        SetImageToImageView.loadImageToImageView(mContext,qbFile.getPublicUrl(),userImage,message.getSenderId(), RoomFragment.progressBar,RoomFragment.chatView);
 
                     }
                     @Override
@@ -149,8 +149,6 @@ public class ChatMessageAdapter extends RecyclerView.Adapter {
             }
             else
             userImage.setImageBitmap(QBFileHolder.getInstance().getFileUserById(message.getSenderId()));
-
-
         }
 
 

@@ -8,16 +8,24 @@ package de.hdodenhof.circleimageview;
 
 public final class R {
     public static final class attr {
-        public static final int civ_border_color = 0x7f03006f;
-        public static final int civ_border_overlay = 0x7f030070;
-        public static final int civ_border_width = 0x7f030071;
-        public static final int civ_fill_color = 0x7f030072;
+        public static final int civ_border_color = 0x7f030083;
+        public static final int civ_border_overlay = 0x7f030084;
+        public static final int civ_border_width = 0x7f030085;
+        public static final int civ_fill_color = 0x7f030086;
     }
     public static final class styleable {
-        public static final int[] CircleImageView = { 0x7f03006f, 0x7f030070, 0x7f030071, 0x7f030072 };
+        public static final int[] CircleImageView = { 0x7f030083, 0x7f030084, 0x7f030085, 0x7f030086, 0x7f030386, 0x7f030387, 0x7f030388, 0x7f030389, 0x7f03038a, 0x7f03038b, 0x7f03038c, 0x7f03038d };
         public static final int CircleImageView_civ_border_color = 0;
         public static final int CircleImageView_civ_border_overlay = 1;
         public static final int CircleImageView_civ_border_width = 2;
         public static final int CircleImageView_civ_fill_color = 3;
+        public static final int CircleImageView_view_backgroundColor = 4;
+        public static final int CircleImageView_view_borderColor = 5;
+        public static final int CircleImageView_view_borderWidth = 6;
+        public static final int CircleImageView_view_selectedColor = 7;
+        public static final int CircleImageView_view_shadowColor = 8;
+        public static final int CircleImageView_view_shadowDx = 9;
+        public static final int CircleImageView_view_shadowDy = 10;
+        public static final int CircleImageView_view_shadowRadius = 11;
     }
 }

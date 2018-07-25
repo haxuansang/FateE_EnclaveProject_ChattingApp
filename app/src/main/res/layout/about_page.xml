@@ -11,7 +11,7 @@
                 style="@style/about_image" />
 
             <TextView
-                android:id="@+id/description"
+                android:id="@+id/edt_description"
                 style="@style/about_description" />
         </LinearLayout>
 

@@ -137,10 +137,11 @@ public class UserModel{
         this.surveyStatus = surveyStatus;
     }
 
-    public UserModel(String id, String nickname, String description, String avatar) {
+    public UserModel(String id, String nickname, String description, String avatar, Boolean gender) {
         this.id = id;
         this.nickname = nickname;
         this.description = description;
         this.avatar = avatar;
+        this.gender = gender;
     }
 }

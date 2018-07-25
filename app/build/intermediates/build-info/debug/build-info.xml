@@ -7,45 +7,57 @@
     format="10"
     ir-eligibility="COMPATIBLE"
     plugin-version="3.1.3"
-    timestamp="1532319025488"
+    timestamp="1532493609347"
     token="902580268002583190"
     verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="556" />
+        duration="320" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="65" />
+        duration="46" />
     <task
         name="verifier"
-        duration="15" />
+        duration="12" />
 
     <artifact
-        location="/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/split-apk/debug/slices/slice_0.apk"
+        location="/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/split-apk/debug/slices/slice_6.apk"
         type="SPLIT" />
 
     <build
         build-mode="FULL"
-        timestamp="1532316502340"
+        timestamp="1532486681181"
         verifier="FULL_BUILD_REQUESTED" >
+        <artifact
+            location="/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/split-apk/debug/slices/slice_3.apk"
+            type="SPLIT" />
+        <artifact
+            location="/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/split-apk/debug/slices/slice_8.apk"
+            type="SPLIT" />
+        <artifact
+            location="/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/split-apk/debug/slices/slice_9.apk"
+            type="SPLIT" />
         <artifact
             location="/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/split-apk/debug/dep/dependencies.apk"
             type="SPLIT" />
         <artifact
-            location="/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/split-apk/debug/slices/slice_0.apk"
+            location="/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/split-apk/debug/slices/slice_6.apk"
             type="SPLIT" />
         <artifact
             location="/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/split-apk/debug/slices/slice_1.apk"
             type="SPLIT" />
         <artifact
+            location="/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/split-apk/debug/slices/slice_0.apk"
+            type="SPLIT" />
+        <artifact
             location="/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/split-apk/debug/slices/slice_2.apk"
             type="SPLIT" />
         <artifact
-            location="/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/split-apk/debug/slices/slice_3.apk"
+            location="/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/split-apk/debug/slices/slice_7.apk"
             type="SPLIT" />
         <artifact
             location="/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/split-apk/debug/slices/slice_4.apk"
@@ -54,37 +66,72 @@
             location="/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/split-apk/debug/slices/slice_5.apk"
             type="SPLIT" />
         <artifact
-            location="/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/split-apk/debug/slices/slice_6.apk"
+            location="/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/instant-run-apk/debug/app-debug.apk"
+            type="SPLIT_MAIN" />
+    </build>
+    <build
+        build-mode="COLD"
+        ir-eligibility="R_CLASS_CHANGE"
+        timestamp="1532488208334"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/split-apk/debug/slices/slice_3.apk"
             type="SPLIT" />
         <artifact
-            location="/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/split-apk/debug/slices/slice_9.apk"
+            location="/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/split-apk/debug/slices/slice_5.apk"
+            type="SPLIT" />
+    </build>
+    <build
+        build-mode="COLD"
+        ir-eligibility="R_CLASS_CHANGE"
+        timestamp="1532490913608"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/split-apk/debug/slices/slice_2.apk"
+            type="SPLIT" />
+        <artifact
+            location="/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/split-apk/debug/slices/slice_4.apk"
             type="SPLIT" />
         <artifact
             location="/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/split-apk/debug/slices/slice_7.apk"
             type="SPLIT" />
         <artifact
-            location="/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/split-apk/debug/slices/slice_8.apk"
+            location="/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/split-apk/debug/slices/slice_9.apk"
             type="SPLIT" />
+    </build>
+    <build
+        build-mode="COLD"
+        ir-eligibility="R_CLASS_CHANGE"
+        timestamp="1532491849077"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/split-apk/debug/slices/slice_1.apk"
+            type="SPLIT" />
+    </build>
+    <build
+        build-mode="COLD"
+        ir-eligibility="METHOD_DELETED"
+        timestamp="1532493370764"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/split-apk/debug/slices/slice_0.apk"
+            type="SPLIT" />
+    </build>
+    <build
+        build-mode="COLD"
+        timestamp="1532493470091"
+        verifier="COLD_SWAP_REQUESTED" >
         <artifact
             location="/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/instant-run-apk/debug/app-debug.apk"
             type="SPLIT_MAIN" />
     </build>
     <build
         build-mode="COLD"
-        ir-eligibility="FIELD_ADDED"
-        timestamp="1532318831756"
+        ir-eligibility="COMPATIBLE"
+        timestamp="1532493609347"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
             location="/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/split-apk/debug/slices/slice_6.apk"
-            type="SPLIT" />
-    </build>
-    <build
-        build-mode="COLD"
-        ir-eligibility="COMPATIBLE"
-        timestamp="1532319025488"
-        verifier="COLD_SWAP_REQUESTED" >
-        <artifact
-            location="/home/loc/Desktop/Mobile demo/mobile/app/build/intermediates/split-apk/debug/slices/slice_0.apk"
             type="SPLIT" />
     </build>
 

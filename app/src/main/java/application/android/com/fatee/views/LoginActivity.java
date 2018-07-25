@@ -245,7 +245,6 @@ public class LoginActivity extends AppCompatActivity implements ViewProcessLogin
     }
 
     public void login(View v) {
-        System.out.println(UserUtil.getUserModel());
         if(UserUtil.getUserModel() == null) {
             currentUsername = edtUsername.getText().toString();
             password = edtPassword.getText().toString();

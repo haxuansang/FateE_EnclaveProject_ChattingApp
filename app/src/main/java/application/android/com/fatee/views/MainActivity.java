@@ -26,7 +26,6 @@ import com.quickblox.chat.QBChatService;
 import com.quickblox.chat.QBRestChatService;
 import com.quickblox.chat.model.QBChatDialog;
 import com.quickblox.core.QBEntityCallback;
-import com.quickblox.core.StoringMechanism;
 import com.quickblox.core.exception.BaseServiceException;
 import com.quickblox.core.exception.QBResponseException;
 import com.quickblox.users.QBUsers;
@@ -35,7 +34,11 @@ import com.quickblox.users.model.QBUser;
 import java.util.ArrayList;
 
 import application.android.com.fatee.R;
+import application.android.com.fatee.models.entities.QuickBloxResponse;
 import application.android.com.fatee.models.quickbloxholder.QBUserHolder;
+import application.android.com.fatee.presenters.ChattingGroupPresenter;
+import application.android.com.fatee.presenters.ChattingPresenterImpl;
+import application.android.com.fatee.presenters.interfaces.ChattingPresenter;
 import application.android.com.fatee.utils.LoginConstant;
 import application.android.com.fatee.utils.SurveyConstant;
 import application.android.com.fatee.utils.UserUtil;
@@ -46,25 +49,28 @@ import application.android.com.fatee.views.fragments.RoomFragment;
 import application.android.com.fatee.views.fragments.SettingsFragment;
 import application.android.com.fatee.views.fragments.BuddyFragment;
 import application.android.com.fatee.views.fragments.SurveyFragment;
+import application.android.com.fatee.views.interfaces.ChattingView;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
-    FragmentTransaction fragmentTransaction;
+        implements NavigationView.OnNavigationItemSelectedListener, ChattingView {
+    private static FragmentTransaction fragmentTransaction;
     FragmentManager fragmentManager;
     ProgressDialog progressDialog;
     String username,password;
     public static  CircleImageView imageView;
-    public static QBChatDialog currentQBChatDialog;
-    static int FileId= 0;
+
+    private ChattingPresenter chattingPresenter;
+    private ChattingGroupPresenter chattingGroupPresenter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        chattingGroupPresenter = new ChattingGroupPresenter();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        initConnectionTimeOut();
+        chattingGroupPresenter.initConnectionTimeOut();
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         /*imageView=  (CircleImageView) findViewById(R.id.imageViewUser);*/
-
+        chattingPresenter = new ChattingPresenterImpl(this);
         setSupportActionBar(toolbar);
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -73,22 +79,21 @@ public class MainActivity extends AppCompatActivity
         toggle.syncState();
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        progressDialog = new ProgressDialog(this);
         String surveyStatus = getIntent().getExtras().getString(SurveyConstant.USER_SURVEY_STATUS_KEY);
         username = getIntent().getExtras().getString(LoginConstant.USERNAME);
         password = getIntent().getExtras().getString(LoginConstant.PASSWORD);
 
-        fragmentManager= getFragmentManager();
-        fragmentTransaction=fragmentManager.beginTransaction();
+        fragmentManager = getFragmentManager();
+        fragmentTransaction = fragmentManager.beginTransaction();
         if(surveyStatus.equals(SurveyConstant.USER_NO_FINISH_SURVEY_STATUS)) {
             UserUtil.getInstance(UserUtil.getUserModel(), SurveyConstant.USER_NO_FINISH_SURVEY_STATUS);
             fragmentTransaction.add(R.id.frame_layout, SurveyFragment.getInstance());
-            loadBitmapUsers();
-            createSessionForChat();
+            fragmentTransaction.commit();
         } else {
-            UserUtil.getInstance(UserUtil.getUserModel(), SurveyConstant.USER_FINISHED_SURVEY_STATUS);
-            fragmentTransaction.add(R.id.frame_layout, RoomFragment.getInstance());
+            chattingPresenter.getQuickBloxIdFromServer();
         }
-        fragmentTransaction.commit();
+
     }
 
    /* private void getImageUser() {
@@ -129,21 +134,7 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
-    private void getQBChatDialog() {
-        QBRestChatService.getChatDialogById("5b486a4fa28f9a13f725ebf3").performAsync(new QBEntityCallback<QBChatDialog>() {
 
-            @Override
-            public void onSuccess(QBChatDialog qbChatDialog, Bundle bundle) {
-                currentQBChatDialog = qbChatDialog;
-                progressDialog.dismiss();
-            }
-
-            @Override
-            public void onError(QBResponseException e) {
-                Toast.makeText(MainActivity.this, "" + e.getMessage(), Toast.LENGTH_LONG).show();
-            }
-        });
-    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -209,85 +200,87 @@ public class MainActivity extends AppCompatActivity
                 this.startActivity(intentAbout);
                 break;
             case R.id.signout:
+                UserUtil.getInstance(null, null);
                 Intent intent = new Intent(MainActivity.this,LoginActivity.class);
                 this.startActivity(intent);
                 this.finish();
                 break;
-
-
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
-    private void initConnectionTimeOut() {
-        QBChatService.getInstance();
-        QBChatService.setDebugEnabled(true); // enable chat logging
-        QBChatService.setDefaultPacketReplyTimeout(10000);
-        QBChatService.ConfigurationBuilder chatServiceConfigurationBuilder = new QBChatService.ConfigurationBuilder();
-        chatServiceConfigurationBuilder.setSocketTimeout(600000); //Sets chat socket's read timeout in seconds
-        chatServiceConfigurationBuilder.setKeepAlive(true); //Sets connection socket's keepAlive option.
-        chatServiceConfigurationBuilder.setUseTls(true); //Sets the TLS security mode used when making the connection. By default TLS is disabled.
-        QBChatService.setConfigurationBuilder(chatServiceConfigurationBuilder);
-        QBChatService.getInstance().setReconnectionAllowed(true);
+//    private void initConnectionTimeOut() {
+//        QBChatService.getInstance();
+//        QBChatService.setDebugEnabled(true); // enable chat logging
+//        QBChatService.setDefaultPacketReplyTimeout(10000);
+//        QBChatService.ConfigurationBuilder chatServiceConfigurationBuilder = new QBChatService.ConfigurationBuilder();
+//        chatServiceConfigurationBuilder.setSocketTimeout(600000); //Sets chat socket's read timeout in seconds
+//        chatServiceConfigurationBuilder.setKeepAlive(true); //Sets connection socket's keepAlive option.
+//        chatServiceConfigurationBuilder.setUseTls(true); //Sets the TLS security mode used when making the connection. By default TLS is disabled.
+//        QBChatService.setConfigurationBuilder(chatServiceConfigurationBuilder);
+//        QBChatService.getInstance().setReconnectionAllowed(true);
+//    }
+//    private void createSessionForChat(final String quickBloxId) {
+//        progressDialog  = new ProgressDialog(this);
+//        progressDialog.setMessage("Please Waiting...");
+//        progressDialog.setCanceledOnTouchOutside(false);
+//        progressDialog.show();
+//        final QBUser qbUser = new QBUser(username, password);
+//        QBAuth.createSession(qbUser).performAsync(new QBEntityCallback<QBSession>() {
+//            @Override
+//            public void onSuccess(QBSession qbSession, Bundle bundle) {
+//                qbUser.setId(qbSession.getUserId());
+//                try {
+//                    qbUser.setPassword(BaseService.getBaseService().getToken());
+//                } catch (BaseServiceException e) {
+//                    e.printStackTrace();
+//                }
+//                QBChatService.getInstance().login(qbUser, new QBEntityCallback() {
+//                    @Override
+//                    public void onSuccess(Object o, Bundle bundle) {
+//                        Toast.makeText(MainActivity.this, "Login Successfully", Toast.LENGTH_SHORT).show();
+////                        QBChatService.getInstance().getUser().getId();
+//                        getQBChatDialog(quickBloxId);
+//                    }
+//
+//                    @Override
+//                    public void onError(QBResponseException e) {
+//                        Log.e("Error",""+e.getMessage());
+//                        Toast.makeText(MainActivity.this, "Login Failed", Toast.LENGTH_SHORT).show();
+//                    }
+//                });
+//            }
+//
+//            @Override
+//            public void onError(QBResponseException e) {
+//                System.out.println("QB Error:" + e.getMessage());
+//            }
+//        });
+//
+//    }
+//    private  void loadBitmapUsers() {
+//        QBUsers.getUsers(null).performAsync(new QBEntityCallback<ArrayList<QBUser>>() {
+//            @Override
+//            public void onSuccess(ArrayList<QBUser> qbUsers, Bundle bundle) {
+//                QBUserHolder.getInstance().putUsers(qbUsers);
+//            }
+//
+//            @Override
+//            public void onError(QBResponseException e) {
+//            }
+//        });
+//    }
+
+    @Override
+    public void joinUserIntoRoom(QuickBloxResponse quickBloxResponse) {
+        QBUser qbUser = new QBUser(username, password);
+        chattingGroupPresenter.loadBitmapUsers();
+        chattingGroupPresenter.createSessionForChat(quickBloxResponse.getQuickBloxId(), qbUser, progressDialog, fragmentTransaction);
     }
-    private void createSessionForChat() {
-        progressDialog  = new ProgressDialog(this);
-        progressDialog.setMessage("Please Waiting...");
-        progressDialog.setCanceledOnTouchOutside(false);
-        progressDialog.show();
-        final QBUser qbUser = new QBUser(username, password);
-        QBAuth.createSession(qbUser).performAsync(new QBEntityCallback<QBSession>() {
-            @Override
-            public void onSuccess(QBSession qbSession, Bundle bundle) {
 
-                qbUser.setId(qbSession.getUserId());
-                try {
-                    qbUser.setPassword(BaseService.getBaseService().getToken());
-                } catch (BaseServiceException e) {
-                    e.printStackTrace();
-                }
-                QBChatService.getInstance().login(qbUser, new QBEntityCallback() {
-                    @Override
-                    public void onSuccess(Object o, Bundle bundle) {
-                        Toast.makeText(MainActivity.this, "Login Successfully", Toast.LENGTH_SHORT).show();
-                        getQBChatDialog();
-                    }
-
-                    @Override
-                    public void onError(QBResponseException e) {
-                        Log.e("Error",""+e.getMessage());
-                        Toast.makeText(MainActivity.this, "Login Failed", Toast.LENGTH_SHORT).show();
-                    }
-                });
-            }
-
-            @Override
-            public void onError(QBResponseException e) {
-                System.out.println("QB Error:" + e.getMessage());
-            }
-        });
-
+    public static FragmentTransaction getFragmentTransaction() {
+        return fragmentTransaction;
     }
-    private  void loadBitmapUsers()
-    {
-
-        QBUsers.getUsers(null).performAsync(new QBEntityCallback<ArrayList<QBUser>>() {
-            @Override
-            public void onSuccess(ArrayList<QBUser> qbUsers, Bundle bundle) {
-
-                QBUserHolder.getInstance().putUsers(qbUsers);
-
-
-            }
-
-            @Override
-            public void onError(QBResponseException e) {
-
-            }
-        });
-
-    }
-
 }

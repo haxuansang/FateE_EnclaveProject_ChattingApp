@@ -299,7 +299,7 @@ public class AboutPage {
     }
 
     public View create() {
-        TextView description = (TextView) mView.findViewById(R.id.description);
+        TextView description = (TextView) mView.findViewById(R.id.edt_description);
         ImageView image = (ImageView) mView.findViewById(R.id.image);
         if (mImage > 0) {
             image.setImageResource(mImage);

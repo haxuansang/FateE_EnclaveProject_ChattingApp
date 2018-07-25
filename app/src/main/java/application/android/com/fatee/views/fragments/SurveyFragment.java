@@ -1,8 +1,11 @@
 package application.android.com.fatee.views.fragments;
 
 import android.app.Fragment;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 
 import android.support.design.widget.FloatingActionButton;
@@ -16,7 +19,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.quickblox.users.model.QBUser;
+
 import application.android.com.fatee.R;
+import application.android.com.fatee.models.entities.QuickBloxResponse;
+import application.android.com.fatee.presenters.ChattingGroupPresenter;
+import application.android.com.fatee.presenters.ChattingPresenterImpl;
+import application.android.com.fatee.presenters.interfaces.ChattingPresenter;
 import application.android.com.fatee.utils.DiaglogConstant;
 import application.android.com.fatee.utils.LoginConstant;
 import application.android.com.fatee.utils.SurveyConstant;
@@ -26,13 +35,15 @@ import application.android.com.fatee.models.entities.SurveyResponseMessage;
 import application.android.com.fatee.models.entities.SurveyResultResponse;
 import application.android.com.fatee.presenters.SurveyPresenterImpl;
 import application.android.com.fatee.presenters.interfaces.SurveyPresenter;
+import application.android.com.fatee.views.MainActivity;
 import application.android.com.fatee.views.adapters.RecyclerViewSurvey;
+import application.android.com.fatee.views.interfaces.ChattingView;
 import application.android.com.fatee.views.interfaces.OnChangeStateAddOrUpdateSurveyButtonListenter;
 import application.android.com.fatee.views.interfaces.OnReceiveSurveyListener;
 import application.android.com.fatee.views.interfaces.SurveyView;
 
 
-public class SurveyFragment extends Fragment implements SurveyView, OnReceiveSurveyListener, OnChangeStateAddOrUpdateSurveyButtonListenter {
+public class SurveyFragment extends Fragment implements SurveyView, OnReceiveSurveyListener, OnChangeStateAddOrUpdateSurveyButtonListenter, ChattingView {
     private View view;
     private RecyclerView recyclerView;
     private RecyclerViewSurvey recyclerViewSurvey;
@@ -41,6 +52,10 @@ public class SurveyFragment extends Fragment implements SurveyView, OnReceiveSur
     private Button btnSumbitOrUpdate;
     private FloatingActionButton fab;
     private boolean isEdit;
+    private ChattingPresenter chattingPresenter;
+    private ChattingGroupPresenter chattingGroupPresenter;
+    private String username;
+    private String password;
 
     public static SurveyFragment getInstance() {
         if (instance == null)
@@ -57,7 +72,9 @@ public class SurveyFragment extends Fragment implements SurveyView, OnReceiveSur
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_survey, container, false);
+        chattingGroupPresenter = new ChattingGroupPresenter();
         surveyPresenter = new SurveyPresenterImpl(this);
+        chattingPresenter = new ChattingPresenterImpl(this);
         surveyPresenter.setListener(this);
         recyclerView = view.findViewById(R.id.recyclerview);
         recyclerView.setHasFixedSize(true);
@@ -72,10 +89,9 @@ public class SurveyFragment extends Fragment implements SurveyView, OnReceiveSur
                     pd.show();
                     getAllInfoSurvey();
                     surveyPresenter.addAnswers(recyclerViewSurvey.getAnswerRequest());
-                    System.out.println("Username:" + UserUtil.getUser().getUsername());
-                    System.out.println("Password:" + UserUtil.getUser().getPassword());
+                    chattingPresenter.getQuickBloxIdFromServer();
                     pd.dismiss();
-                    showNoticeDiaglogMessage(DiaglogConstant.ADD_DIAGLOG_MESSAGE);
+                    fab.setVisibility(View.GONE);
                     UserUtil.setSurveyStatus(SurveyConstant.USER_FINISHED_SURVEY_STATUS);
                 } else {
                     pd.setMessage(DiaglogConstant.UPDATE_DIAGLOG_NAME);
@@ -87,6 +103,8 @@ public class SurveyFragment extends Fragment implements SurveyView, OnReceiveSur
                 }
             }
         });
+        username = getActivity().getIntent().getExtras().getString(LoginConstant.USERNAME);
+        password = getActivity().getIntent().getExtras().getString(LoginConstant.PASSWORD);
         fab = view.findViewById(R.id.edit_float_button);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -131,6 +149,7 @@ public class SurveyFragment extends Fragment implements SurveyView, OnReceiveSur
                 btnSumbitOrUpdate.setEnabled(false);
             }
         }
+
         if (surveyStatus.equals(SurveyConstant.USER_FINISHED_SURVEY_STATUS)) {
             surveyPresenter.getListener().onReceiveSurveyResultResponse(surveyResponse);
         }
@@ -161,9 +180,7 @@ public class SurveyFragment extends Fragment implements SurveyView, OnReceiveSur
         builder.setMessage(message)
                 .setCancelable(false)
                 .setPositiveButton(DiaglogConstant.OK_ACTION, new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-
-                    }
+                    public void onClick(DialogInterface dialog, int id) {}
                 });
         AlertDialog alert = builder.create();
         alert.show();
@@ -171,7 +188,7 @@ public class SurveyFragment extends Fragment implements SurveyView, OnReceiveSur
 
     @Override
     public void viewNotificationAfterAddSurvey(SurveyResponseMessage surveyResponseMessage) {
-        fab.setVisibility(View.VISIBLE);
+        fab.setVisibility(View.GONE);
         btnSumbitOrUpdate.setVisibility(View.GONE);
     }
 
@@ -192,5 +209,14 @@ public class SurveyFragment extends Fragment implements SurveyView, OnReceiveSur
     @Override
     public void onDisableAddOrUpdateButton() {
         btnSumbitOrUpdate.setEnabled(false);
+    }
+
+    @Override
+    public void joinUserIntoRoom(QuickBloxResponse quickBloxResponse) {
+        ProgressDialog progressDialog = new ProgressDialog(getActivity());
+        QBUser qbUser = new QBUser(username, password);
+        chattingGroupPresenter.loadBitmapUsers();
+        FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+        chattingGroupPresenter.createSessionForChat(quickBloxResponse.getQuickBloxId(), qbUser, progressDialog, fragmentTransaction);
     }
 }
