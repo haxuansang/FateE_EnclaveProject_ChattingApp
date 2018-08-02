@@ -16,6 +16,9 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import java.math.BigInteger;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -93,7 +96,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnFocusC
         String mail = edtRegisterEmail.getText().toString();
         if (!"".equals(username) && !"".equals(password) && !"".equals(confirmpassword) && !"".equals(nickname) && !"".equals(mail)) {
             registerPresenter = new RegisterPresenterImpl(this);
-            registerPresenter.createNewAccount(new User(username, password, mail, nickname, gender));
+            registerPresenter.createNewAccount(new User(username, md5(password), mail, nickname, gender));
         } else {
             showDiaglogMessage("Please complete putting your information before registering!");
         }
@@ -186,11 +189,11 @@ public class RegisterActivity extends AppCompatActivity implements View.OnFocusC
         switch(view.getId()) {
             case R.id.radiobtn_gender_Male:
                 if (checked)
-                    Toast.makeText(this, "Male", Toast.LENGTH_SHORT).show();
+
                 break;
             case R.id.radiobtn_gender_Female:
                 if (checked)
-                    Toast.makeText(this, "Female", Toast.LENGTH_SHORT).show();
+
                 gender = false;
                 break;
         }
@@ -237,4 +240,23 @@ public class RegisterActivity extends AppCompatActivity implements View.OnFocusC
         return drawable;
     }
 
+    public String md5(String str){
+        String result = "";
+        MessageDigest digest;
+        try {
+            digest = MessageDigest.getInstance("MD5");
+            digest.update(str.getBytes());
+            BigInteger bigInteger = new BigInteger(1,digest.digest());
+            result = bigInteger.toString(16);
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
+        return result;
+    }
+
+    public void alreadyHaveAccount(View view){
+        Intent intent = new Intent(RegisterActivity.this,LoginActivity.class);
+        startActivity(intent);
+        finish();
+    }
 }

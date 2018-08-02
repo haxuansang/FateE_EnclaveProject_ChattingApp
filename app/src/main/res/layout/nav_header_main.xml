@@ -15,7 +15,7 @@
         android:id="@+id/imageViewUser"
         android:layout_width="96dp"
         android:layout_height="96dp"
-        android:src="@drawable/user_image"
+
         />
     <TextView
         android:id="@+id/tv_nickname"

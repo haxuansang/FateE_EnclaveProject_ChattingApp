@@ -123,23 +123,25 @@ ADDED from /home/sang/Desktop/TheFinalFatee/mobile/app/src/main/AndroidManifest.
 	android:name
 		ADDED from /home/sang/Desktop/TheFinalFatee/mobile/app/src/main/AndroidManifest.xml:25:27-74
 activity#application.android.com.fatee.views.fragments.AboutFragment
-ADDED from /home/sang/Desktop/TheFinalFatee/mobile/app/src/main/AndroidManifest.xml:28:9-67
+ADDED from /home/sang/Desktop/TheFinalFatee/mobile/app/src/main/AndroidManifest.xml:28:9-29:46
+	android:theme
+		ADDED from /home/sang/Desktop/TheFinalFatee/mobile/app/src/main/AndroidManifest.xml:29:13-44
 	android:name
 		ADDED from /home/sang/Desktop/TheFinalFatee/mobile/app/src/main/AndroidManifest.xml:28:19-64
 activity#application.android.com.fatee.views.MainActivity
-ADDED from /home/sang/Desktop/TheFinalFatee/mobile/app/src/main/AndroidManifest.xml:29:9-32:56
+ADDED from /home/sang/Desktop/TheFinalFatee/mobile/app/src/main/AndroidManifest.xml:30:9-33:56
 	android:label
-		ADDED from /home/sang/Desktop/TheFinalFatee/mobile/app/src/main/AndroidManifest.xml:31:13-56
+		ADDED from /home/sang/Desktop/TheFinalFatee/mobile/app/src/main/AndroidManifest.xml:32:13-56
 	android:theme
-		ADDED from /home/sang/Desktop/TheFinalFatee/mobile/app/src/main/AndroidManifest.xml:32:13-44
+		ADDED from /home/sang/Desktop/TheFinalFatee/mobile/app/src/main/AndroidManifest.xml:33:13-44
 	android:name
-		ADDED from /home/sang/Desktop/TheFinalFatee/mobile/app/src/main/AndroidManifest.xml:30:13-47
+		ADDED from /home/sang/Desktop/TheFinalFatee/mobile/app/src/main/AndroidManifest.xml:31:13-47
 activity#application.android.com.fatee.views.RegisterActivity
-ADDED from /home/sang/Desktop/TheFinalFatee/mobile/app/src/main/AndroidManifest.xml:33:9-35:56
+ADDED from /home/sang/Desktop/TheFinalFatee/mobile/app/src/main/AndroidManifest.xml:34:9-36:56
 	android:theme
-		ADDED from /home/sang/Desktop/TheFinalFatee/mobile/app/src/main/AndroidManifest.xml:35:13-44
+		ADDED from /home/sang/Desktop/TheFinalFatee/mobile/app/src/main/AndroidManifest.xml:36:13-44
 	android:name
-		ADDED from /home/sang/Desktop/TheFinalFatee/mobile/app/src/main/AndroidManifest.xml:34:13-51
+		ADDED from /home/sang/Desktop/TheFinalFatee/mobile/app/src/main/AndroidManifest.xml:35:13-51
 receiver#application.android.com.fatee.utils.ConnectionBroadcastReceiver
 ADDED from /home/sang/Desktop/TheFinalFatee/mobile/app/src/main/AndroidManifest.xml:37:9-71
 	android:name

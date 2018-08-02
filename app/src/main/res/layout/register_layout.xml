@@ -29,11 +29,6 @@
             android:textSize="16sp" />
     </android.support.design.widget.TextInputLayout>
 
-    <View
-        android:layout_width="fill_parent"
-        android:layout_height="2px"
-        android:background="#33b5e5" />
-
     <android.support.design.widget.TextInputLayout
         android:id="@+id/input_layout_register_email"
         android:layout_width="match_parent"
@@ -56,11 +51,6 @@
             android:textColorHint="#33b5e5"
             android:textSize="16sp" />
     </android.support.design.widget.TextInputLayout>
-
-    <View
-        android:layout_width="fill_parent"
-        android:layout_height="2px"
-        android:background="#33b5e5" />
 
     <android.support.design.widget.TextInputLayout
         android:id="@+id/input_layout_register_username3"
@@ -85,10 +75,6 @@
             android:textSize="16sp" />
     </android.support.design.widget.TextInputLayout>
 
-    <View
-        android:layout_width="fill_parent"
-        android:layout_height="2px"
-        android:background="#33b5e5" />
     <android.support.design.widget.TextInputLayout
         android:id="@+id/input_layout_name"
         android:layout_width="match_parent"
@@ -110,10 +96,7 @@
             android:textColorHint="#33b5e5"
             android:textSize="16sp" />
     </android.support.design.widget.TextInputLayout>
-    <View
-        android:layout_width="fill_parent"
-        android:layout_height="2px"
-        android:background="#33b5e5" />
+
     <android.support.design.widget.TextInputLayout
         android:id="@+id/input_layout_name2"
         android:layout_width="match_parent"
@@ -135,38 +118,36 @@
             android:textColorHint="#33b5e5"
             android:textSize="16sp" />
     </android.support.design.widget.TextInputLayout>
-    <View
-        android:layout_width="fill_parent"
-        android:layout_height="2px"
-        android:background="#33b5e5" />
+
     <RadioGroup
         android:id="@+id/radiogr_gender"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:layout_gravity="center"
-        android:padding="15dp">
+        android:orientation="horizontal"
+        android:padding="0dp">
 
         <RadioButton
             android:id="@+id/radiobtn_gender_Male"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
+            android:onClick="onRadioButtonClicked"
             android:text="Male"
-            android:textColor="#33b5e5"
-            android:onClick="onRadioButtonClicked"/>
+            android:textColor="#33b5e5" />
 
         <RadioButton
             android:id="@+id/radiobtn_gender_Female"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
+            android:onClick="onRadioButtonClicked"
             android:text="Female"
-            android:textColor="#33b5e5"
-            android:onClick="onRadioButtonClicked"/>
+            android:textColor="#33b5e5" />
     </RadioGroup>
+
     <CheckBox
         android:id="@+id/terms_conditions"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="52dp"
         android:layout_marginTop="7dp"
         android:text="@string/terms_conditions"
         android:textColor="#33b5e5"
@@ -178,22 +159,25 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="0dp"
         android:background="@drawable/loginbutton_selector"
-        android:padding="10dp"
+        android:padding="3dp"
         android:text="SUBMIT"
         android:textColor="#FAFAFA"
         android:textSize="17sp"
         android:textStyle="bold"
         android:onClick="registerSubmit"/>
 
-    <TextView
+    <Button
         android:id="@+id/already_user"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="36dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="5dp"
+        android:background="@color/transparent"
         android:gravity="center"
+        android:onClick="alreadyHaveAccount"
         android:padding="10dp"
         android:text="@string/already_user"
         android:textColor="#33b5e5"
-        android:textSize="15sp" />
+        android:textSize="12sp"
+        android:textAllCaps="true"/>
 </LinearLayout>

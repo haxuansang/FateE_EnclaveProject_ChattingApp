@@ -48,6 +48,7 @@ import application.android.com.fatee.models.entities.UserModel;
 import application.android.com.fatee.models.quickbloxholder.QBFileHolder;
 import application.android.com.fatee.presenters.ProfilePresenterImpl;
 import application.android.com.fatee.utils.UserUtil;
+import application.android.com.fatee.views.MainActivity;
 import application.android.com.fatee.views.interfaces.ProfileView;
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -93,6 +94,7 @@ public class ProfileFragment extends Fragment implements ProfileView{
             public void onClick(View view) {
                 String nickname = edtNickname.getText().toString();
                 String description = edtDescription.getText().toString();
+                MainActivity.tvUserDesctiption.setText(description);
                 int spinnerPosition = dropdownGender.getSelectedItemPosition();
                 if (checkInputEmpty()){
                     String userId = UserUtil.getUserModel().getId();
@@ -196,7 +198,7 @@ public class ProfileFragment extends Fragment implements ProfileView{
     }
     @Override
     public void notificationsAfterUpdate(ProfileResponse profileResponse) {
-        Toast.makeText(getActivity(),"A",Toast.LENGTH_SHORT).show();
+
         String accountStatus = getAccountStatus(profileResponse);
         if ("success".equals(accountStatus)){
             showDiaglogMessage("Update successfully");

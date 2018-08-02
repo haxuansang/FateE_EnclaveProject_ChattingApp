@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity
     private ChattingGroupPresenter chattingGroupPresenter;
     private SharedPreferences sharedPreferencesRememberedUser;
     private TextView tvUserNickname;
-    private TextView tvUserDesctiption;
+    public static TextView tvUserDesctiption;
     public static Dialog dialog;
 
 

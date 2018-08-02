@@ -62,7 +62,7 @@
                     android:inputType="text"
                     android:padding="10dp"
                     android:singleLine="true"
-                    android:textColor="#33b5e5"
+                    android:textColor="#9E9E9E"
                     android:textColorHint="#33b5e5"
                     android:textSize="16sp" />
             </android.support.design.widget.TextInputLayout>
@@ -86,7 +86,7 @@
                     android:inputType="textPassword"
                     android:padding="10dp"
                     android:singleLine="true"
-                    android:textColor="#33b5e5"
+                    android:textColor="#9E9E9E"
                     android:textColorHint="#33b5e5"
                     android:textSize="16sp" />
             </android.support.design.widget.TextInputLayout>

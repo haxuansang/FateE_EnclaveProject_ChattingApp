@@ -10,9 +10,7 @@
                 android:id="@+id/image"
                 style="@style/about_image" />
 
-            <TextView
-                android:id="@+id/edt_description"
-                style="@style/about_description" />
+           
         </LinearLayout>
 
         <View style="@style/about_separator" />

@@ -299,20 +299,20 @@ public class AboutPage {
     }
 
     public View create() {
-        TextView description = (TextView) mView.findViewById(R.id.edt_description);
+//        TextView description = (TextView) mView.findViewById(R.id.edt_description);
         ImageView image = (ImageView) mView.findViewById(R.id.image);
         if (mImage > 0) {
             image.setImageResource(mImage);
         }
 
         if (!TextUtils.isEmpty(mDescription)) {
-            description.setText(mDescription);
+//            description.setText(mDescription);
         }
 
-        description.setGravity(Gravity.CENTER);
+//        description.setGravity(Gravity.CENTER);
 
         if (mCustomFont != null) {
-            description.setTypeface(mCustomFont);
+//            description.setTypeface(mCustomFont);
         }
 
         return mView;

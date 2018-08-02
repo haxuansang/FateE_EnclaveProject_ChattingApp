@@ -15,6 +15,8 @@ import android.os.Handler;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
@@ -25,6 +27,9 @@ import android.widget.Toast;
 
 import com.quickblox.auth.session.QBSettings;
 
+import java.math.BigInteger;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -59,6 +64,8 @@ public class LoginActivity extends AppCompatActivity implements ViewProcessLogin
     private String preUsername = "";
     private ImageView imageViewIcon;
     String currentUsername,password;
+    private LinearLayout loginlayout;
+    private Animation shakeAnimation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -104,8 +111,8 @@ public class LoginActivity extends AppCompatActivity implements ViewProcessLogin
     @Override
     protected void onResume() {
         super.onResume();
-        edtUsername.setOnFocusChangeListener(this);
-        edtPassword.setOnFocusChangeListener(this);
+//        edtUsername.setOnFocusChangeListener(this);
+//        edtPassword.setOnFocusChangeListener(this);
 //        btnLogin.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View view) {
@@ -123,6 +130,8 @@ public class LoginActivity extends AppCompatActivity implements ViewProcessLogin
         edtUsername = (EditText) findViewById(R.id.edt_Username);
         relativeLayoutLogin = (RelativeLayout) findViewById(R.id.relativeLayout_Login);
         linearLayoutWrongLogin = (LinearLayout) findViewById(R.id.linear_warning);
+        loginlayout = (LinearLayout) findViewById(R.id.login_layout);
+        shakeAnimation = AnimationUtils.loadAnimation(this, R.anim.shake);
     }
 
     @Override
@@ -261,24 +270,30 @@ public class LoginActivity extends AppCompatActivity implements ViewProcessLogin
     }
 
     public void login(View v) {
-        if(UserUtil.getUserModel() == null) {
-            currentUsername = edtUsername.getText().toString();
-            password = edtPassword.getText().toString();
-            if (!preUsername.equals(currentUsername)) {
-                count = 0;
-                wrong_info_times = 0;
-                countdown = 5;
-            }
-            if (!currentUsername.equals(LoginConstant.USERNAME_EMPTY) && !password.equals(LoginConstant.PASSWORD_EMPTY)) {
-                User user = new User(currentUsername, password);
-                UserUtil.setUser(user);
-                presenterLogicProcessLogin.getDataFromServer(user);
-                preUsername = currentUsername;
-            } else {
-                showNoticeDiaglogMessage(LoginConstant.USER_INFO_REQUIREMENT_MESSAGE);
+        if (!checkValidation()) {
+            loginlayout.startAnimation(shakeAnimation);
+        }else {
+            if (UserUtil.getUserModel() == null) {
+                currentUsername = edtUsername.getText().toString();
+                password = edtPassword.getText().toString();git a
+                if (!preUsername.equals(currentUsername)) {
+                    count = 0;
+                    wrong_info_times = 0;
+                    countdown = 5;
+                }
+                if (!currentUsername.equals(LoginConstant.USERNAME_EMPTY) && !password.equals(LoginConstant.PASSWORD_EMPTY)) {
+                    User user = new User(currentUsername, md5(password));
+                    UserUtil.setUser(user);
+                    presenterLogicProcessLogin.getDataFromServer(user);
+                    preUsername = currentUsername;
+                } else {
+                    showNoticeDiaglogMessage(LoginConstant.USER_INFO_REQUIREMENT_MESSAGE);
+                }
             }
         }
     }
+
+
 
     private void showOptionDiaglogMessage(String message, final String mail) {
         AlertDialog.Builder builder1 = new AlertDialog.Builder(LoginActivity.this);
@@ -408,11 +423,9 @@ public class LoginActivity extends AppCompatActivity implements ViewProcessLogin
     }
     private boolean checkRememberedUser(){
         if (sharedPreferencesRememberedUser.getString(LoginConstant.REMEMBERED_USERNAME,"null").equals("null")) {
-            Toast.makeText(this,sharedPreferencesRememberedUser.getString(LoginConstant.REMEMBERED_USERNAME,"a"),Toast.LENGTH_SHORT).show();
             return false;
         }
         else {
-//            Toast.makeText(this,sharedPreferencesRememberedUser.getString(Constant.REMEMBERED_USERNAME,"a"),Toast.LENGTH_SHORT).show();
             return true;
         }
     }
@@ -424,5 +437,40 @@ public class LoginActivity extends AppCompatActivity implements ViewProcessLogin
         edtPassword.setText(rememberedPassword);
         btnLogin.callOnClick();
         btnLogin.performClick();
+    }
+
+    public String md5(String str){
+        String result = "";
+        MessageDigest digest;
+        try {
+            digest = MessageDigest.getInstance("MD5");
+            digest.update(str.getBytes());
+            BigInteger bigInteger = new BigInteger(1,digest.digest());
+            result = bigInteger.toString(16);
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
+        return result;
+    }
+
+    private Boolean checkValidation() {
+
+        String username = edtUsername.getText().toString();
+        String pwd = edtPassword.getText().toString();
+
+        Pattern p1 = Pattern.compile(LoginConstant.USERNAME_PATTERN);
+        Matcher m1 = p1.matcher(username);
+        Pattern p2 = Pattern.compile(LoginConstant.PASSWORD_PATTERN);
+        Matcher m2 = p2.matcher(pwd);
+
+        if (username.equals("") || username.length() == 0
+                || pwd.equals("") || pwd.length() == 0) {
+            Toast.makeText(this,"You can't let the field empty",Toast.LENGTH_SHORT).show();
+            return false;
+        } else if (!m1.find() || !m2.find()) {
+            Toast.makeText(this,"Please check your format before submitting",Toast.LENGTH_SHORT).show();
+            return false;
+        } else
+            return true;
     }
 }
